@@ -1,46 +1,13 @@
+@font-face {
+  font-family: 'ssicon';
+  src: url(atom://atom-silverstripe/resources/font/ss.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 // SS icon
-.silverstripe-icon    {
-  background: no-repeat center;
-  background-size: 100%;
-  content: '';
-  display: inline-block;
-}
-
-// SS icon variants
-.silverstripe-icon-normal {
-  background-image: url('atom://atom-silverstripe/resources/icons/silverstripe.png');
-}
-
-.silverstripe-icon-light {
-  background-image: url('atom://atom-silverstripe/resources/icons/silverstripe-light.png');
-}
-
-.silverstripe-icon-modified {
-  background-image: url('atom://atom-silverstripe/resources/icons/silverstripe-modified.png');
-}
-
-// Normal SS icon
 .icon-file-text[data-name$=".ss"]:before,
 .tab > .title[data-name$=".ss"]:before {
-    .silverstripe-icon;
-    .silverstripe-icon-normal;
-}
-
-.tab > .title[data-name$=".ss"]:before {
-    margin-right: 5px;
-    vertical-align: middle;
-}
-
-// Active/selected SS icons
-.selected > .icon-file-text[data-name$=".ss"]:before,
-.active > .title[data-name$=".ss"]:before {
-    .silverstripe-icon;
-    .silverstripe-icon-light;
-}
-
-// Modified SS icon
-.status-modified > .icon-file-text[data-name$=".ss"]:before,
-.tab > .status-modified[data-name$=".ss"]:before {
-    .silverstripe-icon;
-    .silverstripe-icon-modified;
+  font-family: 'ssicon' !important;
+  content: '\e800' !important;
 }
