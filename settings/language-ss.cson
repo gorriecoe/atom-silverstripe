@@ -1,0 +1,13 @@
+'.text.ss':
+  'editor':
+    'commentStart': '<%-- '
+    'commentEnd': ' --%>'
+    'increaseIndentPattern': '
+      <\% (control|loop|with|if) ([-_\\.\(\)A-Za-z0-9]+) \%>
+      |<\%--
+      |<\% else \%>
+    '
+    'decreaseIndentPattern': '
+      <\% end_(control|loop|with|if) \%>
+      |--\%>
+    '
