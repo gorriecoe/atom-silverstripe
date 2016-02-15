@@ -1,0 +1,56 @@
+'fileTypes': [
+  'ss'
+]
+'foldingStartMarker': '<%\\s[^end].*\\s%>'
+'foldingStopMarker': '<%\\send.*\\s%>'
+'name': 'HTML (Silverstripe)'
+'patterns': [
+  {
+    'begin': '<% +(?!>)[-=]?'
+    'captures':
+      '0':
+        'name': 'punctuation.section.embedded.ruby'
+    'end': '-? %>'
+    'name': 'keyword.control.ss'
+    'patterns': [
+      {
+        'captures':
+          '1':
+            'name': 'punctuation.definition.comment.ruby'
+        'match': '(#).*?(?=-? %>)'
+        'name': 'comment.line.number-sign.ruby'
+      }
+      {
+        'include': 'source.ruby.rails'
+      }
+    ]
+  }
+  {
+    'begin': '<%--+(?!>)[-=]?'
+    'captures':
+      '0':
+        'name': 'punctuation.section.comment.html'
+    'end': '-?--%>'
+    'name': 'comment.block.ss'
+    'patterns': [
+      {
+        'captures':
+          '1':
+            'name': 'punctuation.definition.comment.html'
+        'match': '(#).*?(?=-?--%>)'
+        'name': 'comment.line.number-sign.ruby'
+      }
+      {
+        'include': 'source.ruby.rails'
+      }
+    ]
+  }
+  {
+    'match': '\\$[a-zA-Z0-9\\.]*'
+    'name': 'variable.ss'
+  }
+  {
+    'include': 'text.html.basic'
+  }
+]
+'scopeName': 'text.html.ss'

@@ -1,0 +1,50 @@
+'.text.html.ss':
+  'control':
+    'prefix': 'control '
+    'body': """
+    <% control ${1} %>
+    \t${2}
+    <% end_control %>
+    """
+  'loop':
+    'prefix': 'loop '
+    'body': """
+    <% loop ${1} %>
+    \t${2}
+    <% end_loop %>
+    """
+  'with':
+    'prefix': 'with '
+    'body': """
+    <% with ${1} %>
+    \t${2}
+    <% end_with %>
+    """
+  'if':
+    'prefix': 'if '
+    'body': """
+    <% if ${1} %>
+    \t${2}
+    <% end_if %>
+    """
+  'ifelse':
+    'prefix': 'ifelse '
+    'body': """
+    <% if ${1} %>
+    \t${2}
+    <% else %>
+    \t${3}
+    <% end_if %>
+    """
+  'else':
+    'prefix': 'else '
+    'body': '<% else %>\n\t'
+  'include':
+    'prefix': 'include '
+    'body': '<% include ${1} %>'
+  'svg':
+    'prefix': 'svg '
+    'body': "{$SVG('${1}')}"
+  'sscomment':
+    'prefix': '-- '
+    'body': "<%-- ${1} --%>"

@@ -1,0 +1,227 @@
+'.text.html.php':
+  # Debug Tools
+  'Debug-message':
+    'prefix': 'message'
+    'body': 'Debug::message(${1});'
+  'Debug-show':
+    'prefix': 'show'
+    'body': 'Debug::show(${1});'
+  'Debug-log':
+    'prefix': 'log'
+    'body': 'Debug::log(${1});'
+  'Debug-dump':
+    'prefix': 'dump'
+    'body': 'Debug::dump(${1});'
+
+  #  Fields
+  'HTMLEditorField':
+    'prefix': 'htmlfield'
+    'body': 'HtmlEditorField::create(\'${1:name}\',\'${2:title}\')$0'
+  'HTMLEditorFieldInTab':
+    'prefix': 'htmlfieldtab'
+    'body': '\\$fieldsields->addFieldToTab(\'Root.${1:Main}\', HtmlEditorField::create(\'${2:name}\',\'${3:title}\'))$0;\n'
+
+  'UploadField':
+    'prefix': 'uploadfield'
+    'body': 'UploadField::create(\'${1:name}\',\'${2:title}\'))$0;\n'
+  'UploadFieldInTab':
+    'prefix': 'uploadfieldtab'
+    'body': '\\$fields->addFieldToTab(\'Root.${1:Main}\', UploadField::create(\'${2:name}\',\'${3:title}\'))$0;\n'
+
+  'TextField':
+    'prefix': 'textfield'
+    'body': 'TextField::create(\'${1:name}\',\'${2:title}\')$0'
+  'TextFieldInTab':
+    'prefix': 'textfieldtab'
+    'body': '\\$fields->addFieldToTab(\'Root.${1:Main}\', TextField::create(\'${2:name}\',\'${3:title}\'))$0;\n'
+
+  'TextareaField':
+    'prefix': 'textareafield'
+    'body': 'TextareaField::create(\'${1:name}\',\'${2:title}\',\'${3:rows}\',\'${4:cols}\')$0'
+  'TextareaFieldInTab':
+    'prefix': 'textareafieldtab'
+    'body': '\\$fields->addFieldToTab(\'Root.${1:Main}\', TextareaField::create(\'${2:name}\',\'${3:title}\'))$0;\n'
+
+  #  Tabs
+  'addFieldToTab':
+    'prefix': 'addfield'
+    'body': """
+    addFieldToTab(\'${1:Root.Main}\', $0,\'${3:insertBefore}\');
+    """
+  'addFieldsToTab':
+    'prefix': 'addfields'
+    'body': """
+    addFieldsToTab(\'${1:Root.Main}\', array(
+    \t$0
+    ));
+    """
+
+  'getCMSFields':
+    'prefix': 'getcmsfields'
+    'body': """
+    /**
+     * CMS Fields
+     * @return FieldList
+     */
+    function getCMSFields() {
+    \t\\$fields = parent::getCMSFields();
+    \t\\$fields->$0
+    \treturn \\$fields;
+    }
+    """
+  'updateCMSFields':
+    'prefix': 'updatecmsfields'
+    'body': """
+    /**
+     * Update Fields
+     * @return FieldList
+     */
+    function updateCMSFields(FieldList \\$fields) {
+    \t\\$fields->$0
+    \treturn \\$fields;
+    }
+    """
+  'singular_name':
+    'prefix': 'singular_name '
+    'body': """
+    /**
+     * Singular name for CMS
+     * @return string
+     */
+    private static $singular_name = \'${1}\';
+    """
+  'plural_name':
+    'prefix': 'plural_name '
+    'body': """
+    /**
+     * Plural name for CMS
+     * @return string
+     */
+    private static $plural_name = \'${1}\';
+    """
+  'db':
+    'prefix': 'db '
+    'body': """
+    /**
+     * Database fields
+     * @return array
+     */
+    private static \\$db = array(
+    \t\'${1}\' => \'${2}\',
+    );
+    """
+  'default_sort':
+    'prefix': 'default_sort '
+    'body': """
+    /**
+     * Default sort ordering
+     * @return string
+     */
+    private static $default_sort = \'${1} {2:ASC}\';
+    """
+  'hide_ancestor':
+    'prefix': 'hide_ancestor'
+    'body': """
+    private static \$hide_ancestor = \'\${1:PageType}\';
+    """
+  'has_one':
+    'prefix': 'has_one'
+    'body': """
+    /**
+     * Has_one relationship
+     * @return array
+     */
+    private static \\$has_one = array(
+    \t\'${1}\' => \'${2}\',
+    );
+    """
+  'has_many':
+    'prefix': 'has_many'
+    'body': """
+    /**
+     * Has_many relationship
+     * @return array
+     */
+    private static \\$has_many = array(
+    \t\'${1}\' => \'${2}\',
+    );
+    """
+  'many_many':
+    'prefix': 'many_many'
+    'body': """
+    /**
+     * Many_many relationship
+     * @return array
+     */
+    private static \\$many_many = array(
+    \t\'${1}\' => \'${2}\',
+    );
+    """
+  'belongs_to':
+    'prefix': 'belongs_to'
+    'body': """
+    /**
+     * Belongs_to relationship
+     * @return array
+     */
+    private static \\$belongs_to = array(
+    \t\'${1}\' => \'${2}\',
+    );
+    """
+  'belongs_many_many':
+    'prefix': 'belongs_many_many'
+    'body': """
+    /**
+     * Belongs_many_many relationship
+     * @return array
+     */
+    private static \\$belongs_many_many = array(
+    \t\'${1}\' => \'${2}\',
+    );
+    """
+
+  # Permissions
+  'canView':
+    'prefix': 'canview'
+    'body': """
+    /**
+     * Viewing Permissions
+     * @return boolean
+     */
+    public function canView($member = null) {
+    \treturn ${1};
+    }
+    """
+  'canEdit':
+    'prefix': 'canedit'
+    'body': """
+    /**
+     * Editing Permissions
+     * @return boolean
+     */
+    public function canEdit($member = null) {
+    \treturn ${1};
+    }
+    """
+  'canDelete':
+    'prefix': 'candelete'
+    'body': """
+    /**
+     * Deleting Permissions
+     * @return boolean
+     */
+    public function canDelete($member = null) {
+    \treturn ${1};
+    }
+    """
+  'canCreate':
+    'prefix': 'cancreate'
+    'body': """
+    /**
+     * Creating Permissions
+     * @return boolean
+     */
+    public function canCreate($member = null) {
+    \treturn ${1};
+    }
+    """

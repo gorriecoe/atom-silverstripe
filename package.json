@@ -1,0 +1,31 @@
+{
+  "name": "atom-silverstripe",
+  "version": "1.0",
+  "description": "SilverStripe syntax highlighting and snippets.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gorriecoe/atom-silverstripe.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">1.0.5"
+  },
+  "dependencies": {},
+  "readme": "",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/gorriecoe/atom-silverstripe/issues"
+  },
+  "homepage": "https://github.comgorriecoe/atom-silverstripe",
+  "_id": "atom-silverstripe@0.0.1",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

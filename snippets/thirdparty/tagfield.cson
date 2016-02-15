@@ -1,0 +1,4 @@
+'.text.html.php':
+  'TagField':
+    'prefix': 'tagfield'
+    'body': 'TagField::create(\'${1:name}\',\'${2:null}\',${3:null}, ${4}))$0;\n'
