@@ -51,7 +51,7 @@
     \t\'${1:name}\',
     \t\'${2:title}\',
     \t\'${3:datalist}\',
-    \'${4:configuration}\'
+    \t\'${4:configuration}\'
     )$0
     """
 
