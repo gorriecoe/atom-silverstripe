@@ -226,3 +226,8 @@
     \treturn ${1};
     }
     """
+    'permissionCheck':
+      'prefix': 'permissioncheck'
+      'body': """
+      permission::check(${1:string|array}, ${2:'any'}, ${3:$member})${0}
+      """
