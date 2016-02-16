@@ -14,12 +14,6 @@
     'body': 'Debug::dump(${1});'
 
   #  Fields
-  'OptionsetField':
-    'prefix': 'optionsetfield'
-    'body': 'OptionsetField::create(\'${1:name}\',\'${2:title}\',\'${3:datalist}\')$0'
-  'DropdownField':
-    'prefix': 'dropdownfield'
-    'body': 'DropdownField::create(\'${1:name}\',\'${2:title}\',\'${3:datalist}\')$0'
   'HTMLEditorField':
     'prefix': 'htmlfield'
     'body': 'HtmlEditorField::create(\'${1:name}\',\'${2:title}\')$0'
@@ -32,10 +26,34 @@
   'TextareaField':
     'prefix': 'textareafield'
     'body': 'TextareaField::create(\'${1:name}\',\'${2:title}\')$0'
+  'OptionsetField':
+    'prefix': 'optionsetfield'
+    'body': """
+    OptionsetField::create(
+    \t\'${1:name}\',
+    \t\'${2:title}\',
+    \t\'${3:datalist}\'
+    )$0
+    """
+  'DropdownField':
+    'prefix': 'dropdownfield'
+    'body': """
+    DropdownField::create(
+    \t\'${1:name}\',
+    \t\'${2:title}\',
+    \t\'${3:datalist}\'
+    )$0
+    """
   'GridField':
     'prefix': 'gridfield'
-    'body': 'GridField::create(\'${1:name}\',\'${2:title}\',\'${3:datalist}\',\'${4:configuration}\')$0'
-
+    'body': """
+    GridField::create(
+    \t\'${1:name}\',
+    \t\'${2:title}\',
+    \t\'${3:datalist}\',
+    \'${4:configuration}\'
+    )$0
+    """
 
   #  Tabs
   'addFieldToTab':
