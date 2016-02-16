@@ -172,6 +172,19 @@
     \t\'${1}\' => \'${2}\',
     );
     """
+  'many_many_extraFields':
+    'prefix': 'many_many_extrafields'
+    'body': """
+    /**
+     * \{@inheritdoc \}
+     * @return array
+     */
+    private static \\$many_many_extraFields = array(
+    \t\'${1}\' => array(
+    \t\t'${2:Sort}' => '${3:Int}'
+    \t)
+    );
+    """
   'belongs_to':
     'prefix': 'belongs_to'
     'body': """
