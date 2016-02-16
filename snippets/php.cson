@@ -14,33 +14,28 @@
     'body': 'Debug::dump(${1});'
 
   #  Fields
+  'OptionsetField':
+    'prefix': 'optionsetfield'
+    'body': 'OptionsetField::create(\'${1:name}\',\'${2:title}\',\'${3:datalist}\')$0'
+  'DropdownField':
+    'prefix': 'dropdownfield'
+    'body': 'DropdownField::create(\'${1:name}\',\'${2:title}\',\'${3:datalist}\')$0'
   'HTMLEditorField':
     'prefix': 'htmlfield'
     'body': 'HtmlEditorField::create(\'${1:name}\',\'${2:title}\')$0'
-  'HTMLEditorFieldInTab':
-    'prefix': 'htmlfieldtab'
-    'body': '\\$fieldsields->addFieldToTab(\'Root.${1:Main}\', HtmlEditorField::create(\'${2:name}\',\'${3:title}\'))$0;\n'
-
   'UploadField':
     'prefix': 'uploadfield'
     'body': 'UploadField::create(\'${1:name}\',\'${2:title}\'))$0;\n'
-  'UploadFieldInTab':
-    'prefix': 'uploadfieldtab'
-    'body': '\\$fields->addFieldToTab(\'Root.${1:Main}\', UploadField::create(\'${2:name}\',\'${3:title}\'))$0;\n'
-
   'TextField':
     'prefix': 'textfield'
     'body': 'TextField::create(\'${1:name}\',\'${2:title}\')$0'
-  'TextFieldInTab':
-    'prefix': 'textfieldtab'
-    'body': '\\$fields->addFieldToTab(\'Root.${1:Main}\', TextField::create(\'${2:name}\',\'${3:title}\'))$0;\n'
-
   'TextareaField':
     'prefix': 'textareafield'
-    'body': 'TextareaField::create(\'${1:name}\',\'${2:title}\',\'${3:rows}\',\'${4:cols}\')$0'
-  'TextareaFieldInTab':
-    'prefix': 'textareafieldtab'
-    'body': '\\$fields->addFieldToTab(\'Root.${1:Main}\', TextareaField::create(\'${2:name}\',\'${3:title}\'))$0;\n'
+    'body': 'TextareaField::create(\'${1:name}\',\'${2:title}\')$0'
+  'GridField':
+    'prefix': 'gridfield'
+    'body': 'GridField::create(\'${1:name}\',\'${2:title}\',\'${3:datalist}\',\'${4:configuration}\')$0'
+
 
   #  Tabs
   'addFieldToTab':
