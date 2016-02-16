@@ -41,10 +41,10 @@
     'body': '<% else %>\n\t'
   'include':
     'prefix': 'include '
-    'body': '<% include ${1} %>'
+    'body': '<% include ${1} %>${0}'
   'svg':
     'prefix': 'svg '
     'body': "{$SVG('${1}')}"
   'sscomment':
     'prefix': '-- '
-    'body': "<%-- ${1} --%>"
+    'body': "<%-- ${1} --%>${0}"
