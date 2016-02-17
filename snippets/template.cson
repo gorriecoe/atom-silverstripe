@@ -38,13 +38,7 @@
     """
   'else':
     'prefix': 'else '
-    'body': '<% else %>\n\t'
+    'body': '<% else %>\n\t${0}'
   'include':
     'prefix': 'include '
     'body': '<% include ${1} %>${0}'
-  'svg':
-    'prefix': 'svg '
-    'body': "{$SVG('${1}')}"
-  'sscomment':
-    'prefix': '-- '
-    'body': "<%-- ${1} --%>${0}"
