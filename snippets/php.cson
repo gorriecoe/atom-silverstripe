@@ -2,16 +2,16 @@
   # Debug Tools
   'Debug-message':
     'prefix': 'message'
-    'body': 'Debug::message(${1});'
+    'body': 'Debug::message(${1});$0'
   'Debug-show':
     'prefix': 'show'
-    'body': 'Debug::show(${1});'
+    'body': 'Debug::show(${1});$0'
   'Debug-log':
     'prefix': 'log'
-    'body': 'Debug::log(${1});'
+    'body': 'Debug::log(${1});$0'
   'Debug-dump':
     'prefix': 'dump'
-    'body': 'Debug::dump(${1});'
+    'body': 'Debug::dump(${1});$0'
 
   #  Fields
   'HTMLEditorField':
@@ -19,7 +19,7 @@
     'body': 'HtmlEditorField::create(\'${1:name}\',\'${2:title}\')$0'
   'UploadField':
     'prefix': 'uploadfield'
-    'body': 'UploadField::create(\'${1:name}\',\'${2:title}\'))$0;\n'
+    'body': 'UploadField::create(\'${1:name}\',\'${2:title}\'))$0'
   'TextField':
     'prefix': 'textfield'
     'body': 'TextField::create(\'${1:name}\',\'${2:title}\')$0'
@@ -59,14 +59,21 @@
   'addFieldToTab':
     'prefix': 'addfield'
     'body': """
-    addFieldToTab(\'${1:Root.Main}\', $0,\'${3:insertBefore}\');
+    addFieldToTab(
+    \t\'${1:Root.Main}\',
+    \t$0,
+    \t\'${3:insertBefore}\'
+    );
     """
   'addFieldsToTab':
     'prefix': 'addfields'
     'body': """
-    addFieldsToTab(\'${1:Root.Main}\', array(
-    \t$0
-    ));
+    addFieldsToTab(
+    \t\'${1:Root.Main}\',
+    \tarray(
+    \t\t$0
+    \t)
+    );
     """
 
   'getCMSFields':
@@ -104,6 +111,7 @@
      * @return string
      */
     private static $singular_name = \'${1}\';
+    $0
     """
   'plural_name':
     'prefix': 'plural_name '
@@ -113,6 +121,7 @@
      * @return string
      */
     private static $plural_name = \'${1}\';
+    $0
     """
   'db':
     'prefix': 'db '
@@ -124,6 +133,7 @@
     private static \\$db = array(
     \t\'${1}\' => \'${2}\',
     );
+    $0
     """
   'default_sort':
     'prefix': 'default_sort '
@@ -133,11 +143,13 @@
      * @return string
      */
     private static $default_sort = \'${1} {2:ASC}\';
+    $0
     """
   'hide_ancestor':
     'prefix': 'hide_ancestor'
     'body': """
     private static \$hide_ancestor = \'\${1:PageType}\';
+    $0
     """
   'has_one':
     'prefix': 'has_one'
@@ -149,6 +161,7 @@
     private static \\$has_one = array(
     \t\'${1}\' => \'${2}\',
     );
+    $0
     """
   'has_many':
     'prefix': 'has_many'
@@ -160,6 +173,7 @@
     private static \\$has_many = array(
     \t\'${1}\' => \'${2}\',
     );
+    $0
     """
   'many_many':
     'prefix': 'many_many'
@@ -171,6 +185,7 @@
     private static \\$many_many = array(
     \t\'${1}\' => \'${2}\',
     );
+    $0
     """
   'many_many_extraFields':
     'prefix': 'many_many_extrafields'
@@ -184,6 +199,7 @@
     \t\t'${2:Sort}' => '${3:Int}'
     \t)
     );
+    $0
     """
   'belongs_to':
     'prefix': 'belongs_to'
@@ -195,6 +211,7 @@
     private static \\$belongs_to = array(
     \t\'${1}\' => \'${2}\',
     );
+    $0
     """
   'belongs_many_many':
     'prefix': 'belongs_many_many'
@@ -206,6 +223,7 @@
     private static \\$belongs_many_many = array(
     \t\'${1}\' => \'${2}\',
     );
+    $0
     """
 
   # Permissions
@@ -220,6 +238,7 @@
     {
     \treturn ${1};
     }
+    $0
     """
   'canEdit':
     'prefix': 'canedit'
@@ -232,6 +251,7 @@
     {
     \treturn ${1};
     }
+    $0
     """
   'canDelete':
     'prefix': 'candelete'
@@ -244,6 +264,7 @@
     {
     \treturn ${1};
     }
+    $0
     """
   'canCreate':
     'prefix': 'cancreate'
@@ -256,9 +277,10 @@
     {
     \treturn ${1};
     }
+    $0
     """
   'permissionCheck':
     'prefix': 'permissioncheck'
     'body': """
-    permission::check(${1:string|array}, ${2:'any'}, ${3:$member})${0}
+    permission::check(${1:string|array}, ${2:'any'}, ${3:$member})$0
     """
