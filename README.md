@@ -1,8 +1,8 @@
-# Atom silverstripe
+# Silverstripe
 
-SilverStripe syntax highlighting and snippets.
+Provides [SilverStripe](http://www.silverstripe.org/) syntax highlighting and snippets for .ss templates and php.
 
-## Install
+## Installation
 
 Using `apm`:
 
