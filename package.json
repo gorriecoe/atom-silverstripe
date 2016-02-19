@@ -1,6 +1,6 @@
 {
   "name": "atom-silverstripe",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Provides SilverStripe syntax highlighting and snippets for .ss templates and php.",
   "engines": {
     "atom": ">1.0.0"
