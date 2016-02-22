@@ -4,7 +4,7 @@
     'body': """
     /**
      * Singular name for CMS
-     * @return string
+     * @var string
      */
     private static $singular_name = \'${1}\';
     $0
@@ -14,7 +14,7 @@
     'body': """
     /**
      * Plural name for CMS
-     * @return string
+     * @var string
      */
     private static $plural_name = \'${1}\';
     $0
@@ -24,7 +24,7 @@
     'body': """
     /**
      * Database fields
-     * @return array
+     * @var array
      */
     private static \\$db = array(
     \t\'${1}\' => \'${2}\',
@@ -36,7 +36,7 @@
     'body': """
     /**
      * Default sort ordering
-     * @return string
+     * @var string
      */
     private static $default_sort = \'${1} {2:ASC}\';
     $0
@@ -52,7 +52,7 @@
     'body': """
     /**
      * Has_one relationship
-     * @return array
+     * @var array
      */
     private static \\$has_one = array(
     \t\'${1}\' => \'${2}\',
@@ -64,7 +64,7 @@
     'body': """
     /**
      * Has_many relationship
-     * @return array
+     * @var array
      */
     private static \\$has_many = array(
     \t\'${1}\' => \'${2}\',
@@ -76,7 +76,7 @@
     'body': """
     /**
      * Many_many relationship
-     * @return array
+     * @var array
      */
     private static \\$many_many = array(
     \t\'${1}\' => \'${2}\',
@@ -88,7 +88,7 @@
     'body': """
     /**
      * \{@inheritdoc \}
-     * @return array
+     * @var array
      */
     private static \\$many_many_extraFields = array(
     \t\'${1}\' => array(
@@ -102,7 +102,7 @@
     'body': """
     /**
      * Belongs_to relationship
-     * @return array
+     * @var array
      */
     private static \\$belongs_to = array(
     \t\'${1}\' => \'${2}\',
@@ -114,7 +114,7 @@
     'body': """
     /**
      * Belongs_many_many relationship
-     * @return array
+     * @var array
      */
     private static \\$belongs_many_many = array(
     \t\'${1}\' => \'${2}\',
@@ -178,5 +178,5 @@
   'permissionCheck':
     'prefix': 'permissioncheck'
     'body': """
-    permission::check(${1:string|array}, ${2:'any'}, ${3:$member})$0
+    Permission::check(${1:string|array}, ${2:'any'}, ${3:$member})$0
     """
