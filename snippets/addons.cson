@@ -16,7 +16,7 @@
     'prefix': 'linkfield'
     'body': """
     LinkField::create(
-    \t\'${1:name}\',
+    \t\'${1:name}ID\',
     \t\'${2:title}\'
     )
     $0
