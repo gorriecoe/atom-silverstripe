@@ -2,10 +2,11 @@
   'Class & Controller Silverstripe':
     'prefix': 'classcontroller'
     'body': """
-    <?php
-
     /**
+     * ${3:Description}
      *
+     * @package silverstripe
+     * @subpackage ${4:mysite}
      */
     class $1 extends ${2:Page}
     {
