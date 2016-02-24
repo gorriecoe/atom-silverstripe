@@ -1,4 +1,23 @@
 '.text.html.php':
+  'Class & Controller Silverstripe':
+    'prefix': 'classcontroller'
+    'body': """
+    <?php
+
+    /**
+     *
+     */
+    class $1 extends ${2:Page}
+    {
+    \t${0}
+    }
+    class ${1}_Controller extends ${2:Page}_Controller
+    {
+    \tfunction init() {
+    \t\tparent::init();
+    \t}
+    }
+    """
   'singular_name':
     'prefix': 'singular_name '
     'body': """
