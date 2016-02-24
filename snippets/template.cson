@@ -1,4 +1,5 @@
 '.text.html.ss':
+  # scope
   'control':
     'prefix': 'control '
     'body': """
@@ -20,10 +21,18 @@
     \t${2}
     <% end_with %>
     """
+  # Conditional Logic
   'if':
     'prefix': 'if '
     'body': """
     <% if ${1} %>
+    \t${2}
+    <% end_if %>
+    """
+  'ifnot':
+    'prefix': 'ifnot '
+    'body': """
+    <% if not ${1} %>
     \t${2}
     <% end_if %>
     """
@@ -39,6 +48,41 @@
   'else':
     'prefix': 'else '
     'body': '<% else %>\n\t${0}'
+  # Includes
   'include':
     'prefix': 'include '
     'body': '<% include ${1} %>${0}'
+  # Image manipulation
+  'ScaleWidth Image':
+    'prefix': 'scalewidth '
+    'body': 'ScaleWidth(${1:width})${0}'
+  'ScaleMaxWidth Image':
+    'prefix': 'scalemaxwidth '
+    'body': 'ScaleMaxWidth(${1:width})${0}'
+  'ScaleHeight Image':
+    'prefix': 'scaleheight '
+    'body': 'ScaleHeight(${1:height})${0}'
+  'ScaleMaxHeight Image':
+    'prefix': 'scalemaxheight '
+    'body': 'ScaleMaxHeight(${1:height})${0}'
+  'Fit Image':
+    'prefix': 'fit '
+    'body': 'Fit(${1:width},${1:height})${0}'
+  'FitMax Image':
+    'prefix': 'fitmax '
+    'body': 'FitMax(${1:width},${1:height})${0}'
+  'Fill Image':
+    'prefix': 'fill '
+    'body': 'Fill(${1:width},${1:height})${0}'
+  'FillMax Image':
+    'prefix': 'fillmax '
+    'body': 'FillMax(${1:width},${1:height})${0}'
+  'CropWidth Image':
+    'prefix': 'cropwidth '
+    'body': 'CropWidth(${1:width})${0}'
+  'CropHeight Image':
+    'prefix': 'cropheight '
+    'body': 'CropHeight(${1:width})${0}'
+  'Pad Image':
+    'prefix': 'pad '
+    'body': 'Pad(${1:width},${1:height},${3:hex})${0}'
