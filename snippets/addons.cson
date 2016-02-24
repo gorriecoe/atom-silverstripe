@@ -1,4 +1,17 @@
 '.text.html.php':
+  # TagField
+  'TagField':
+    'prefix': 'tagfield'
+    'body': """
+    TagField::create(
+    \t\'${1:name}\',
+    \t\'${2:null}\',
+    \t${3:null},
+    \t${4}
+    )
+    $0
+    """
+  # Linkable
   'LinkField':
     'prefix': 'linkfield'
     'body': """
