@@ -9,18 +9,27 @@
   'TextField':
     'prefix': 'textfield'
     'body': 'TextField::create(\'${1:name}\',\'${2:title}\')$0'
+  'ReadonlyField':
+    'prefix': 'readonlyfield'
+    'body': 'ReadonlyField::create(\'${1:name}\',\'${2:title}\')$0'
+  'NumericField':
+    'prefix': 'numericfield'
+    'body': 'NumericField::create(\'${1:name}\',\'${2:title}\')$0'
+  'NumericField_Readonly':
+    'prefix': 'numericfield_readonly'
+    'body': 'NumericField_Readonly::create(\'${1:name}\',\'${2:title}\')$0'
+  'CheckboxField':
+    'prefix': 'checkboxfield'
+    'body': 'CheckboxField::create(\'${1:name}\',\'${2:title}\')$0'
+  'CheckboxField_Readonly':
+    'prefix': 'checkboxfield_readonly'
+    'body': 'CheckboxField_Readonly::create(\'${1:name}\',\'${2:title}\')$0'
+  'NullableField':
+    'prefix': 'nullablefield'
+    'body': 'NullableField::create(\'${1:name}\',\'${2:title}\')$0'
   'TextareaField':
     'prefix': 'textareafield'
     'body': 'TextareaField::create(\'${1:name}\',\'${2:title}\')$0'
-  'OptionsetField':
-    'prefix': 'optionsetfield'
-    'body': """
-    OptionsetField::create(
-    \t\'${1:name}\',
-    \t\'${2:title}\',
-    \t\'${3:datalist}\'
-    )$0
-    """
   'DropdownField':
     'prefix': 'dropdownfield'
     'body': """
@@ -30,6 +39,57 @@
     \t\'${3:datalist}\'
     )$0
     """
+  'LookupField':
+    'prefix': 'lookupfield'
+    'body': """
+    LookupField::create(
+    \t\'${1:name}\',
+    \t\'${2:title}\',
+    \t\'${3:datalist}\'
+    )$0
+    """
+  'ListboxField':
+    'prefix': 'listboxfield'
+    'body': """
+    ListboxField::create(
+    \t\'${1:name}\',
+    \t\'${2:title}\',
+    \t\'${3:datalist}\'
+    )$0
+    """
+  'GroupedDropdownField':
+    'prefix': 'groupeddropdownfield'
+    'body': """
+    GroupedDropdownField::create(
+    \t\'${1:name}\',
+    \t\'${2:title}\',
+    \t\'${3:datalist}\'
+    )$0
+    """
+  'OptionsetField':
+    'prefix': 'optionsetfield'
+    'body': """
+    OptionsetField::create(
+    \t\'${1:name}\',
+    \t\'${2:title}\',
+    \t\'${3:datalist}\'
+    )$0
+    """
+  'CheckboxSetField':
+    'prefix': 'checkboxsetfield'
+    'body': """
+    CheckboxSetField::create(
+    \t\'${1:name}\',
+    \t\'${2:title}\',
+    \t\'${3:datalist}\'
+    )$0
+    """
+  'HeaderField':
+    'prefix': 'headerfield'
+    'body': 'HeaderField::create(\'${1:name}\',\'${2:title}\')$0'
+  'HiddenField':
+    'prefix': 'hiddenfield'
+    'body': 'HiddenField::create(\'${1:name}\',\'${2:title}\')$0'
   'GridField':
     'prefix': 'gridfield'
     'body': """
