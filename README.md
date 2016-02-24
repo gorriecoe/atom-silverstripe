@@ -1,6 +1,6 @@
 # Silverstripe
 
-Provides [SilverStripe](http://www.silverstripe.org/) syntax highlighting and snippets for .ss templates and php.
+Provides [SilverStripe](http://www.silverstripe.org/) syntax highlighting and snippets.
 
 ## Installation
 
