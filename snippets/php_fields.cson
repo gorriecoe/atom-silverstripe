@@ -9,6 +9,9 @@
   'TextField':
     'prefix': 'textfield'
     'body': 'TextField::create(\'${1:name}\',\'${2:title}\')$0'
+  'EmailField':
+    'prefix': 'emailfield'
+    'body': 'EmailField::create(\'${1:name}\',\'${2:title}\')$0'
   'ReadonlyField':
     'prefix': 'readonlyfield'
     'body': 'ReadonlyField::create(\'${1:name}\',\'${2:title}\')$0'
@@ -34,6 +37,15 @@
     'prefix': 'treedropdownfield'
     'body': """
     TreeDropdownField::create(
+    \t\'${1:name}ID\',
+    \t\'${2:title}\',
+    \t\'${3:SiteTree}\'
+    )$0
+    """
+  'TreeDropdownField_Readonly':
+    'prefix': 'treedropdownfield_readonly'
+    'body': """
+    TreeDropdownField_Readonly::create(
     \t\'${1:name}ID\',
     \t\'${2:title}\',
     \t\'${3:SiteTree}\'
@@ -99,6 +111,9 @@
   'HiddenField':
     'prefix': 'hiddenfield'
     'body': 'HiddenField::create(\'${1:name}\',\'${2:title}\')$0'
+  'LabelField':
+    'prefix': 'labelfield'
+    'body': 'LabelField::create(\'${1:name}\',\'${2:title}\')$0'
   'GridField':
     'prefix': 'gridfield'
     'body': """
