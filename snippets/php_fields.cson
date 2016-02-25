@@ -30,6 +30,15 @@
   'TextareaField':
     'prefix': 'textareafield'
     'body': 'TextareaField::create(\'${1:name}\',\'${2:title}\')$0'
+  'TreeDropdownField':
+    'prefix': 'treedropdownfield'
+    'body': """
+    TreeDropdownField::create(
+    \t\'${1:name}ID\',
+    \t\'${2:title}\',
+    \t\'${3:SiteTree}\'
+    )$0
+    """
   'DropdownField':
     'prefix': 'dropdownfield'
     'body': """
