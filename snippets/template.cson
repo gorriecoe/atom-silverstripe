@@ -53,36 +53,36 @@
     'prefix': 'include '
     'body': '<% include ${1} %>${0}'
   # Image manipulation
-  'ScaleWidth Image':
+  'ScaleWidth Image 3.2+':
     'prefix': 'scalewidth '
     'body': 'ScaleWidth(${1:width})${0}'
-  'ScaleMaxWidth Image':
+  'ScaleMaxWidth Image 3.2+':
     'prefix': 'scalemaxwidth '
     'body': 'ScaleMaxWidth(${1:width})${0}'
-  'ScaleHeight Image':
+  'ScaleHeight Image 3.2+':
     'prefix': 'scaleheight '
     'body': 'ScaleHeight(${1:height})${0}'
-  'ScaleMaxHeight Image':
+  'ScaleMaxHeight Image 3.2+':
     'prefix': 'scalemaxheight '
     'body': 'ScaleMaxHeight(${1:height})${0}'
-  'Fit Image':
+  'Fit Image 3.2+':
     'prefix': 'fit '
     'body': 'Fit(${1:width},${1:height})${0}'
-  'FitMax Image':
+  'FitMax Image 3.2+':
     'prefix': 'fitmax '
     'body': 'FitMax(${1:width},${1:height})${0}'
-  'Fill Image':
+  'Fill Image 3.2+':
     'prefix': 'fill '
     'body': 'Fill(${1:width},${1:height})${0}'
-  'FillMax Image':
+  'FillMax Image 3.2+':
     'prefix': 'fillmax '
     'body': 'FillMax(${1:width},${1:height})${0}'
-  'CropWidth Image':
+  'CropWidth Image 3.2+':
     'prefix': 'cropwidth '
     'body': 'CropWidth(${1:width})${0}'
-  'CropHeight Image':
+  'CropHeight Image 3.2+':
     'prefix': 'cropheight '
     'body': 'CropHeight(${1:width})${0}'
-  'Pad Image':
+  'Pad Image 3.2+':
     'prefix': 'pad '
     'body': 'Pad(${1:width},${1:height},${3:hex})${0}'
