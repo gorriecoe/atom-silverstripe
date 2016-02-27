@@ -1,4 +1,7 @@
 '.text.html.php':
+  '<?php …':
+    'prefix': 'php' # Overrides standard php to exclude ?>
+    'body': '\<?php\n$0'
   'Class & Controller Silverstripe':
     'prefix': 'classcontroller'
     'body': """
