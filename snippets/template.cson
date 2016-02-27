@@ -1,20 +1,21 @@
 '.text.html.ss':
-  # scope
-  'control':
+  # scope 2.4
+  'Control 2.4':
     'prefix': 'control '
     'body': """
     <% control ${1} %>
     \t${2}
     <% end_control %>
     """
-  'loop':
+  # scope 3.0 +
+  'Loop 3.0 +':
     'prefix': 'loop '
     'body': """
     <% loop ${1} %>
     \t${2}
     <% end_loop %>
     """
-  'with':
+  'With 3.0 +':
     'prefix': 'with '
     'body': """
     <% with ${1} %>
@@ -29,14 +30,14 @@
     \t${2}
     <% end_if %>
     """
-  'ifnot':
+  'if not':
     'prefix': 'ifnot '
     'body': """
     <% if not ${1} %>
     \t${2}
     <% end_if %>
     """
-  'ifelse':
+  'if else':
     'prefix': 'ifelse '
     'body': """
     <% if ${1} %>
@@ -52,37 +53,56 @@
   'include':
     'prefix': 'include '
     'body': '<% include ${1} %>${0}'
-  # Image manipulation
-  'ScaleWidth Image 3.2+':
+  # Image manipulation 3.2
+  'Scale Width Image 3.2+':
     'prefix': 'scalewidth '
     'body': 'ScaleWidth(${1:width})${0}'
-  'ScaleMaxWidth Image 3.2+':
+  'Scale Max Width Image 3.2+':
     'prefix': 'scalemaxwidth '
     'body': 'ScaleMaxWidth(${1:width})${0}'
-  'ScaleHeight Image 3.2+':
+  'Scale Height Image 3.2+':
     'prefix': 'scaleheight '
     'body': 'ScaleHeight(${1:height})${0}'
-  'ScaleMaxHeight Image 3.2+':
+  'Scale Max Height Image 3.2+':
     'prefix': 'scalemaxheight '
     'body': 'ScaleMaxHeight(${1:height})${0}'
   'Fit Image 3.2+':
     'prefix': 'fit '
     'body': 'Fit(${1:width},${1:height})${0}'
-  'FitMax Image 3.2+':
+  'Fit Max Image 3.2+':
     'prefix': 'fitmax '
     'body': 'FitMax(${1:width},${1:height})${0}'
   'Fill Image 3.2+':
     'prefix': 'fill '
     'body': 'Fill(${1:width},${1:height})${0}'
-  'FillMax Image 3.2+':
+  'Fill Max Image 3.2+':
     'prefix': 'fillmax '
     'body': 'FillMax(${1:width},${1:height})${0}'
-  'CropWidth Image 3.2+':
+  'Crop Width Image 3.2+':
     'prefix': 'cropwidth '
     'body': 'CropWidth(${1:width})${0}'
-  'CropHeight Image 3.2+':
+  'Crop Height Image 3.2+':
     'prefix': 'cropheight '
     'body': 'CropHeight(${1:width})${0}'
   'Pad Image 3.2+':
     'prefix': 'pad '
     'body': 'Pad(${1:width},${1:height},${3:hex})${0}'
+  # Image manipulation 3.0 - 3.1
+  'Set Width Image 3.0 - 3.1':
+    'prefix': 'setwidth '
+    'body': 'SetWidth(${1:width})${0}'
+  'Set Height Image 3.0 - 3.1':
+    'prefix': 'setheight '
+    'body': 'SetHeight(${1:height})${0}'
+  'Set Size Image 3.0 - 3.1':
+    'prefix': 'setsize '
+    'body': 'SetSize(${1:width},${1:height})${0}'
+  'Set Ratio Size Image 3.0 - 3.1':
+    'prefix': 'setratiosize '
+    'body': 'SetRatioSize(${1:width},${1:height})${0}'
+  'Cropped Image 3.0 - 3.1':
+    'prefix': 'croppedimage '
+    'body': 'CroppedImage(${1:width},${1:height})${0}'
+  'Padded Image 3.0 - 3.1':
+    'prefix': 'paddedimage '
+    'body': 'PaddedImage(${1:width},${1:height},${3:hex})${0}'
