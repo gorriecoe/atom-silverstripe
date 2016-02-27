@@ -29,7 +29,7 @@
     'begin': '<%--+(?!>)[-=]?'
     'captures':
       '0':
-        'name': 'punctuation.section.comment.html'
+        'name': 'punctuation.definition.comment.html'
     'end': '-?--%>'
     'name': 'comment.block.ss'
     'patterns': [
@@ -38,10 +38,10 @@
           '1':
             'name': 'punctuation.definition.comment.html'
         'match': '(#).*?(?=-?--%>)'
-        'name': 'comment.line.number-sign.ruby'
+        'name': 'invalid.illegal.bad-comments-or-CDATA.html'
       }
       {
-        'include': 'source.ruby.rails'
+        'include': '#embedded-code'
       }
     ]
   }
