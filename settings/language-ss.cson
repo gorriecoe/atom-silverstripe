@@ -1,4 +1,6 @@
-'.text.ss':
+'.text.html.ss':
   'editor':
     'commentStart': '<%-- '
     'commentEnd': ' --%>'
+    'increaseIndentPattern': '(<% (control|loop|with|if) ([-_\\.\(\)A-Za-z0-9]+) %>|<%--|<% else %>|<(?!area|base|br|col|frame|hr|html|img|input|link|meta|param)([-_\\.\\{\\}\\$\\(\\) A-Za-z0-9]+)(>|!/>)|<!--)'
+    'decreaseIndentPattern': '(<% end_(control|loop|with|if) %>|--%>|<% else %>|</(?!html)([-_\\.\(\)A-Za-z0-9]+)>|-->)'
