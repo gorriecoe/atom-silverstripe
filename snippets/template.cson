@@ -57,54 +57,54 @@
 '.text.html.ss .variable':
   # Image manipulation 3.2
   'Scale Width Image 3.2+':
-    'prefix': 'scalewidth '
+    'prefix': 'scalewidth'
     'body': 'ScaleWidth(${1:width})${0}'
   'Scale Max Width Image 3.2+':
-    'prefix': 'scalemaxwidth '
+    'prefix': 'scalemaxwidth'
     'body': 'ScaleMaxWidth(${1:width})${0}'
   'Scale Height Image 3.2+':
-    'prefix': 'scaleheight '
+    'prefix': 'scaleheight'
     'body': 'ScaleHeight(${1:height})${0}'
   'Scale Max Height Image 3.2+':
-    'prefix': 'scalemaxheight '
+    'prefix': 'scalemaxheight'
     'body': 'ScaleMaxHeight(${1:height})${0}'
   'Fit Image 3.2+':
-    'prefix': 'fit '
+    'prefix': 'fit'
     'body': 'Fit(${1:width},${2:${1:height}})${0}'
   'Fit Max Image 3.2+':
-    'prefix': 'fitmax '
+    'prefix': 'fitmax'
     'body': 'FitMax(${1:width},${2:${1:height}})${0}'
   'Fill Image 3.2+':
-    'prefix': 'fill '
+    'prefix': 'fill'
     'body': 'Fill(${1:width},${2:${1:height}})${0}'
   'Fill Max Image 3.2+':
-    'prefix': 'fillmax '
+    'prefix': 'fillmax'
     'body': 'FillMax(${1:width},${2:${1:height}})${0}'
   'Crop Width Image 3.2+':
-    'prefix': 'cropwidth '
+    'prefix': 'cropwidth'
     'body': 'CropWidth(${1:width})${0}'
   'Crop Height Image 3.2+':
-    'prefix': 'cropheight '
+    'prefix': 'cropheight'
     'body': 'CropHeight(${1:width})${0}'
   'Pad Image 3.2+':
-    'prefix': 'pad '
+    'prefix': 'pad'
     'body': 'Pad(${1:width},${2:${1:height}},${3:hex})${0}'
   # Image manipulation 3.0 - 3.1
   'Set Width Image 3.0 - 3.1':
-    'prefix': 'setwidth '
+    'prefix': 'setwidth'
     'body': 'SetWidth(${1:width})${0}'
   'Set Height Image 3.0 - 3.1':
-    'prefix': 'setheight '
+    'prefix': 'setheight'
     'body': 'SetHeight(${1:height})${0}'
   'Set Size Image 3.0 - 3.1':
-    'prefix': 'setsize '
+    'prefix': 'setsize'
     'body': 'SetSize(${1:width},${2:${1:height}})${0}'
   'Set Ratio Size Image 3.0 - 3.1':
-    'prefix': 'setratiosize '
+    'prefix': 'setratiosize'
     'body': 'SetRatioSize(${1:width},${2:${1:height}})${0}'
   'Cropped Image 3.0 - 3.1':
-    'prefix': 'croppedimage '
+    'prefix': 'croppedimage'
     'body': 'CroppedImage(${1:width},${2:${1:height}})${0}'
   'Padded Image 3.0 - 3.1':
-    'prefix': 'paddedimage '
+    'prefix': 'paddedimage'
     'body': 'PaddedImage(${1:width},${2:${1:height}},${3:hex})${0}'
