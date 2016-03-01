@@ -108,3 +108,19 @@
   'Padded Image 3.0 - 3.1':
     'prefix': 'paddedimage'
     'body': 'PaddedImage(${1:width},${2:${1:height}},${3:hex})${0}'
+  # Image General
+  'Image Width':
+    'prefix': 'width'
+    'body': 'Width'
+  'Image Height':
+    'prefix': 'height'
+    'body': 'Height'
+  'Image Orientation':
+    'prefix': 'orientation'
+    'body': 'Orientation'
+  'Image Filename':
+    'prefix': 'filename'
+    'body': 'Filename'
+  'Image URL':
+    'prefix': 'url'
+    'body': 'URL'
