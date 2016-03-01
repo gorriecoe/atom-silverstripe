@@ -28,3 +28,21 @@
     \t${3}
     )$0
     """
+'.text.html.ss .variable':
+  # Focuspoint 3.2
+  'Focus Fill Image 3.2+':
+    'prefix': 'focusfill'
+    'body': 'FocusFill(${1:width},${2:${1:height}})${0}'
+  'Focus Fill Max Image 3.2+':
+    'prefix': 'focusfillmax'
+    'body': 'FocusFillMax(${1:width},${2:${1:height}})${0}'
+  'Focus Crop Width Image 3.2+':
+    'prefix': 'focuscropwidth'
+    'body': 'FocusCropWidth(${1:width})${0}'
+  'Focus Crop Height Image 3.2+':
+    'prefix': 'focuscropheight'
+    'body': 'FocusCropHeight(${1:width})${0}'
+  # Focuspoint 3.0 - 3.1
+  'Cropped Focused Image 3.0 - 3.1':
+    'prefix': 'croppedfocusedimage'
+    'body': 'CroppedFocusedImage(${1:width},${2:${1:height}})${0}'
