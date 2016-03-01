@@ -53,6 +53,8 @@
   'include':
     'prefix': 'include '
     'body': '<% include ${1} %>${0}'
+    
+'.text.html.ss .variable':
   # Image manipulation 3.2
   'Scale Width Image 3.2+':
     'prefix': 'scalewidth '
