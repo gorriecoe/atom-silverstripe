@@ -117,6 +117,40 @@
   'Level':
     'prefix': 'level'
     'body': 'Level(${1:1})${0}'
+  # Scope traverse
+  'Traverse Up Scope':
+    'prefix': 'up'
+    'body': 'Up'
+  'Current Object Scope':
+    'prefix': 'me'
+    'body': 'Me'
+  'Top Level Scope':
+    'prefix': 'top'
+    'body': 'Top'
+  # Breadcrumbs
+  'Breadcrumbs':
+    'prefix': 'breadcrumbs'
+    'body': 'Breadcrumbs'
+  # Form
+  'Form':
+    'prefix': 'form'
+    'body': 'Form'
+  # Formating
+  'LimitWordCount':
+    'prefix': 'limitwordcount'
+    'body': 'LimitWordCount(${1:26},${1:\'...\'})'
+  'LimitCharacters':
+    'prefix': 'limitcharacters'
+    'body': 'LimitCharacters(${1:20},${1:\'...\'})'
+  'EscapeXML'
+    'prefix': 'escapexml'
+    'body': 'EscapeXML'
+  'FirstParagraph':
+    'prefix': 'firstparagraph'
+    'body': 'FirstParagraph'
+  'NoHTML':
+    'prefix': 'nohtml'
+    'body': 'NoHTML'
 
 '.text.html.ss .variable':
   # Image manipulation 3.2
