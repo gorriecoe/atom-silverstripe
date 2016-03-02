@@ -53,7 +53,71 @@
   'include':
     'prefix': 'include '
     'body': '<% include ${1} %>${0}'
-    
+  'Base Tag':
+    'prefix': 'basetag'
+    'body': '<% base_tag %>${0}'
+
+'.text.html.ss .variable, .text.html.ss .control':
+  # General Variables
+  'CurrentMember':
+    'prefix': 'currentmember'
+    'body': 'CurrentMember'
+  'Title':
+    'prefix': 'title'
+    'body': 'Title'
+  'Menu Title':
+    'prefix': 'menutitle'
+    'body': 'MenuTitle'
+  'Content':
+    'prefix': 'content'
+    'body': 'Content'
+  'SiteConfig':
+    'prefix': 'siteconfig'
+    'body': 'SiteConfig'
+  'MetaTags':
+    'prefix': 'siteconfig'
+    'body': 'SiteConfig'
+  'Relative Link':
+    'prefix': 'link'
+    'body': 'Link'
+  'Absolute Link':
+    'prefix': 'absolutelink'
+    'body': 'AbsoluteLink'
+  'isSection Linking Mode':
+    'prefix': 'issection'
+    'body': 'isSection'
+  'isCurrent Linking Mode':
+    'prefix': 'iscurrent'
+    'body': 'isCurrent'
+  'inSection Linking Mode':
+    'prefix': 'insection'
+    'body': 'inSection(${1:page-url})${0}'
+  'URLSegment':
+    'prefix': 'urlsegment'
+    'body': 'URLSegment'
+  'ClassName':
+    'prefix': 'classname'
+    'body': 'ClassName'
+  # Children loop
+  'Children':
+    'prefix': 'children'
+    'body': 'Children'
+  'ChildrenOf':
+    'prefix': 'childrenof'
+    'body': 'ChildrenOf(${1:page-url})${0}'
+  'AllChildren':
+    'prefix': 'allchildren'
+    'body': 'AllChildren'
+  'Menu':
+    'prefix': 'menu'
+    'body': 'Menu(${1:page-url})${0}'
+  'Page':
+    'prefix': 'page'
+    'body': 'Page(${1:page-url})${0}'
+  'Level':
+    'prefix': 'level'
+    'body': 'Level(${1:1})${0}'
+
 '.text.html.ss .variable':
   # Image manipulation 3.2
   'Scale Width Image 3.2+':
