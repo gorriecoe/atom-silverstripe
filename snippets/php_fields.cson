@@ -153,7 +153,7 @@
      * CMS Fields
      * @return FieldList
      */
-    function getCMSFields()
+    public function getCMSFields()
     {
     \t\\$fields = parent::getCMSFields();
     \t\\$fields->$0
@@ -167,7 +167,7 @@
      * Update Fields
      * @return FieldList
      */
-    function updateCMSFields(FieldList \\$fields)
+    public function updateCMSFields(FieldList \\$fields)
     {
     \t\\$fields->$0
     \treturn \\$fields;
