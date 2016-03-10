@@ -26,13 +26,33 @@
     'prefix': 'classmodeladmin'
     'body': """
     /**
-     * ${2:Description}
+     * ${5:Description}
      *
      * @package silverstripe
-     * @subpackage ${3:mysite}
+     * @subpackage ${6:mysite}
      */
-    class $1 extends ModelAdmin
+    class $1Admin extends ModelAdmin
     {
+    \t/**
+    \t * Managed data objects for CMS
+    \t * @var array
+    \t */
+    \tprivate static $managed_models = array(
+    \t\t\'${2}\'
+    \t);
+
+    \t/**
+    \t * URL Path for CMS
+    \t * @var string
+    \t */
+    \tprivate static $url_segment = \'${3}\';
+
+    \t/**
+    \t * Menu title for CMS
+    \t * @var string
+    \t */
+    \tprivate static $menu_title = \'${4}\';
+
     \t${0}
     }
     """
