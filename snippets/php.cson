@@ -22,6 +22,20 @@
     \t}
     }
     """
+  'Class Model Admin Silverstripe':
+    'prefix': 'classmodeladmin'
+    'body': """
+    /**
+     * ${2:Description}
+     *
+     * @package silverstripe
+     * @subpackage ${3:mysite}
+     */
+    class $1 extends ModelAdmin
+    {
+    \t${0}
+    }
+    """
   'singular_name':
     'prefix': 'singular_name '
     'body': """
