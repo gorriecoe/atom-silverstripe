@@ -173,3 +173,18 @@
     \treturn \\$fields;
     }
     """
+  'getEditForm':
+    'prefix': 'geteditform'
+    'body': """
+    /**
+     * @param Int $id
+     * @param FieldList $fields
+     * @return Form
+     */
+    public function getEditForm($id = null, $fields = null)
+    {
+    \t\\$form = parent::getEditForm($id, $fields);
+    \t$0
+    \treturn \\$form;
+    }
+    """
