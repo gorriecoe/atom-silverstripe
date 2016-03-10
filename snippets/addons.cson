@@ -5,7 +5,7 @@
     'body': """
     TagField::create(
     \t\'${1:name}\',
-    \t\'${2:null}\',
+    \t\'${2:${1:title}}\',
     \t${3:null},
     \t${4}
     )$0
@@ -16,7 +16,7 @@
     'body': """
     LinkField::create(
     \t\'${1:name}ID\',
-    \t\'${2:title}\'
+    \t\'${2:${1:title}}\'
     )$0
     """
   'EmbeddedObjectField':
@@ -24,7 +24,7 @@
     'body': """
     EmbeddedObjectField::create(
     \t\'${1:name}\',
-    \t\'${2:title}\',
+    \t\'${2:${1:title}}\',
     \t${3}
     )$0
     """
