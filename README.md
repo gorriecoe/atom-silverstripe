@@ -19,4 +19,4 @@ Or search for `atom-silverstripe` in Atom settings view.
 - File icon for .ss
 - Uses full word prefixes so you don't have to remember abbreviations
 - Includes addon snippets such as [tagfield](https://github.com/silverstripe-labs/silverstripe-tagfield) and [linkable](https://github.com/sheadawson/silverstripe-linkable)
-- .ss Template indentation. (coming soon)
+- .ss scope and conditional template indentation.
