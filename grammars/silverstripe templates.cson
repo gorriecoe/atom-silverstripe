@@ -46,11 +46,21 @@
     ]
   }
   {
-    'match': '\\$[a-zA-Z0-9\\.\(\)\,]*'
-    'name': 'variable.ss'
+    'include': '#ss-variable'
+  }
+  {
+    'include': '#ss-variable-closed'
   }
   {
     'include': 'text.html.basic'
   }
 ]
+'repository':
+  'ss-variable':
+    'match': '\\$[a-zA-Z0-9\\.\(\)\,]*'
+    'name': 'variable.ss'
+  'ss-variable-closed':
+    'begin': '\{\\$'
+    'end': '\}'
+    'name': 'variable.ss'
 'scopeName': 'text.html.ss'
