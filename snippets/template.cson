@@ -50,9 +50,18 @@
     'prefix': 'else '
     'body': '<% else %>\n\t${0}'
   # Includes
-  'include':
+  'Include':
     'prefix': 'include '
     'body': '<% include ${1} %>${0}'
+  'Require themedCSS':
+    'prefix': 'requirethemedcss'
+    'body': '<% require themedCSS(\'${1}\') %>${0}'
+  'Require Javascript':
+    'prefix': 'requirejavascript'
+    'body': '<% require javascript(\'${1}\') %>${0}'
+  'Require CSS':
+    'prefix': 'requirecss'
+    'body': '<% require css(\'${1}\') %>${0}'
   'Base Tag':
     'prefix': 'basetag'
     'body': '<% base_tag %>${0}'
