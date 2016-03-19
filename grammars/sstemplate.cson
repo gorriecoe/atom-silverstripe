@@ -3,6 +3,11 @@
 'foldingStopMarker': '<%\\send.*\\s%>'
 'patterns': [
   {
+    'begin': '<% (include|require)'
+    'end': '-? %>'
+    'name': 'keyword.control.import.include.ss'
+  }
+  {
     'begin': '<% +(?!>)[-=]?'
     'captures':
       '0':
@@ -16,9 +21,6 @@
             'name': 'punctuation.definition.comment.ruby'
         'match': '(#).*?(?=-? %>)'
         'name': 'comment.line.number-sign.ruby'
-      }
-      {
-        'include': 'source.ruby.rails'
       }
     ]
   }
@@ -36,9 +38,6 @@
             'name': 'punctuation.definition.comment.html'
         'match': '(#).*?(?=-?--%>)'
         'name': 'invalid.illegal.bad-comments-or-CDATA.html'
-      }
-      {
-        'include': '#embedded-code'
       }
     ]
   }
@@ -72,7 +71,6 @@
   'ss-variable-open':
     'match': '\\$(.*[\w\d]*(\([\w\d\'\,\s]*\))*)*'
     'name': 'variable.ss'
-    # 'match': '\\$[a-zA-Z0-9\\.\(\)\,]*'
   'ss-variable-closed':
     'begin': '\{\\$'
     'end': '\}'
