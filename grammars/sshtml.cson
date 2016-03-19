@@ -1,0 +1,13 @@
+'scopeName': 'text.html.ss'
+'name': 'HTML (Silverstripe)'
+'fileTypes': [
+  'ss'
+]
+'patterns': [
+  {
+    'include': 'text.html.basic'
+  }
+  {
+    'include': 'source.sstemplate'
+  }
+]

@@ -1,9 +1,6 @@
-'fileTypes': [
-  'ss'
-]
+'scopeName': 'source.sstemplate'
 'foldingStartMarker': '<%\\s[^end].*\\s%>'
 'foldingStopMarker': '<%\\send.*\\s%>'
-'name': 'HTML (Silverstripe)'
 'patterns': [
   {
     'begin': '<% +(?!>)[-=]?'
@@ -46,21 +43,37 @@
     ]
   }
   {
-    'include': '#ss-variable'
+    'begin': '(<(?!\/|\%)([\w]*))'
+    'beginCaptures':
+      '1':
+        'name': 'punctuation.definition.tag.begin.html.ss'
+    'end': '(?!\%>)(>)'
+    'endCaptures':
+      '1':
+        'name': 'punctuation.definition.tag.end.html.ss'
+    'name': 'meta.tag.block.any.html.ss'
+    'patterns': [
+      {
+        'include': '#ss-variable-open'
+      }
+      {
+        'include': '#ss-variable-closed'
+      }
+    ]
+  }
+  {
+    'include': '#ss-variable-open'
   }
   {
     'include': '#ss-variable-closed'
   }
-  {
-    'include': 'text.html.basic'
-  }
 ]
 'repository':
-  'ss-variable':
-    'match': '\\$[a-zA-Z0-9\\.\(\)\,]*'
+  'ss-variable-open':
+    'match': '\\$(.*[\w\d]*(\([\w\d\'\,\s]*\))*)*'
     'name': 'variable.ss'
+    # 'match': '\\$[a-zA-Z0-9\\.\(\)\,]*'
   'ss-variable-closed':
     'begin': '\{\\$'
     'end': '\}'
     'name': 'variable.ss'
-'scopeName': 'text.html.ss'
