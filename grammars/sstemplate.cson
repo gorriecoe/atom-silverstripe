@@ -42,7 +42,7 @@
     ]
   }
   {
-    'begin': '(<(?!\/|\%)([\w]*))'
+    'begin': '(<(?!\/|\%)([a-zA-Z]*))'
     'beginCaptures':
       '1':
         'name': 'punctuation.definition.tag.begin.html.ss'
@@ -69,7 +69,7 @@
 ]
 'repository':
   'ss-variable-open':
-    'match': '\\$(.*[\w\d]*(\([\w\d\'\,\s]*\))*)*'
+    'match': '\\$(\\.?[a-zA-Z0-9]*(\\([a-zA-Z0-9\'\, ]*\\))*)*'
     'name': 'variable.ss'
   'ss-variable-closed':
     'begin': '\{\\$'
