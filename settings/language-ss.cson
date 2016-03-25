@@ -2,5 +2,5 @@
   'editor':
     'commentStart': '<%-- '
     'commentEnd': ' --%>'
-    'increaseIndentPattern': '<(?!area|base|br|col|frame|hr|html|img|input|link|meta|param)([A-Za-z]+) ([-_\.\s\t\n\r\{\}\$\(\)\=\"\\\' A-Za-z0-9]+)(>|!\/>)(?!.*<\/\\1>)|<% (?!include|require|base_tag)(control|loop|with|if|else_if) \\$?([-_\\.\\(\\)\\& A-Za-z0-9]+) %>(?!.*<% end_\\4 %>)|<% else %>|<%--(?!.*--%>)|<!--(?!.*-->)'
+    'increaseIndentPattern': '<(?!area|base|br|col|frame|hr|html|img|input|link|meta|param)([A-Za-z0-9]+) ([-_\.\s\t\n\r\{\}\$\(\)\=\"\\\' A-Za-z0-9]+)(>|!\/>)(?!.*<\/\\1>)|<% (?!include|require|base_tag)(control|loop|with|if|else_if) \\$?([-_\\.\\(\\)\\& A-Za-z0-9]+) %>(?!.*<% end_\\4 %>)|<% else %>|<%--(?!.*--%>)|<!--(?!.*-->)'
     'decreaseIndentPattern': '(^\\s*(<\/(?!html)([-_\\.\(\)A-Za-z0-9]+)>|<% end_(control|loop|with|if) %>|-->)|<% else %>)'
