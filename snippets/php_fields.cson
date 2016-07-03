@@ -2,37 +2,37 @@
   #  Fields
   'HTMLEditorField':
     'prefix': 'htmlfield'
-    'body': 'HtmlEditorField::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'HtmlEditorField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'UploadField':
     'prefix': 'uploadfield'
-    'body': 'UploadField::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'UploadField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'TextField':
     'prefix': 'textfield'
-    'body': 'TextField::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'TextField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'EmailField':
     'prefix': 'emailfield'
-    'body': 'EmailField::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'EmailField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'ReadonlyField':
     'prefix': 'readonlyfield'
-    'body': 'ReadonlyField::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'ReadonlyField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'NumericField':
     'prefix': 'numericfield'
-    'body': 'NumericField::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'NumericField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'NumericField_Readonly':
     'prefix': 'numericfield_readonly'
-    'body': 'NumericField_Readonly::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'NumericField_Readonly::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'CheckboxField':
     'prefix': 'checkboxfield'
-    'body': 'CheckboxField::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'CheckboxField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'CheckboxField_Readonly':
     'prefix': 'checkboxfield_readonly'
-    'body': 'CheckboxField_Readonly::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'CheckboxField_Readonly::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'NullableField':
     'prefix': 'nullablefield'
-    'body': 'NullableField::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'NullableField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'TextareaField':
     'prefix': 'textareafield'
-    'body': 'TextareaField::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'TextareaField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'TreeDropdownField':
     'prefix': 'treedropdownfield'
     'body': """
@@ -40,7 +40,7 @@
     \t\'${1:name}ID\',
     \t\'${2:${1:title}}\',
     \t\'${3:SiteTree}\'
-    )$0
+    )${0}
     """
   'TreeDropdownField_Readonly':
     'prefix': 'treedropdownfield_readonly'
@@ -49,7 +49,7 @@
     \t\'${1:name}ID\',
     \t\'${2:${1:title}}\',
     \t\'${3:SiteTree}\'
-    )$0
+    )${0}
     """
   'DropdownField':
     'prefix': 'dropdownfield'
@@ -58,7 +58,7 @@
     \t\'${1:name}\',
     \t\'${2:${1:title}}\',
     \t\'${3:datalist}\'
-    )$0
+    )${0}
     """
   'LookupField':
     'prefix': 'lookupfield'
@@ -67,7 +67,7 @@
     \t\'${1:name}\',
     \t\'${2:${1:title}}\',
     \t\'${3:datalist}\'
-    )$0
+    )${0}
     """
   'ListboxField':
     'prefix': 'listboxfield'
@@ -76,7 +76,7 @@
     \t\'${1:name}\',
     \t\'${2:${1:title}}\',
     \t\'${3:datalist}\'
-    )$0
+    )${0}
     """
   'GroupedDropdownField':
     'prefix': 'groupeddropdownfield'
@@ -85,7 +85,7 @@
     \t\'${1:name}\',
     \t\'${2:${1:title}}\',
     \t\'${3:datalist}\'
-    )$0
+    )${0}
     """
   'OptionsetField':
     'prefix': 'optionsetfield'
@@ -94,7 +94,7 @@
     \t\'${1:name}\',
     \t\'${2:${1:title}}\',
     \t\'${3:datalist}\'
-    )$0
+    )${0}
     """
   'CheckboxSetField':
     'prefix': 'checkboxsetfield'
@@ -103,26 +103,26 @@
     \t\'${1:name}\',
     \t\'${2:${1:title}}\',
     \t\'${3:datalist}\'
-    )$0
+    )${0}
     """
   'HeaderField':
     'prefix': 'headerfield'
-    'body': 'HeaderField::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'HeaderField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'HiddenField':
     'prefix': 'hiddenfield'
-    'body': 'HiddenField::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'HiddenField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'LabelField':
     'prefix': 'labelfield'
-    'body': 'LabelField::create(\'${1:name}\',\'${2:${1:title}}\')$0'
+    'body': 'LabelField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
   'GridField':
     'prefix': 'gridfield'
     'body': """
     GridField::create(
     \t\'${1:name}\',
     \t\'${2:${1:title}}\',
-    \t\'${3:datalist}\',
+    \t\\$this->${1}(),
     \t\'${4:configuration}\'
-    )$0
+    )${0}
     """
 
   #  Tabs
@@ -131,7 +131,7 @@
     'body': """
     addFieldToTab(
     \t\'${1:Root.Main}\',
-    \t$0,
+    \t${0},
     \t\'${3:insertBefore}\'
     );
     """
@@ -141,7 +141,7 @@
     addFieldsToTab(
     \t\'${1:Root.Main}\',
     \tarray(
-    \t\t$0
+    \t\t${0}
     \t)
     );
     """
@@ -156,7 +156,21 @@
     public function getCMSFields()
     {
     \t\\$fields = parent::getCMSFields();
-    \t\\$fields->$0
+    \t\\$fields->${0}
+    \treturn \\$fields;
+    }
+    """
+  'getSettingsFields':
+    'prefix': 'getsettingsfields'
+    'body': """
+    /**
+     * Settings Tab Fields
+     * @return FieldList
+     */
+    public function getSettingsFields()
+    {
+    \t\\$fields = parent::getSettingsFields();
+    \t\\$fields->${0}
     \treturn \\$fields;
     }
     """
@@ -169,7 +183,7 @@
      */
     public function updateCMSFields(FieldList \\$fields)
     {
-    \t\\$fields->$0
+    \t\\$fields->${0}
     \treturn \\$fields;
     }
     """
@@ -184,7 +198,7 @@
     public function getEditForm($id = null, $fields = null)
     {
     \t\\$form = parent::getEditForm($id, $fields);
-    \t$0
+    \t${0}
     \treturn \\$form;
     }
     """
