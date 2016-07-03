@@ -1,7 +1,21 @@
 '.text.html.php':
   '<?php …':
     'prefix': 'php' # Overrides standard php to exclude ?>
-    'body': '\<?php\n$0'
+    'body': '\<?php\n${0}'
+  'Class DataObject Silverstripe':
+    'prefix': 'classdataobject'
+    'body': """
+    /**
+     * ${3:Description}
+     *
+     * @package silverstripe
+     * @subpackage ${4:mysite}
+     */
+    class $1 extends ${2:DataObject}
+    {
+    \t${0}
+    }
+    """
   'Class & Controller Silverstripe':
     'prefix': 'classcontroller'
     'body': """
@@ -17,7 +31,7 @@
     }
     class ${1}_Controller extends ${2:Page}_Controller
     {
-    \tfunction init() {
+    \tpublic function init() {
     \t\tparent::init();
     \t}
     }
@@ -37,7 +51,7 @@
     \t * Managed data objects for CMS
     \t * @var array
     \t */
-    \tprivate static $managed_models = array(
+    \tprivate static \\$managed_models = array(
     \t\t\'${2}\'
     \t);
 
@@ -45,16 +59,34 @@
     \t * URL Path for CMS
     \t * @var string
     \t */
-    \tprivate static $url_segment = \'${3}\';
+    \tprivate static \\$url_segment = \'${3}\';
 
     \t/**
-    \t * Menu title for CMS
+    \t * Menu title for Left and Main CMS
     \t * @var string
     \t */
-    \tprivate static $menu_title = \'${4}\';
+    \tprivate static \\$menu_title = \'${4}\';
 
     \t${0}
     }
+    """
+  'menu_title':
+    'prefix': 'menu_title '
+    'body': """
+    /**
+     * Menu title for Left and Main CMS
+     * @var string
+     */
+    private static \\$menu_title = \'${1}\';${0}
+    """
+  'menu_icon':
+    'prefix': 'menu_icon '
+    'body': """
+    /**
+     * Menu icon for Left and Main CMS
+     * @var string
+     */
+    private static \\$menu_icon = \'${1}\';${0}
     """
   'singular_name':
     'prefix': 'singular_name '
@@ -63,7 +95,7 @@
      * Singular name for CMS
      * @var string
      */
-    private static $singular_name = \'${1}\';$0
+    private static \\$singular_name = \'${1}\';${0}
     """
   'plural_name':
     'prefix': 'plural_name '
@@ -72,21 +104,7 @@
      * Plural name for CMS
      * @var string
      */
-    private static $plural_name = \'${1}\';$0
-    """
-  'Class DataObject Silverstripe':
-    'prefix': 'classdataobject'
-    'body': """
-    /**
-     * ${3:Description}
-     *
-     * @package silverstripe
-     * @subpackage ${4:mysite}
-     */
-    class $1 extends ${2:DataObject}
-    {
-    \t${0}
-    }
+    private static \\$plural_name = \'${1}\';${0}
     """
   'db':
     'prefix': 'db '
@@ -97,21 +115,7 @@
      */
     private static \\$db = array(
     \t\'${1}\' => \'${2}\',
-    );$0
-    """
-  'default_sort':
-    'prefix': 'default_sort '
-    'body': """
-    /**
-     * Default sort ordering
-     * @var string
-     */
-    private static $default_sort = \'${1} ${2:ASC}\';$0
-    """
-  'hide_ancestor':
-    'prefix': 'hide_ancestor'
-    'body': """
-    private static \$hide_ancestor = \'\${1:PageType}\';$0
+    );${0}
     """
   'has_one':
     'prefix': 'has_one'
@@ -122,7 +126,7 @@
      */
     private static \\$has_one = array(
     \t\'${1}\' => \'${2}\',
-    );$0
+    );${0}
     """
   'has_many':
     'prefix': 'has_many'
@@ -133,7 +137,7 @@
      */
     private static \\$has_many = array(
     \t\'${1}\' => \'${2}\',
-    );$0
+    );${0}
     """
   'many_many':
     'prefix': 'many_many'
@@ -144,7 +148,7 @@
      */
     private static \\$many_many = array(
     \t\'${1}\' => \'${2}\',
-    );$0
+    );${0}
     """
   'many_many_extraFields':
     'prefix': 'many_many_extrafields'
@@ -155,9 +159,9 @@
      */
     private static \\$many_many_extraFields = array(
     \t\'${1}\' => array(
-    \t\t'${2:Sort}' => '${3:Int}'
+    \t\t\'${2:Sort}\' => \'${3:Int}\'
     \t)
-    );$0
+    );${0}
     """
   'belongs_to':
     'prefix': 'belongs_to'
@@ -169,7 +173,7 @@
     private static \\$belongs_to = array(
     \t\'${1}\' => \'${2}\',
     );
-    $0
+    ${0}
     """
   'belongs_many_many':
     'prefix': 'belongs_many_many'
@@ -180,7 +184,46 @@
      */
     private static \\$belongs_many_many = array(
     \t\'${1}\' => \'${2}\',
-    );$0
+    );${0}
+    """
+  'default_sort':
+    'prefix': 'default_sort '
+    'body': """
+    /**
+     * Default sort ordering
+     * @var string
+     */
+    private static \\$default_sort = \'${1} ${2:ASC}\';${0}
+    """
+  'hide_ancestor':
+    'prefix': 'hide_ancestor'
+    'body': """
+    private static \\$hide_ancestor = \'\${1:PageType}\';${0}
+    """
+
+  # Scaffolding
+  'summary_fields':
+    'prefix': 'summary_fields'
+    'body': """
+    /**
+     * Defines summary fields commonly used in table columns
+     * as a quick overview of the data for this dataobject
+     * @var array
+     */
+    private static \\$summary_fields = array(
+    \t'${1}' => '${2}'
+    );
+    """
+  'searchable_fields':
+    'prefix': 'searchable_fields'
+    'body': """
+    /**
+     * Defines a default list of filters for the search context
+     * @var array
+     */
+    private static \\$searchable_fields = array(
+    \t'${1}' => '${2}'
+    );
     """
 
   # Permissions
@@ -194,7 +237,7 @@
     public function canView($member = null)
     {
     \treturn ${1};
-    }$0
+    }${0}
     """
   'canEdit':
     'prefix': 'canedit'
@@ -206,7 +249,7 @@
     public function canEdit($member = null)
     {
     \treturn ${1};
-    }$0
+    }${0}
     """
   'canDelete':
     'prefix': 'candelete'
@@ -218,7 +261,7 @@
     public function canDelete($member = null)
     {
     \treturn ${1};
-    }$0
+    }${0}
     """
   'canCreate':
     'prefix': 'cancreate'
@@ -230,10 +273,10 @@
     public function canCreate($member = null)
     {
     \treturn ${1};
-    }$0
+    }${0}
     """
   'permissionCheck':
     'prefix': 'permissioncheck'
     'body': """
-    Permission::check(${1:string|array}, ${2:'any'}, ${3:$member})$0
+    Permission::check(${1:string|array}, ${2:'any'}, ${3:$member})${0}
     """
