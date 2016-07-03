@@ -186,6 +186,18 @@
     \t\'${1}\' => \'${2}\',
     );${0}
     """
+  'defaults':
+    'prefix': 'defaults'
+    'body': """
+    /**
+     * Define the default values for all the $db fields
+     * @var array
+     */
+    private static $defaults = array(
+        \t'${1}' => '${2}'
+    );
+    """
+
   'default_sort':
     'prefix': 'default_sort '
     'body': """
