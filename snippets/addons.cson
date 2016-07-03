@@ -8,7 +8,7 @@
     \t\'${2:${1:title}}\',
     \t${3:null},
     \t${4}
-    )$0
+    )${0}
     """
   # Linkable
   'LinkField':
@@ -17,7 +17,7 @@
     LinkField::create(
     \t\'${1:name}ID\',
     \t\'${2:${1:title}}\'
-    )$0
+    )${0}
     """
   'EmbeddedObjectField':
     'prefix': 'embeddedobjectfield'
@@ -26,7 +26,7 @@
     \t\'${1:name}\',
     \t\'${2:${1:title}}\',
     \t${3}
-    )$0
+    )${0}
     """
 '.text.html.ss .variable':
   # Focuspoint 3.2
