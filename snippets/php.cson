@@ -206,6 +206,17 @@
      */
     private static \\$default_sort = \'${1} ${2:ASC}\';${0}
     """
+  'allowed_actions':
+    'prefix': 'allowed_actions '
+    'body': """
+    /**
+     * Defines methods that can be called directly
+     * @var array
+     */
+    private static \\$allowed_actions = array(
+    \t\'${1}\' => \'${2}\'
+    );
+    """
   'hide_ancestor':
     'prefix': 'hide_ancestor'
     'body': """
