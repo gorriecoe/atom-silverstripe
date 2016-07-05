@@ -206,6 +206,17 @@
      */
     private static \\$default_sort = \'${1} ${2:ASC}\';${0}
     """
+  'allowed_children':
+    'prefix': 'allowed_children '
+    'body': """
+    /**
+     * Defines the allowed child page types
+     * @var array
+     */
+    private static $allowed_children = array(
+    \t\'${1}\'
+    );
+    """
   'allowed_actions':
     'prefix': 'allowed_actions '
     'body': """
