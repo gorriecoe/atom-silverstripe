@@ -2,37 +2,92 @@
   #  Fields
   'HTMLEditorField':
     'prefix': 'htmlfield'
-    'body': 'HtmlEditorField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    HtmlEditorField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'UploadField':
     'prefix': 'uploadfield'
-    'body': 'UploadField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    UploadField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'TextField':
     'prefix': 'textfield'
-    'body': 'TextField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    TextField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'EmailField':
     'prefix': 'emailfield'
-    'body': 'EmailField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    EmailField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'ReadonlyField':
     'prefix': 'readonlyfield'
-    'body': 'ReadonlyField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    ReadonlyField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'NumericField':
     'prefix': 'numericfield'
-    'body': 'NumericField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    NumericField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'NumericField_Readonly':
     'prefix': 'numericfield_readonly'
-    'body': 'NumericField_Readonly::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    NumericField_Readonly::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'CheckboxField':
     'prefix': 'checkboxfield'
-    'body': 'CheckboxField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    CheckboxField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'CheckboxField_Readonly':
     'prefix': 'checkboxfield_readonly'
-    'body': 'CheckboxField_Readonly::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    CheckboxField_Readonly::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'NullableField':
     'prefix': 'nullablefield'
-    'body': 'NullableField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    NullableField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'TextareaField':
     'prefix': 'textareafield'
-    'body': 'TextareaField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    TextareaField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'TreeDropdownField':
     'prefix': 'treedropdownfield'
     'body': """
@@ -107,13 +162,28 @@
     """
   'HeaderField':
     'prefix': 'headerfield'
-    'body': 'HeaderField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    HeaderField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'HiddenField':
     'prefix': 'hiddenfield'
-    'body': 'HiddenField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    HiddenField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'LabelField':
     'prefix': 'labelfield'
-    'body': 'LabelField::create(\'${1:name}\',\'${2:${1:title}}\')${0}'
+    'body': """
+    LabelField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
   'GridField':
     'prefix': 'gridfield'
     'body': """
@@ -121,9 +191,21 @@
     \t\'${1:name}\',
     \t\'${2:${1:title}}\',
     \t\\$this->${1}(),
-    \t\'${4:configuration}\'
+    \t${4:GridFieldConfig_Base::create()}
     )${0}
     """
+  'GridFieldConfig_Base':
+    'prefix': 'gridfieldconfig_base'
+    'body': 'GridFieldConfig_Base::create(${1})${0}'
+  'GridFieldConfig_RecordEditor':
+    'prefix': 'gridfieldconfig_recordeditor'
+    'body': 'GridFieldConfig_RecordEditor::create(${1})${0}'
+  'GridFieldConfig_RelationEditor':
+    'prefix': 'gridfieldconfig_relationeditor'
+    'body': 'GridFieldConfig_RelationEditor::create(${1})${0}'
+  'GridFieldConfig_RecordViewer':
+    'prefix': 'gridfieldconfig_recordviewer'
+    'body': 'GridFieldConfig_RecordViewer::create(${1})${0}'
 
   #  Tabs
   'addFieldToTab':

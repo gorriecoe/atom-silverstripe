@@ -11,7 +11,7 @@
      * @package silverstripe
      * @subpackage ${4:mysite}
      */
-    class $1 extends ${2:DataObject}
+    class ${1} extends ${2:DataObject}
     {
     \t${0}
     }
@@ -45,7 +45,7 @@
      * @package silverstripe
      * @subpackage ${6:mysite}
      */
-    class $1Admin extends ModelAdmin
+    class ${1}Admin extends ModelAdmin
     {
     \t/**
     \t * Managed data objects for CMS
@@ -198,7 +198,7 @@
     );
     """
   'default_sort':
-    'prefix': 'default_sort '
+    'prefix': 'default_sort'
     'body': """
     /**
      * Default sort ordering
@@ -207,7 +207,7 @@
     private static \\$default_sort = \'${1} ${2:ASC}\';${0}
     """
   'allowed_children':
-    'prefix': 'allowed_children '
+    'prefix': 'allowed_children'
     'body': """
     /**
      * Defines the allowed child page types
@@ -218,14 +218,14 @@
     );
     """
   'allowed_actions':
-    'prefix': 'allowed_actions '
+    'prefix': 'allowed_actions'
     'body': """
     /**
      * Defines methods that can be called directly
      * @var array
      */
     private static \\$allowed_actions = array(
-    \t\'${1}\' => \'${2}\'
+    \t\'${1}\' => \'${2:true}\'
     );
     """
   'hide_ancestor':
@@ -358,6 +358,9 @@
     """
   'permissionCheck':
     'prefix': 'permissioncheck'
-    'body': """
-    Permission::check(${1:string|array}, ${2:'any'}, ${3:$member})${0}
-    """
+    'body': 'Permission::check(${1:string|array}, ${2:\'any\'}, ${3:$member})${0}'
+
+  # translate
+  'translate':
+    'prefix': '_t'
+    'body': '_t(${1}, ${2})${0}'
