@@ -10,5 +10,5 @@
     'prefix': 'log'
     'body': 'Debug::log(${1});${0}'
   'Debug-dump':
-    'prefix': 'dump'
+    'prefix': 'dump '
     'body': 'Debug::dump(${1});${0}'
