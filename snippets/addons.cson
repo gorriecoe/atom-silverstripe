@@ -1,6 +1,6 @@
 '.text.html.php':
   # TagField
-  'TagField':
+  'TagField (Tagfield)':
     'prefix': 'tagfield'
     'body': """
     TagField::create(
@@ -10,8 +10,24 @@
     \t${4}
     )${0}
     """
+  'StringTagField (Tagfield)':
+    'prefix': 'stringtagfield'
+    'body': """
+    StringTagField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\',
+    \t${3:array()},
+    \texplode(',', $this->${1:name})
+    )${0}
+    """
+  'setShouldLazyLoad (Tagfield)':
+    'prefix': 'setshouldlazyload'
+    'body': '->setShouldLazyLoad(${1:true})${0}'
+  'setCanCreate (Tagfield)':
+    'prefix': 'setcancreate'
+    'body': '->setCanCreate(${1:true})${0}'
   # Linkable
-  'LinkField':
+  'LinkField (Linkable)':
     'prefix': 'linkfield'
     'body': """
     LinkField::create(
@@ -19,13 +35,22 @@
     \t\'${2:${1:title}}\'
     )${0}
     """
-  'EmbeddedObjectField':
+  'EmbeddedObjectField (Linkable)':
     'prefix': 'embeddedobjectfield'
     'body': """
     EmbeddedObjectField::create(
     \t\'${1:name}\',
     \t\'${2:${1:title}}\',
     \t${3}
+    )${0}
+    """
+  # SortableUploadField
+  'SortableUploadField (SortableUploadField)':
+    'prefix': 'sortableuploadfield'
+    'body': """
+    SortableUploadField::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
     )${0}
     """
 '.text.html.ss .variable':
