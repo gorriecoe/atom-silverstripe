@@ -359,8 +359,22 @@
   'permissionCheck':
     'prefix': 'permissioncheck'
     'body': 'Permission::check(${1:string|array}, ${2:\'any\'}, ${3:$member})${0}'
+  'providePermissions':
+    'prefix': 'providepermissions'
+    'body': """
+    /**
+     * Return a map of permission codes to add to the dropdown shown in the Security section of the CMS
+     * @return array
+     */
+    public function providePermissions()
+    {
+    \treturn array(
+    \t\t'${1:PERMISSION}' => '${2:Title}'
+    \t);
+    }
+    """
 
   # translate
-  'translate':
+  'Main translator function':
     'prefix': '_t'
     'body': '_t(${1}, ${2})${0}'
