@@ -16,6 +16,15 @@
     \t\'${2:${1:title}}\'
     )${0}
     """
+  'setAllowedMaxFileNumber':
+    'prefix': 'setallowedmaxfilenumber'
+    'body': '->setAllowedMaxFileNumber(${1:null})${0}'
+  'setCanUpload':
+    'prefix': 'setcanupload'
+    'body': '->setCanUpload(${1:true})${0}'
+  'setCanAttachExisting':
+    'prefix': 'setcanattachexisting'
+    'body': '->setCanAttachExisting(${1:true})${0}'
   'TextField':
     'prefix': 'textfield'
     'body': """
