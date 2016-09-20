@@ -84,8 +84,8 @@
     'prefix': 'siteconfig'
     'body': 'SiteConfig'
   'MetaTags':
-    'prefix': 'siteconfig'
-    'body': 'SiteConfig'
+    'prefix': 'metatags'
+    'body': 'MetaTags'
   'Relative Link':
     'prefix': 'link'
     'body': 'Link'
