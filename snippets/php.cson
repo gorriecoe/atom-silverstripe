@@ -225,7 +225,7 @@
      * @var array
      */
     private static \\$allowed_actions = array(
-    \t\'${1}\' => \'${2:true}\'
+    \t\'${1}\' => ${2:true}
     );
     """
   'hide_ancestor':
