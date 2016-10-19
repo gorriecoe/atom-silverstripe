@@ -22,10 +22,13 @@ Or search for `atom-silverstripe` in Atom settings view.
 - .ss templates include scope and conditional indentation.
 
 Quick object and controller setup
-![Quick object and controller setup](./README/objectandcontroller.gif)
+
+![Quick object and controller setup](https://raw.githubusercontent.com/gorriecoe/atom-silverstripe/master/README/objectandcontroller.gif)
 
 Adding private statics
-![Adding private statics](./README/privatestatics.gif)
+
+![Adding private statics](https://raw.githubusercontent.com/gorriecoe/atom-silverstripe/master/README/privatestatics.gif)
 
 Adding CMS Fields
-![Adding CMS Fields](./README/addfields.gif)
+
+![Adding CMS Fields](https://raw.githubusercontent.com/gorriecoe/atom-silverstripe/master/README/addfields.gif)
