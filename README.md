@@ -20,3 +20,12 @@ Or search for `atom-silverstripe` in Atom settings view.
 - Uses full word prefixes so you don't have to remember abbreviations
 - Includes snippets for addons modules such as [tagfield](https://github.com/silverstripe-labs/silverstripe-tagfield) and [linkable](https://github.com/sheadawson/silverstripe-linkable)
 - .ss templates include scope and conditional indentation.
+
+Quick object and controller setup
+![Quick object and controller setup](./README/objectandcontroller.gif)
+
+Adding private statics
+![Adding private statics](./README/privatestatics.gif)
+
+Adding CMS Fields
+![Adding CMS Fields](./README/addfields.gif)
