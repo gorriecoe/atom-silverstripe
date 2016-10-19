@@ -186,6 +186,17 @@
     \t\'${1}\' => \'${2}\',
     );${0}
     """
+  'casting':
+    'prefix': 'casting'
+    'body': """
+    /**
+     * Defines types to variables from custom functions
+     * @var array
+     */
+    private static \\$casting = array(
+    \t\'${1}\' => \'${2}\'
+    );
+    """
   'defaults':
     'prefix': 'defaults'
     'body': """
