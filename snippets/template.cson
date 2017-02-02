@@ -80,7 +80,7 @@
   'Content':
     'prefix': 'content'
     'body': 'Content'
-  'SiteConfig':
+  'Current SiteConfig':
     'prefix': 'siteconfig'
     'body': 'SiteConfig'
   'MetaTags':

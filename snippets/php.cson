@@ -389,3 +389,7 @@
   'Main translator function':
     'prefix': '_t'
     'body': '_t(${1}, ${2})${0}'
+
+  'Current SiteConfig':
+    'prefix': 'siteconfig'
+    'body': 'SiteConfig::current_site_config()'
