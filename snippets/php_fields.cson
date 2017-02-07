@@ -136,6 +136,12 @@
     \t\'${2:${1:title}}\'
     )${0}
     """
+  'setRows':
+    'prefix': 'setrows'
+    'body': '->setRows(${1})${0}'
+  'setColumns':
+    'prefix': 'setcolumns'
+    'body': '->setColumns(${1})${0}'
   'TreeDropdownField':
     'prefix': 'treedropdownfield'
     'body': """
