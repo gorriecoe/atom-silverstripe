@@ -16,6 +16,15 @@
     \t\'${2:${1:title}}\'
     )${0}
     """
+  'setFolderName':
+    'prefix': 'setfoldername'
+    'body': '->setFolderName(\'${1}\')${0}'
+  'setAllowedExtensions':
+    'prefix': 'setallowedextensions'
+    'body': '->setAllowedExtensions(array(${1}))${0}'
+  'setAllowedFileCategories':
+    'prefix': 'setallowedfilecategories'
+    'body': '->setAllowedFileCategories(array(${1}))${0}'
   'setAllowedMaxFileNumber':
     'prefix': 'setallowedmaxfilenumber'
     'body': '->setAllowedMaxFileNumber(${1:null})${0}'
