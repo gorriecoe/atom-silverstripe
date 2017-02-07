@@ -1,5 +1,35 @@
 '.text.html.php':
   #  Fields
+  'setAttribute':
+    'prefix': 'setattribute'
+    'body': '->setAttribute(\'${1}\', \'${2}\')${0}'
+  'setValue':
+    'prefix': 'setvalue'
+    'body': '->setValue(${1})${0}'
+  'setName':
+    'prefix': 'setname'
+    'body': '->setName(\'${1}\')${0}'
+  'setTitle':
+    'prefix': 'settitle'
+    'body': '->setTitle(\'${1}\')${0}'
+  'setRightTitle':
+    'prefix': 'setrighttitle'
+    'body': '->setRightTitle(\'${1}\')${0}'
+  'setLeftTitle':
+    'prefix': 'setlefttitle'
+    'body': '->setLeftTitle(\'${1}\')${0}'
+  'setDescription':
+    'prefix': 'setdescription'
+    'body': '->setDescription(\'${1}\')${0}'
+  'addExtraClass':
+    'prefix': 'addextraclass'
+    'body': '->addExtraClass(\'${1}\')${0}'
+  'removeExtraClass':
+    'prefix': 'removeextraclass'
+    'body': '->removeExtraClass(\'${1}\')${0}'
+  'Required':
+    'prefix': 'required'
+    'body': '->Required()${0}'
   'HTMLEditorField':
     'prefix': 'htmlfield'
     'body': """
