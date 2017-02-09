@@ -324,6 +324,20 @@
     \treturn \\$fields;
     }
     """
+  'updateSettingsFields':
+    'prefix': 'updatesettingsfields'
+    'body': """
+    /**
+     * Update Fields
+     * @return FieldList
+     */
+    public function updateSettingsFields(FieldList \\$fields)
+    {
+    \t\\$owner = $this->owner;
+    \t\\$fields->${0}
+    \treturn \\$fields;
+    }
+    """
   'getEditForm':
     'prefix': 'geteditform'
     'body': """
