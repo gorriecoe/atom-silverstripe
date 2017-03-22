@@ -1,0 +1,613 @@
+######
+#
+# 1. SS
+#
+######
+
+'.text.html.ss':
+  # Conditional Logic
+  'if':
+    'prefix': 'if '
+    'body': """
+    <% if ${1} %>
+    \t${2}
+    <% end_if %>
+    """
+  'if not':
+    'prefix': 'ifnot '
+    'body': """
+    <% if not ${1} %>
+    \t${2}
+    <% end_if %>
+    """
+  'if else':
+    'prefix': 'ifelse '
+    'body': """
+    <% if ${1} %>
+    \t${2}
+    <% else %>
+    \t${3}
+    <% end_if %>
+    """
+  'else':
+    'prefix': 'else '
+    'body': '<% else %>\n\t${0}'
+  # Includes
+  'Include':
+    'prefix': 'include '
+    'body': '<% include ${1} %>${0}'
+  'Require themedCSS':
+    'prefix': 'requirethemedcss'
+    'body': '<% require themedCSS(\'${1}\') %>${0}'
+  'Require Javascript':
+    'prefix': 'requirejavascript'
+    'body': '<% require javascript(\'${1}\') %>${0}'
+  'Require CSS':
+    'prefix': 'requirecss'
+    'body': '<% require css(\'${1}\') %>${0}'
+  'Base Tag':
+    'prefix': 'basetag'
+    'body': '<% base_tag %>${0}'
+
+'.text.html.ss .variable, .text.html.ss .control':
+  # General Variables
+  'CurrentMember':
+    'prefix': 'currentmember'
+    'body': 'CurrentMember'
+  'Title':
+    'prefix': 'title'
+    'body': 'Title'
+  'Menu Title':
+    'prefix': 'menutitle'
+    'body': 'MenuTitle'
+  'Content':
+    'prefix': 'content'
+    'body': 'Content'
+  'Current SiteConfig':
+    'prefix': 'siteconfig'
+    'body': 'SiteConfig'
+  'MetaTags':
+    'prefix': 'metatags'
+    'body': 'MetaTags'
+  'Relative Link':
+    'prefix': 'link'
+    'body': 'Link'
+  'Absolute Link':
+    'prefix': 'absolutelink'
+    'body': 'AbsoluteLink'
+  'isSection Linking Mode':
+    'prefix': 'issection'
+    'body': 'isSection'
+  'isCurrent Linking Mode':
+    'prefix': 'iscurrent'
+    'body': 'isCurrent'
+  'inSection Linking Mode':
+    'prefix': 'insection'
+    'body': 'inSection(${1:page-url})${0}'
+  'URLSegment':
+    'prefix': 'urlsegment'
+    'body': 'URLSegment'
+  'ClassName':
+    'prefix': 'classname'
+    'body': 'ClassName'
+  # Children loop
+  'Children':
+    'prefix': 'children'
+    'body': 'Children'
+  'ChildrenOf':
+    'prefix': 'childrenof'
+    'body': 'ChildrenOf(${1:page-url})${0}'
+  'AllChildren':
+    'prefix': 'allchildren'
+    'body': 'AllChildren'
+  'Menu':
+    'prefix': 'menu'
+    'body': 'Menu(${1:page-url})${0}'
+  'Page':
+    'prefix': 'page'
+    'body': 'Page(${1:page-url})${0}'
+  'Level':
+    'prefix': 'level'
+    'body': 'Level(${1:1})${0}'
+  # Scope traverse
+  'Traverse Up Scope':
+    'prefix': 'up'
+    'body': 'Up'
+  'Current Object Scope':
+    'prefix': 'me'
+    'body': 'Me'
+  'Top Level Scope':
+    'prefix': 'top'
+    'body': 'Top'
+  # Breadcrumbs
+  'Breadcrumbs':
+    'prefix': 'breadcrumbs'
+    'body': 'Breadcrumbs'
+  # Form
+  'Form':
+    'prefix': 'form'
+    'body': 'Form'
+  # Formating
+  'Limit Word Count':
+    'prefix': 'limitwordcount'
+    'body': 'LimitWordCount(${1:26},${2:\'...\'})${0}'
+  'Limit Characters':
+    'prefix': 'limitcharacters'
+    'body': 'LimitCharacters(${1:20},${2:\'...\'})${0}'
+  'Escape XML':
+    'prefix': 'escapexml'
+    'body': 'EscapeXML'
+  'First Paragraph':
+    'prefix': 'firstparagraph'
+    'body': 'FirstParagraph'
+  'No HTML':
+    'prefix': 'nohtml'
+    'body': 'NoHTML'
+
+'.text.html.ss .variable':
+  # Image manipulation 3.2
+  'Scale Width Image 3.2+':
+    'prefix': 'scalewidth'
+    'body': 'ScaleWidth(${1:width})${0}'
+  'Scale Max Width Image 3.2+':
+    'prefix': 'scalemaxwidth'
+    'body': 'ScaleMaxWidth(${1:width})${0}'
+  'Scale Height Image 3.2+':
+    'prefix': 'scaleheight'
+    'body': 'ScaleHeight(${1:height})${0}'
+  'Scale Max Height Image 3.2+':
+    'prefix': 'scalemaxheight'
+    'body': 'ScaleMaxHeight(${1:height})${0}'
+  'Fit Image 3.2+':
+    'prefix': 'fit'
+    'body': 'Fit(${1:width},${2:${1:height}})${0}'
+  'Fit Max Image 3.2+':
+    'prefix': 'fitmax'
+    'body': 'FitMax(${1:width},${2:${1:height}})${0}'
+  'Fill Image 3.2+':
+    'prefix': 'fill'
+    'body': 'Fill(${1:width},${2:${1:height}})${0}'
+  'Fill Max Image 3.2+':
+    'prefix': 'fillmax'
+    'body': 'FillMax(${1:width},${2:${1:height}})${0}'
+  'Crop Width Image 3.2+':
+    'prefix': 'cropwidth'
+    'body': 'CropWidth(${1:width})${0}'
+  'Crop Height Image 3.2+':
+    'prefix': 'cropheight'
+    'body': 'CropHeight(${1:width})${0}'
+  'Pad Image 3.2+':
+    'prefix': 'pad'
+    'body': 'Pad(${1:width},${2:${1:height}},${3:hex})${0}'
+  # Image General
+  'Image Width':
+    'prefix': 'width'
+    'body': 'Width'
+  'Image Height':
+    'prefix': 'height'
+    'body': 'Height'
+  'Image Orientation':
+    'prefix': 'orientation'
+    'body': 'Orientation'
+  'Image Filename':
+    'prefix': 'filename'
+    'body': 'Filename'
+  'Image URL':
+    'prefix': 'url'
+    'body': 'URL'
+
+######
+#
+# 2. PHP
+#
+######
+
+'.text.html.php':
+  # Debug Tools
+  'Debug-message':
+    'prefix': 'message'
+    'body': 'Debug::message(${1});${0}'
+  'Debug-show':
+    'prefix': 'show'
+    'body': 'Debug::show(${1});${0}'
+  'Debug-log':
+    'prefix': 'log'
+    'body': 'Debug::log(${1});${0}'
+  'Debug-dump':
+    'prefix': 'dump '
+    'body': 'Debug::dump(${1});${0}'
+  '<?php …':
+    'prefix': 'php' # Overrides standard php to exclude ?>
+    'body': '\<?php\n${0}'
+  'Class DataObject Silverstripe':
+    'prefix': 'classdataobject'
+    'body': """
+    /**
+     * ${3:Description}
+     *
+     * @package silverstripe
+     * @subpackage ${4:mysite}
+     */
+    class ${1} extends ${2:DataObject}
+    {
+    \t${0}
+    }
+    """
+  'Class & Controller Silverstripe':
+    'prefix': 'classcontroller'
+    'body': """
+    /**
+     * ${3:Description}
+     *
+     * @package silverstripe
+     * @subpackage ${4:mysite}
+     */
+    class $1 extends ${2:Page}
+    {
+    \t${0}
+    }
+    class ${1}_Controller extends ${2:Page}_Controller
+    {
+    \tpublic function init()
+    \t{
+    \t\tparent::init();
+    \t}
+    }
+    """
+  'Class Model Admin Silverstripe':
+    'prefix': 'classmodeladmin'
+    'body': """
+    /**
+     * ${5:Description}
+     *
+     * @package silverstripe
+     * @subpackage ${6:mysite}
+     */
+    class ${1}Admin extends ModelAdmin
+    {
+    \t/**
+    \t * Managed data objects for CMS
+    \t * @var array
+    \t */
+    \tprivate static \\$managed_models = array(
+    \t\t\'${2}\'
+    \t);
+
+    \t/**
+    \t * URL Path for CMS
+    \t * @var string
+    \t */
+    \tprivate static \\$url_segment = \'${3}\';
+
+    \t/**
+    \t * Menu title for Left and Main CMS
+    \t * @var string
+    \t */
+    \tprivate static \\$menu_title = \'${4}\';
+
+    \t${0}
+    }
+    """
+  'menu_title':
+    'prefix': 'menu_title '
+    'body': """
+    /**
+     * Menu title for Left and Main CMS
+     * @var string
+     */
+    private static \\$menu_title = \'${1}\';${0}
+    """
+  'menu_icon':
+    'prefix': 'menu_icon '
+    'body': """
+    /**
+     * Menu icon for Left and Main CMS
+     * @var string
+     */
+    private static \\$menu_icon = \'${1}\';${0}
+    """
+  'singular_name':
+    'prefix': 'singular_name '
+    'body': """
+    /**
+     * Singular name for CMS
+     * @var string
+     */
+    private static \\$singular_name = \'${1}\';${0}
+    """
+  'plural_name':
+    'prefix': 'plural_name '
+    'body': """
+    /**
+     * Plural name for CMS
+     * @var string
+     */
+    private static \\$plural_name = \'${1}\';${0}
+    """
+  'db':
+    'prefix': 'db '
+    'body': """
+    /**
+     * Database fields
+     * @var array
+     */
+    private static \\$db = array(
+    \t\'${1}\' => \'${2}\',
+    );${0}
+    """
+  'has_one':
+    'prefix': 'has_one'
+    'body': """
+    /**
+     * Has_one relationship
+     * @var array
+     */
+    private static \\$has_one = array(
+    \t\'${1}\' => \'${2}\',
+    );${0}
+    """
+  'has_many':
+    'prefix': 'has_many'
+    'body': """
+    /**
+     * Has_many relationship
+     * @var array
+     */
+    private static \\$has_many = array(
+    \t\'${1}\' => \'${2}\',
+    );${0}
+    """
+  'many_many':
+    'prefix': 'many_many'
+    'body': """
+    /**
+     * Many_many relationship
+     * @var array
+     */
+    private static \\$many_many = array(
+    \t\'${1}\' => \'${2}\',
+    );${0}
+    """
+  'many_many_extraFields':
+    'prefix': 'many_many_extrafields'
+    'body': """
+    /**
+     * \{@inheritdoc \}
+     * @var array
+     */
+    private static \\$many_many_extraFields = array(
+    \t\'${1}\' => array(
+    \t\t\'${2:Sort}\' => \'${3:Int}\'
+    \t)
+    );${0}
+    """
+  'belongs_to':
+    'prefix': 'belongs_to'
+    'body': """
+    /**
+     * Belongs_to relationship
+     * @var array
+     */
+    private static \\$belongs_to = array(
+    \t\'${1}\' => \'${2}\',
+    );
+    ${0}
+    """
+  'belongs_many_many':
+    'prefix': 'belongs_many_many'
+    'body': """
+    /**
+     * Belongs_many_many relationship
+     * @var array
+     */
+    private static \\$belongs_many_many = array(
+    \t\'${1}\' => \'${2}\',
+    );${0}
+    """
+  'casting':
+    'prefix': 'casting'
+    'body': """
+    /**
+     * Defines types to variables from custom functions
+     * @var array
+     */
+    private static \\$casting = array(
+    \t\'${1}\' => \'${2}\'
+    );
+    """
+  'defaults':
+    'prefix': 'defaults'
+    'body': """
+    /**
+     * Define the default values for all the $db fields
+     * @var array
+     */
+    private static \\$defaults = array(
+    \t\'${1}\' => \'${2}\'
+    );
+    """
+  'default_sort':
+    'prefix': 'default_sort'
+    'body': """
+    /**
+     * Default sort ordering
+     * @var string
+     */
+    private static \\$default_sort = \'${1} ${2:ASC}\';${0}
+    """
+  'allowed_children':
+    'prefix': 'allowed_children'
+    'body': """
+    /**
+     * Defines the allowed child page types
+     * @var array
+     */
+    private static $allowed_children = array(
+    \t\'${1}\'
+    );
+    """
+  'allowed_actions':
+    'prefix': 'allowed_actions'
+    'body': """
+    /**
+     * Defines methods that can be called directly
+     * @var array
+     */
+    private static \\$allowed_actions = array(
+    \t\'${1}\' => ${2:true}
+    );
+    """
+  'hide_ancestor':
+    'prefix': 'hide_ancestor'
+    'body': """
+    private static \\$hide_ancestor = \'\${1:PageType}\';${0}
+    """
+  'onBeforeWrite':
+    'prefix': 'onbeforewrite'
+    'body': """
+    /**
+     * Event handler called before writing to the database.
+     */
+    public function onBeforeWrite()
+    {
+    \tparent::onBeforeWrite();
+    \t${0}
+    }
+    """
+  'onAfterWrite':
+    'prefix': 'onafterwrite'
+    'body': """
+    /**
+     * Event handler called after writing to the database.
+     */
+    public function onAfterWrite()
+    {
+    \tparent::onAfterWrite();
+    \t${0}
+    }
+    """
+  'onBeforeDelete':
+    'prefix': 'onbeforedelete'
+    'body': """
+    /**
+     * Event handler called before deleting from the database.
+     */
+    public function onBeforeDelete()
+    {
+    \tparent::onBeforeDelete();
+    \t${0}
+    }
+    """
+  'onAfterDelete':
+    'prefix': 'onafterdelete'
+    'body': """
+    /**
+     * Event handler called after deleting from the database.
+     */
+    public function onAfterDelete()
+    {
+    \tparent::onAfterDelete();
+    \t${0}
+    }
+    """
+
+  # Scaffolding
+  'summary_fields':
+    'prefix': 'summary_fields'
+    'body': """
+    /**
+     * Defines summary fields commonly used in table columns
+     * as a quick overview of the data for this dataobject
+     * @var array
+     */
+    private static \\$summary_fields = array(
+    \t'${1}' => '${2}'
+    );
+    """
+  'searchable_fields':
+    'prefix': 'searchable_fields'
+    'body': """
+    /**
+     * Defines a default list of filters for the search context
+     * @var array
+     */
+    private static \\$searchable_fields = array(
+    \t'${1}' => '${2}'
+    );
+    """
+
+  # Permissions
+  'canView':
+    'prefix': 'canview'
+    'body': """
+    /**
+     * Viewing Permissions
+     * @return boolean
+     */
+    public function canView($member = null)
+    {
+    \treturn ${1};
+    }${0}
+    """
+  'canEdit':
+    'prefix': 'canedit'
+    'body': """
+    /**
+     * Editing Permissions
+     * @return boolean
+     */
+    public function canEdit($member = null)
+    {
+    \treturn ${1};
+    }${0}
+    """
+  'canDelete':
+    'prefix': 'candelete'
+    'body': """
+    /**
+     * Deleting Permissions
+     * @return boolean
+     */
+    public function canDelete($member = null)
+    {
+    \treturn ${1};
+    }${0}
+    """
+  'canCreate':
+    'prefix': 'cancreate'
+    'body': """
+    /**
+     * Creating Permissions
+     * @return boolean
+     */
+    public function canCreate($member = null)
+    {
+    \treturn ${1};
+    }${0}
+    """
+  'permissionCheck':
+    'prefix': 'permissioncheck'
+    'body': 'Permission::check(${1:string|array}, ${2:\'any\'}, ${3:$member})${0}'
+  'providePermissions':
+    'prefix': 'providepermissions'
+    'body': """
+    /**
+     * Return a map of permission codes to add to the dropdown shown in the Security section of the CMS
+     * @return array
+     */
+    public function providePermissions()
+    {
+    \treturn array(
+    \t\t'${1:PERMISSION}' => '${2:Title}'
+    \t);
+    }
+    """
+
+  # translate
+  'Main translator function':
+    'prefix': '_t'
+    'body': '_t(${1}, ${2})${0}'
+
+  'Current SiteConfig':
+    'prefix': 'siteconfig'
+    'body': 'SiteConfig::current_site_config()'

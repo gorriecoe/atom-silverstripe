@@ -1,4 +1,4 @@
-'.text.html.ss':
+'.text.html.ss.ssv2-4':
   # scope 2.4
   'Control 2.4':
     'prefix': 'control '
@@ -7,6 +7,14 @@
     \t${2}
     <% end_control %>
     """
+  'Control 2.4':
+    'prefix': 'loop '
+    'body': """
+    <% control ${1} %>
+    \t${2}
+    <% end_control %>
+    """
+'.text.html.ss.ssv3-2':
   # scope 3.0 +
   'Loop 3.0 +':
     'prefix': 'loop '
