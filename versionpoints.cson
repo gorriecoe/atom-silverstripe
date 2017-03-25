@@ -1,0 +1,10 @@
+'silverstripe/framework':
+  '{version} < 3.0': 'ssv_2-4'
+  '{version} == 3.0': 'ssv_3-0'
+  '{version} >= 3.0': 'ssv_3-0_+'
+  '{version} >= 3.1': 'ssv_3-1_+'
+  '{version} >= 3.2': 'ssv_3-2_+'
+  '{version} > 4.0': 'ssv_4_+'
+'jonom/focuspoint':
+  '{version} < 2.0': 'fp_1'
+  '{version} >= 2.0': 'fp_2'
