@@ -164,7 +164,7 @@
 #
 ######
 
-'.text.html.php.ss_3-0_':
+'.text.html.php.ssf_3-0_':
   #  Fields
   'setAttribute':
     'prefix': 'setattribute'
