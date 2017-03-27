@@ -426,6 +426,18 @@
   'GridFieldConfig_RecordViewer':
     'prefix': 'gridfieldconfig_recordviewer'
     'body': 'GridFieldConfig_RecordViewer::create(${1})${0}'
+  'addComponent':
+    'prefix': 'addcomponent'
+    'body': '->addComponent(${1})${0}'
+  'removeComponentsByType':
+    'prefix': 'removecomponentsbytype'
+    'body': '->removeComponentsByType(${1})${0}'
+  'GridFieldButtonRow':
+    'prefix': 'gridfieldbuttonrow'
+    'body': 'new GridFieldButtonRow(\'before\')'
+  'GridFieldToolbarHeader':
+    'prefix': 'gridfieldtoolbarheader'
+    'body': 'new GridFieldToolbarHeader()'
 
   #  Tabs
   'addFieldToTab':

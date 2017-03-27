@@ -98,3 +98,32 @@
   'Cropped Focused Image':
     'prefix': 'croppedfocusedimage'
     'body': 'CroppedFocusedImage(${1:width},${2:${1:height}})${0}'
+
+######
+#
+# 5. Gridfield extensions
+#
+######
+
+'.text.html.php.gridfl_1':
+  'GridFieldAddExistingSearchButton':
+    'prefix': 'gridfieldaddexistingsearchbutton'
+    'body': 'new GridFieldAddExistingSearchButton()'
+  'GridFieldTitleHeader':
+    'prefix': 'gridfieldtitleheader'
+    'body': 'new GridFieldTitleHeader()'
+  'GridFieldEditableColumns':
+    'prefix': 'gridfieldeditablecolumns'
+    'body': 'new GridFieldEditableColumns()'
+  'GridFieldDeleteAction':
+    'prefix': 'gridfielddeleteaction'
+    'body': 'new GridFieldDeleteAction()'
+  'GridFieldAddNewInlineButton':
+    'prefix': 'gridfieldaddnewinlinebutton'
+    'body': 'new GridFieldAddNewInlineButton()'
+  'GridFieldAddNewMultiClass':
+    'prefix': 'gridfieldaddnewmulticlass'
+    'body': 'new GridFieldAddNewMultiClass())'
+  'GridFieldOrderableRows':
+    'prefix': 'gridfieldorderablerows'
+    'body': 'new GridFieldOrderableRows(${1:\'Sort\'})'

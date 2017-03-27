@@ -16,3 +16,5 @@
   '{version} >= 1.0': 'srtfl_1'
 'silverstripe/tagfield':
   '{version} >= 1.0': 'tagfl_1'
+'silverstripe-australia/gridfieldextensions':
+  '{version} >= 1.0': 'gridfl_1'
