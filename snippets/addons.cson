@@ -1,5 +1,10 @@
-'.text.html.php':
-  # TagField
+######
+#
+# 1. TagField
+#
+######
+
+'.text.html.php.tagfl_1':
   'TagField (Tagfield)':
     'prefix': 'tagfield'
     'body': """
@@ -26,7 +31,14 @@
   'setCanCreate (Tagfield)':
     'prefix': 'setcancreate'
     'body': '->setCanCreate(${1:true})${0}'
-  # Linkable
+
+######
+#
+# 2. Linkable
+#
+######
+
+'.text.html.php.lnkfl_1':
   'LinkField (Linkable)':
     'prefix': 'linkfield'
     'body': """
@@ -44,7 +56,14 @@
     \t${3}
     )${0}
     """
-  # SortableUploadField
+
+######
+#
+# 3. SortableUploadField
+#
+######
+
+'.text.html.php.srtfl_1':
   'SortableUploadField (SortableUploadField)':
     'prefix': 'sortableuploadfield'
     'body': """
@@ -53,21 +72,29 @@
     \t\'${2:${1:title}}\'
     )${0}
     """
-'.text.html.ss .variable':
-  # Focuspoint 3.2
-  'Focus Fill Image 3.2+':
+
+######
+#
+# 4. Focuspoint
+#
+######
+
+'.text.html.ss.fp_2 .variable':
+  # 3.2 onwards
+  'Focus Fill Image':
     'prefix': 'focusfill'
     'body': 'FocusFill(${1:width},${2:${1:height}})${0}'
-  'Focus Fill Max Image 3.2+':
+  'Focus Fill Max Image':
     'prefix': 'focusfillmax'
     'body': 'FocusFillMax(${1:width},${2:${1:height}})${0}'
-  'Focus Crop Width Image 3.2+':
+  'Focus Crop Width Image':
     'prefix': 'focuscropwidth'
     'body': 'FocusCropWidth(${1:width})${0}'
-  'Focus Crop Height Image 3.2+':
+  'Focus Crop Height Image':
     'prefix': 'focuscropheight'
     'body': 'FocusCropHeight(${1:width})${0}'
-  # Focuspoint 3.0 - 3.1
-  'Cropped Focused Image 3.0 - 3.1':
+'.text.html.ss.fp_1 .variable':
+  # 3.0 - 3.1
+  'Cropped Focused Image':
     'prefix': 'croppedfocusedimage'
     'body': 'CroppedFocusedImage(${1:width},${2:${1:height}})${0}'

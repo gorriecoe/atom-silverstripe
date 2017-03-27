@@ -4,7 +4,7 @@
 #
 ######
 
-'.text.html.ss.ssv2-4':
+'.text.html.ss.ssf_2-4':
   'Control':
     'prefix': 'control '
     'body': """
@@ -33,4 +33,4 @@
 #
 ######
 
-# '.text.html.php.ssv2-4':
+# '.text.html.php.ssf_2-4':

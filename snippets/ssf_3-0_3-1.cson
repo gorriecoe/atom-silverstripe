@@ -4,7 +4,7 @@
 #
 ######
 
-'.text.html.ss.ssv3-0':
+'.text.html.ss.ssf_3-0_3-1':
   'Set Width Image':
     'prefix': 'setwidth'
     'body': 'SetWidth(${1:width})${0}'
@@ -30,4 +30,4 @@
 #
 ######
 
-# '.text.html.php.ssv3-0':
+# '.text.html.php.ss_3-0':

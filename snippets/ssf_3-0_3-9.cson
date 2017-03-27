@@ -1,21 +1,18 @@
-'.text.html.php':
-  '<?php …':
-    'prefix': 'php' # Overrides standard php to exclude ?>
-    'body': '\<?php\n${0}'
-  'Class DataObject Silverstripe':
-    'prefix': 'classdataobject'
-    'body': """
-    /**
-     * ${3:Description}
-     *
-     * @package silverstripe
-     * @subpackage ${4:mysite}
-     */
-    class ${1} extends ${2:DataObject}
-    {
-    \t${0}
-    }
-    """
+######
+#
+# 1. SS
+#
+######
+
+
+
+######
+#
+# 2. PHP
+#
+######
+
+'.text.html.php.ssf_3-0_3-9':
   'Class & Controller Silverstripe':
     'prefix': 'classcontroller'
     'body': """
@@ -31,7 +28,8 @@
     }
     class ${1}_Controller extends ${2:Page}_Controller
     {
-    \tpublic function init() {
+    \tpublic function init()
+    \t{
     \t\tparent::init();
     \t}
     }
@@ -244,54 +242,6 @@
     'body': """
     private static \\$hide_ancestor = \'\${1:PageType}\';${0}
     """
-  'onBeforeWrite':
-    'prefix': 'onbeforewrite'
-    'body': """
-    /**
-     * Event handler called before writing to the database.
-     */
-    public function onBeforeWrite()
-    {
-    \tparent::onBeforeWrite();
-    \t${0}
-    }
-    """
-  'onAfterWrite':
-    'prefix': 'onafterwrite'
-    'body': """
-    /**
-     * Event handler called after writing to the database.
-     */
-    public function onAfterWrite()
-    {
-    \tparent::onAfterWrite();
-    \t${0}
-    }
-    """
-  'onBeforeDelete':
-    'prefix': 'onbeforedelete'
-    'body': """
-    /**
-     * Event handler called before deleting from the database.
-     */
-    public function onBeforeDelete()
-    {
-    \tparent::onBeforeDelete();
-    \t${0}
-    }
-    """
-  'onAfterDelete':
-    'prefix': 'onafterdelete'
-    'body': """
-    /**
-     * Event handler called after deleting from the database.
-     */
-    public function onAfterDelete()
-    {
-    \tparent::onAfterDelete();
-    \t${0}
-    }
-    """
 
   # Scaffolding
   'summary_fields':
@@ -384,12 +334,3 @@
     \t);
     }
     """
-
-  # translate
-  'Main translator function':
-    'prefix': '_t'
-    'body': '_t(${1}, ${2})${0}'
-
-  'Current SiteConfig':
-    'prefix': 'siteconfig'
-    'body': 'SiteConfig::current_site_config()'

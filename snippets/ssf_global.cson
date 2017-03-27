@@ -1,35 +1,10 @@
-'.text.html.ss.ssv2-4':
-  # scope 2.4
-  'Control 2.4':
-    'prefix': 'control '
-    'body': """
-    <% control ${1} %>
-    \t${2}
-    <% end_control %>
-    """
-  'Control 2.4':
-    'prefix': 'loop '
-    'body': """
-    <% control ${1} %>
-    \t${2}
-    <% end_control %>
-    """
-'.text.html.ss.ssv3-2':
-  # scope 3.0 +
-  'Loop 3.0 +':
-    'prefix': 'loop '
-    'body': """
-    <% loop ${1} %>
-    \t${2}
-    <% end_loop %>
-    """
-  'With 3.0 +':
-    'prefix': 'with '
-    'body': """
-    <% with ${1} %>
-    \t${2}
-    <% end_with %>
-    """
+######
+#
+# 1. SS
+#
+######
+
+'.text.html.ss':
   # Conditional Logic
   'if':
     'prefix': 'if '
@@ -170,60 +145,7 @@
     'body': 'NoHTML'
 
 '.text.html.ss .variable':
-  # Image manipulation 3.2
-  'Scale Width Image 3.2+':
-    'prefix': 'scalewidth'
-    'body': 'ScaleWidth(${1:width})${0}'
-  'Scale Max Width Image 3.2+':
-    'prefix': 'scalemaxwidth'
-    'body': 'ScaleMaxWidth(${1:width})${0}'
-  'Scale Height Image 3.2+':
-    'prefix': 'scaleheight'
-    'body': 'ScaleHeight(${1:height})${0}'
-  'Scale Max Height Image 3.2+':
-    'prefix': 'scalemaxheight'
-    'body': 'ScaleMaxHeight(${1:height})${0}'
-  'Fit Image 3.2+':
-    'prefix': 'fit'
-    'body': 'Fit(${1:width},${2:${1:height}})${0}'
-  'Fit Max Image 3.2+':
-    'prefix': 'fitmax'
-    'body': 'FitMax(${1:width},${2:${1:height}})${0}'
-  'Fill Image 3.2+':
-    'prefix': 'fill'
-    'body': 'Fill(${1:width},${2:${1:height}})${0}'
-  'Fill Max Image 3.2+':
-    'prefix': 'fillmax'
-    'body': 'FillMax(${1:width},${2:${1:height}})${0}'
-  'Crop Width Image 3.2+':
-    'prefix': 'cropwidth'
-    'body': 'CropWidth(${1:width})${0}'
-  'Crop Height Image 3.2+':
-    'prefix': 'cropheight'
-    'body': 'CropHeight(${1:width})${0}'
-  'Pad Image 3.2+':
-    'prefix': 'pad'
-    'body': 'Pad(${1:width},${2:${1:height}},${3:hex})${0}'
-  # Image manipulation 3.0 - 3.1
-  'Set Width Image 3.0 - 3.1':
-    'prefix': 'setwidth'
-    'body': 'SetWidth(${1:width})${0}'
-  'Set Height Image 3.0 - 3.1':
-    'prefix': 'setheight'
-    'body': 'SetHeight(${1:height})${0}'
-  'Set Size Image 3.0 - 3.1':
-    'prefix': 'setsize'
-    'body': 'SetSize(${1:width},${2:${1:height}})${0}'
-  'Set Ratio Size Image 3.0 - 3.1':
-    'prefix': 'setratiosize'
-    'body': 'SetRatioSize(${1:width},${2:${1:height}})${0}'
-  'Cropped Image 3.0 - 3.1':
-    'prefix': 'croppedimage'
-    'body': 'CroppedImage(${1:width},${2:${1:height}})${0}'
-  'Padded Image 3.0 - 3.1':
-    'prefix': 'paddedimage'
-    'body': 'PaddedImage(${1:width},${2:${1:height}},${3:hex})${0}'
-  # Image General
+  # Image Metadata
   'Image Width':
     'prefix': 'width'
     'body': 'Width'
@@ -239,3 +161,98 @@
   'Image URL':
     'prefix': 'url'
     'body': 'URL'
+
+######
+#
+# 2. PHP
+#
+######
+
+'.text.html.php':
+  '<?php …':
+    'prefix': 'php' # Overrides standard php to exclude ?>
+    'body': '\<?php\n${0}'
+  # Debug Tools
+  'Debug-message':
+    'prefix': 'message'
+    'body': 'Debug::message(${1});${0}'
+  'Debug-show':
+    'prefix': 'show'
+    'body': 'Debug::show(${1});${0}'
+  'Debug-log':
+    'prefix': 'log'
+    'body': 'Debug::log(${1});${0}'
+  'Debug-dump':
+    'prefix': 'dump '
+    'body': 'Debug::dump(${1});${0}'
+  'Class DataObject Silverstripe':
+    'prefix': 'classdataobject'
+    'body': """
+    /**
+     * ${3:Description}
+     *
+     * @package silverstripe
+     * @subpackage ${4:mysite}
+     */
+    class ${1} extends ${2:DataObject}
+    {
+    \t${0}
+    }
+    """
+  'onBeforeWrite':
+    'prefix': 'onbeforewrite'
+    'body': """
+    /**
+     * Event handler called before writing to the database.
+     */
+    public function onBeforeWrite()
+    {
+    \tparent::onBeforeWrite();
+    \t${0}
+    }
+    """
+  'onAfterWrite':
+    'prefix': 'onafterwrite'
+    'body': """
+    /**
+     * Event handler called after writing to the database.
+     */
+    public function onAfterWrite()
+    {
+    \tparent::onAfterWrite();
+    \t${0}
+    }
+    """
+  'onBeforeDelete':
+    'prefix': 'onbeforedelete'
+    'body': """
+    /**
+     * Event handler called before deleting from the database.
+     */
+    public function onBeforeDelete()
+    {
+    \tparent::onBeforeDelete();
+    \t${0}
+    }
+    """
+  'onAfterDelete':
+    'prefix': 'onafterdelete'
+    'body': """
+    /**
+     * Event handler called after deleting from the database.
+     */
+    public function onAfterDelete()
+    {
+    \tparent::onAfterDelete();
+    \t${0}
+    }
+    """
+
+  # translate
+  'Main translator function':
+    'prefix': '_t'
+    'body': '_t(${1}, ${2})${0}'
+
+  'Current SiteConfig':
+    'prefix': 'siteconfig'
+    'body': 'SiteConfig::current_site_config()'

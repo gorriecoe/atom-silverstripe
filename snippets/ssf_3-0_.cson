@@ -1,4 +1,170 @@
-'.text.html.php':
+######
+#
+# 1. SS
+#
+######
+
+'.text.html.ss.ssf_3-0_':
+  'Loop':
+    'prefix': 'loop '
+    'body': """
+    <% loop ${1} %>
+    \t${2}
+    <% end_loop %>
+    """
+  'With':
+    'prefix': 'with '
+    'body': """
+    <% with ${1} %>
+    \t${2}
+    <% end_with %>
+    """
+  # Conditional Logic
+  'if':
+    'prefix': 'if '
+    'body': """
+    <% if ${1} %>
+    \t${2}
+    <% end_if %>
+    """
+  'if not':
+    'prefix': 'ifnot '
+    'body': """
+    <% if not ${1} %>
+    \t${2}
+    <% end_if %>
+    """
+  'if else':
+    'prefix': 'ifelse '
+    'body': """
+    <% if ${1} %>
+    \t${2}
+    <% else %>
+    \t${3}
+    <% end_if %>
+    """
+  'else':
+    'prefix': 'else '
+    'body': '<% else %>\n\t${0}'
+  # Includes
+  'Include':
+    'prefix': 'include '
+    'body': '<% include ${1} %>${0}'
+  'Require themedCSS':
+    'prefix': 'requirethemedcss'
+    'body': '<% require themedCSS(\'${1}\') %>${0}'
+  'Require Javascript':
+    'prefix': 'requirejavascript'
+    'body': '<% require javascript(\'${1}\') %>${0}'
+  'Require CSS':
+    'prefix': 'requirecss'
+    'body': '<% require css(\'${1}\') %>${0}'
+  'Base Tag':
+    'prefix': 'basetag'
+    'body': '<% base_tag %>${0}'
+
+'.text.html.ss.ssf_3-0_ .variable, .text.html.ss.ssf_3-0_ .control':
+  # General Variables
+  'CurrentMember':
+    'prefix': 'currentmember'
+    'body': 'CurrentMember'
+  'Title':
+    'prefix': 'title'
+    'body': 'Title'
+  'Menu Title':
+    'prefix': 'menutitle'
+    'body': 'MenuTitle'
+  'Content':
+    'prefix': 'content'
+    'body': 'Content'
+  'Current SiteConfig':
+    'prefix': 'siteconfig'
+    'body': 'SiteConfig'
+  'MetaTags':
+    'prefix': 'metatags'
+    'body': 'MetaTags'
+  'Relative Link':
+    'prefix': 'link'
+    'body': 'Link'
+  'Absolute Link':
+    'prefix': 'absolutelink'
+    'body': 'AbsoluteLink'
+  'isSection Linking Mode':
+    'prefix': 'issection'
+    'body': 'isSection'
+  'isCurrent Linking Mode':
+    'prefix': 'iscurrent'
+    'body': 'isCurrent'
+  'inSection Linking Mode':
+    'prefix': 'insection'
+    'body': 'inSection(${1:page-url})${0}'
+  'URLSegment':
+    'prefix': 'urlsegment'
+    'body': 'URLSegment'
+  'ClassName':
+    'prefix': 'classname'
+    'body': 'ClassName'
+  # Children loop
+  'Children':
+    'prefix': 'children'
+    'body': 'Children'
+  'ChildrenOf':
+    'prefix': 'childrenof'
+    'body': 'ChildrenOf(${1:page-url})${0}'
+  'AllChildren':
+    'prefix': 'allchildren'
+    'body': 'AllChildren'
+  'Menu':
+    'prefix': 'menu'
+    'body': 'Menu(${1:page-url})${0}'
+  'Page':
+    'prefix': 'page'
+    'body': 'Page(${1:page-url})${0}'
+  'Level':
+    'prefix': 'level'
+    'body': 'Level(${1:1})${0}'
+  # Scope traverse
+  'Traverse Up Scope':
+    'prefix': 'up'
+    'body': 'Up'
+  'Current Object Scope':
+    'prefix': 'me'
+    'body': 'Me'
+  'Top Level Scope':
+    'prefix': 'top'
+    'body': 'Top'
+  # Breadcrumbs
+  'Breadcrumbs':
+    'prefix': 'breadcrumbs'
+    'body': 'Breadcrumbs'
+  # Form
+  'Form':
+    'prefix': 'form'
+    'body': 'Form'
+  # Formating
+  'Limit Word Count':
+    'prefix': 'limitwordcount'
+    'body': 'LimitWordCount(${1:26},${2:\'...\'})${0}'
+  'Limit Characters':
+    'prefix': 'limitcharacters'
+    'body': 'LimitCharacters(${1:20},${2:\'...\'})${0}'
+  'Escape XML':
+    'prefix': 'escapexml'
+    'body': 'EscapeXML'
+  'First Paragraph':
+    'prefix': 'firstparagraph'
+    'body': 'FirstParagraph'
+  'No HTML':
+    'prefix': 'nohtml'
+    'body': 'NoHTML'
+
+######
+#
+# 2. PHP
+#
+######
+
+'.text.html.php.ss_3-0_':
   #  Fields
   'setAttribute':
     'prefix': 'setattribute'
@@ -318,20 +484,6 @@
      * @return FieldList
      */
     public function updateCMSFields(FieldList \\$fields)
-    {
-    \t\\$owner = $this->owner;
-    \t\\$fields->${0}
-    \treturn \\$fields;
-    }
-    """
-  'updateSettingsFields':
-    'prefix': 'updatesettingsfields'
-    'body': """
-    /**
-     * Update Fields
-     * @return FieldList
-     */
-    public function updateSettingsFields(FieldList \\$fields)
     {
     \t\\$owner = $this->owner;
     \t\\$fields->${0}
