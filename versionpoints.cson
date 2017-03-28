@@ -18,3 +18,7 @@
   '{version} >= 1.0': 'tagfl_1'
 'silverstripe-australia/gridfieldextensions':
   '{version} >= 1.0': 'gridfl_1'
+'undefinedoffset/sortablegridfield':
+  '{version} >= 1.0': 'sortgridfl_1'
+'unclecheese/betterbuttons':
+  '{version} >= 1.0': 'betterbuttons_1'

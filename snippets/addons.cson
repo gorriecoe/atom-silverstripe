@@ -127,3 +127,55 @@
   'GridFieldOrderableRows':
     'prefix': 'gridfieldorderablerows'
     'body': 'new GridFieldOrderableRows(${1:\'Sort\'})'
+
+######
+#
+# 6. Sortable Gridfield
+#
+######
+
+'.text.html.php.sortgridfl_1':
+  'GridFieldSortableRows':
+    'prefix': 'gridfieldsortablerows'
+    'body': 'new GridFieldSortableRows(${1:\'Sort\'})'
+
+######
+#
+# 7. Better Buttons
+#
+######
+
+'.text.html.php.betterbuttons_1':
+  'getBetterButtonsActions':
+    'prefix': 'getbetterbuttonsactions'
+    'body': """
+    /**
+     * Create better button custom actions
+     * @return FieldList
+     */
+    public function getBetterButtonsActions()
+    {
+    \t\\$fields = parent::getBetterButtonsActions();
+    \t\\$fields->${0}
+    \treturn \\$fields;
+    }
+    """
+  'BetterButtonCustomAction':
+    'prefix': 'betterbuttoncustomaction'
+    'body': """
+    BetterButtonCustomAction::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\'
+    )${0}
+    """
+  'BetterButtonNestedForm':
+    'prefix': 'betterbuttonnestedform'
+    'body': """
+    BetterButtonNestedForm::create(
+    \t\'${1:name}\',
+    \t\'${2:${1:title}}\',
+    \tFieldList::create(
+    \t\t${3}
+    \t)
+    )${0}
+    """
