@@ -7,7 +7,6 @@
     "atom": ">1.0.0"
   },
   "dependencies": {
-    "cson-safe": "^1.0.5",
     "json-file": "^0.1.0",
     "loophole": "^1.1.0",
     "season": "^6.0.0",
