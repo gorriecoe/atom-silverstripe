@@ -6,13 +6,6 @@
   "engines": {
     "atom": ">1.0.0"
   },
-  "dependencies": {
-    "cson-safe": "^1.0.5",
-    "json-file": "^0.1.0",
-    "loophole": "^1.1.0",
-    "season": "^6.0.0",
-    "string-template": "^1.0.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gorriecoe/atom-silverstripe.git"
@@ -22,5 +15,15 @@
     "url": "https://github.com/gorriecoe/atom-silverstripe/issues"
   },
   "homepage": "https://github.com/gorriecoe/atom-silverstripe",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "cson-safe": "^1.0.5",
+    "json-file": "^0.1.0",
+    "loophole": "^1.1.0",
+    "season": "^6.0.0",
+    "string-template": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0"
+  }
 }
