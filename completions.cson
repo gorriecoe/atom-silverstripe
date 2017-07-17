@@ -4,6 +4,7 @@
 #
 ######
 
+# Template scope
 'Loop':
   'prefix': 'loop'
   'module': 'silverstripe/framework'
@@ -49,7 +50,8 @@
       """
     }
   ]
-# Conditional Logic
+
+# Template conditional logic
 'if':
   'prefix': 'if'
   'module': 'silverstripe/framework'
@@ -59,6 +61,7 @@
   \t${2}
   <% end_if %>
   """
+
 'if not':
   'prefix': 'ifnot'
   'module': 'silverstripe/framework'
@@ -68,6 +71,7 @@
   \t${2}
   <% end_if %>
   """
+
 'if else':
   'prefix': 'ifelse'
   'module': 'silverstripe/framework'
@@ -79,38 +83,45 @@
   \t${3}
   <% end_if %>
   """
+
 'else':
   'prefix': 'else'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': '<% else %>\n\t${0}'
-# Includes
+
+# Template includes
 'Include':
   'prefix': 'include'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': '<% include ${1} %>${0}'
+
 'Require themedCSS':
   'prefix': 'requirethemedcss'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': '<% require themedCSS(\'${1}\') %>${0}'
+
 'Require Javascript':
   'prefix': 'requirejavascript'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': '<% require javascript(\'${1}\') %>${0}'
+
 'Require CSS':
   'prefix': 'requirecss'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': '<% require css(\'${1}\') %>${0}'
+
 'Base Tag':
   'prefix': 'basetag'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': '<% base_tag %>${0}'
-# General Variables
+
+# General variables
 'Current Member':
   'prefix': 'currentmember'
   'module': 'silverstripe/framework'
@@ -124,6 +135,7 @@
       'body': 'Member::currentUser()'
     }
   ]
+
 'Current SiteConfig':
   'prefix': 'siteconfig'
   'module': 'silverstripe/framework'
@@ -137,72 +149,86 @@
       'body': 'SiteConfig::current_site_config()'
     }
   ]
+
 'Title':
   'prefix': 'title'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss, .text.html.php'
   'body': 'Title'
+
 'Menu Title':
   'prefix': 'menutitle'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss, .text.html.php'
   'body': 'MenuTitle'
+
 'Content':
   'prefix': 'content'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss, .text.html.php'
   'body': 'Content'
+
 'MetaTags':
   'prefix': 'metatags'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': 'MetaTags'
+
 'Relative Link':
   'prefix': 'link'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss, .text.html.php'
   'body': 'Link'
+
 'Absolute Link':
   'prefix': 'absolutelink'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss, .text.html.php'
   'body': 'AbsoluteLink'
+
 'isSection Linking Mode':
   'prefix': 'issection'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': 'isSection'
+
 'isCurrent Linking Mode':
   'prefix': 'iscurrent'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': 'isCurrent'
+
 'inSection Linking Mode':
   'prefix': 'insection'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': 'inSection(${1:page-url})${0}'
+
 'URLSegment':
   'prefix': 'urlsegment'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss, .text.html.php'
   'body': 'URLSegment'
+
 'ClassName':
   'prefix': 'classname'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss, .text.html.php'
   'body': 'ClassName'
+
 # Children loop
 'Children':
   'prefix': 'children'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss, .text.html.php'
   'body': 'Children'
+
 'ChildrenOf':
   'prefix': 'childrenof'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': 'ChildrenOf(${1:page-url})${0}'
+
 'AllChildren':
   'prefix': 'allchildren'
   'module': 'silverstripe/framework'
@@ -213,55 +239,93 @@
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': 'Menu(${1:page-url})${0}'
+
 'Page':
   'prefix': 'page'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': 'Page(${1:page-url})${0}'
+
 'Level':
   'prefix': 'level'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': 'Level(${1:1})${0}'
+
+'Count':
+  'prefix': 'count'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': 'Count${0}'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': 'Count()${0}'
+    }
+  ]
+
+
 # Scope traverse
 'Traverse Up Scope':
   'prefix': 'up'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': 'Up'
+
 'Current Object Scope':
   'prefix': 'me'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': 'Me'
+
 'Top Level Scope':
   'prefix': 'top'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': 'Top'
+
 # Breadcrumbs
 'Breadcrumbs':
   'prefix': 'breadcrumbs'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': 'Breadcrumbs'
+
 # Form
 'Form':
   'prefix': 'form'
   'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': 'Form'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': 'Form'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': '''
+      Form::create(
+      \t${0}
+      )
+      '''
+    }
+  ]
+
+
 # Formating
 'Limit Word Count':
   'prefix': 'limitwordcount'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss, .text.html.php'
   'body': 'LimitWordCount(${1:26},${2:\'...\'})${0}'
+
 'Limit Characters':
   'prefix': 'limitcharacters'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss, .text.html.php'
   'body': 'LimitCharacters(${1:20},${2:\'...\'})${0}'
+
 'Escape XML':
   'prefix': 'escapexml'
   'module': 'silverstripe/framework'
@@ -275,6 +339,7 @@
       'body': 'EscapeXML()'
     }
   ]
+
 'First Paragraph':
   'prefix': 'firstparagraph'
   'module': 'silverstripe/framework'
@@ -288,6 +353,7 @@
       'body': 'FirstParagraph()'
     }
   ]
+
 'No HTML':
   'prefix': 'nohtml'
   'module': 'silverstripe/framework'
@@ -301,6 +367,7 @@
       'body': 'NoHTML()'
     }
   ]
+
 'Class & Controller Silverstripe':
   'prefix': 'classcontroller'
   'module': 'silverstripe/cms'
@@ -325,6 +392,7 @@
   \t}
   }
   """
+
 'Class Page Silverstripe':
   'prefix': 'classpage'
   'module': 'silverstripe/cms'
@@ -343,6 +411,7 @@
   \t${0}
   }
   """
+
 'Class Page Silverstripe':
   'prefix': 'classpagecontroller'
   'module': 'silverstripe/cms'
@@ -364,6 +433,7 @@
   \t}
   }
   """
+
 'Class Model Admin Silverstripe':
   'prefix': 'classmodeladmin'
   'module': 'silverstripe/framework'
@@ -400,8 +470,11 @@
   \t${0}
   }
   """
+
 'menu_title':
   'prefix': 'menu_title'
+  'module': 'silverstripe/framework'
+  'minVersion': '3.0'
   'body': """
   /**
    * Menu title for Left and Main CMS
@@ -409,6 +482,7 @@
    */
   private static \\$menu_title = \'${1}\';${0}
   """
+
 'menu_icon':
   'prefix': 'menu_icon'
   'module': 'silverstripe/framework'
@@ -420,6 +494,7 @@
    */
   private static \\$menu_icon = \'${1}\';${0}
   """
+
 'singular_name':
   'prefix': 'singular_name'
   'module': 'silverstripe/framework'
@@ -431,6 +506,7 @@
    */
   private static \\$singular_name = \'${1}\';${0}
   """
+
 'plural_name':
   'prefix': 'plural_name'
   'module': 'silverstripe/framework'
@@ -442,6 +518,7 @@
    */
   private static \\$plural_name = \'${1}\';${0}
   """
+
 'db':
   'prefix': 'db'
   'module': 'silverstripe/framework'
@@ -455,6 +532,7 @@
   \t\'${1}\' => \'${2}\',
   );${0}
   """
+
 'has_one':
   'prefix': 'has_one'
   'module': 'silverstripe/framework'
@@ -468,6 +546,7 @@
   \t\'${1}\' => \'${2}\',
   );${0}
   """
+
 'has_many':
   'prefix': 'has_many'
   'module': 'silverstripe/framework'
@@ -481,6 +560,7 @@
   \t\'${1}\' => \'${2}\',
   );${0}
   """
+
 'many_many':
   'prefix': 'many_many'
   'module': 'silverstripe/framework'
@@ -494,6 +574,7 @@
   \t\'${1}\' => \'${2}\',
   );${0}
   """
+
 'many_many_extraFields':
   'prefix': 'many_many_extrafields'
   'module': 'silverstripe/framework'
@@ -509,6 +590,7 @@
   \t)
   );${0}
   """
+
 'belongs_to':
   'prefix': 'belongs_to'
   'module': 'silverstripe/framework'
@@ -523,6 +605,7 @@
   );
   ${0}
   """
+
 'belongs_many_many':
   'prefix': 'belongs_many_many'
   'module': 'silverstripe/framework'
@@ -536,6 +619,7 @@
   \t\'${1}\' => \'${2}\',
   );${0}
   """
+
 'casting':
   'prefix': 'casting'
   'module': 'silverstripe/framework'
@@ -549,6 +633,7 @@
   \t\'${1}\' => \'${2}\'
   );
   """
+
 'defaults':
   'prefix': 'defaults'
   'module': 'silverstripe/framework'
@@ -562,6 +647,7 @@
   \t\'${1}\' => \'${2}\'
   );
   """
+
 'default_sort':
   'prefix': 'default_sort'
   'module': 'silverstripe/framework'
@@ -573,6 +659,7 @@
    */
   private static \\$default_sort = \'${1} ${2:ASC}\';${0}
   """
+
 'allowed_children':
   'prefix': 'allowed_children'
   'module': 'silverstripe/framework'
@@ -586,6 +673,7 @@
   \t\'${1}\'
   );
   """
+
 'allowed_actions':
   'prefix': 'allowed_actions'
   'module': 'silverstripe/framework'
@@ -599,6 +687,7 @@
   \t\'${1}\' => ${2:true}
   );
   """
+
 'hide_ancestor':
   'prefix': 'hide_ancestor'
   'module': 'silverstripe/framework'
@@ -606,6 +695,7 @@
   'body': """
   private static \\$hide_ancestor = \'\${1:PageType}\';${0}
   """
+
 # Scaffolding
 'summary_fields':
   'prefix': 'summary_fields'
@@ -621,6 +711,7 @@
   \t'${1}' => '${2}'
   );
   """
+
 'searchable_fields':
   'prefix': 'searchable_fields'
   'module': 'silverstripe/framework'
@@ -634,11 +725,21 @@
   \t'${1}' => '${2}'
   );
   """
+
+# translate
+'Main translator function':
+  'prefix': '_t'
+  'module': 'silverstripe/framework'
+  'minVersion': '3.0'
+  'scope': '.text.html.ss, .text.html.php'
+  'body': '_t(${1}, ${2})${0}'
+
 # Permissions
 'canView':
   'prefix': 'canview'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Viewing Permissions
@@ -649,10 +750,12 @@
   \treturn ${1};
   }${0}
   """
+
 'canEdit':
   'prefix': 'canedit'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Editing Permissions
@@ -663,10 +766,12 @@
   \treturn ${1};
   }${0}
   """
+
 'canDelete':
   'prefix': 'candelete'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Deleting Permissions
@@ -677,10 +782,12 @@
   \treturn ${1};
   }${0}
   """
+
 'canCreate':
   'prefix': 'cancreate'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Creating Permissions
@@ -691,15 +798,19 @@
   \treturn ${1};
   }${0}
   """
+
 'permissionCheck':
   'prefix': 'permissioncheck'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': 'Permission::check(${1:string|array}, ${2:\'any\'}, ${3:$member})${0}'
+
 'providePermissions':
   'prefix': 'providepermissions'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Return a map of permission codes to add to the dropdown shown in the Security section of the CMS
@@ -712,6 +823,7 @@
   \t);
   }
   """
+
 # Images
 'Set Size Image':
   'prefix': 'setsize'
@@ -720,6 +832,7 @@
   'maxVersion': '3.2'
   'scope': '.text.html.ss, .text.html.php'
   'body': 'SetSize(${1:width},${2:${1:height}})${0}'
+
 'Set Ratio Size Image':
   'prefix': 'setratiosize'
   'module': 'silverstripe/framework'
@@ -727,6 +840,7 @@
   'maxVersion': '3.2'
   'scope': '.text.html.ss, .text.html.php'
   'body': 'SetRatioSize(${1:width},${2:${1:height}})${0}'
+
 'Scale Width Image':
   'prefix': 'scalewidth'
   'module': 'silverstripe/framework'
@@ -742,11 +856,13 @@
       'body': 'SetWidth(${1:width})${0}'
     }
   ]
+
 'Scale Max Width Image':
   'prefix': 'scalemaxwidth'
   'module': 'silverstripe/framework'
   'minVersion': '3.2'
   'body': 'ScaleMaxWidth(${1:width})${0}'
+
 'Scale Height Image':
   'prefix': 'scaleheight'
   'module': 'silverstripe/framework'
@@ -762,21 +878,28 @@
       'body': 'SetHeight(${1:height})${0}'
     }
   ]
+
 'Scale Max Height Image':
   'prefix': 'scalemaxheight'
   'module': 'silverstripe/framework'
   'minVersion': '3.2'
+  'scope': '.text.html.ss, .text.html.php'
   'body': 'ScaleMaxHeight(${1:height})${0}'
+
 'Fit Image':
   'prefix': 'fit'
   'module': 'silverstripe/framework'
   'minVersion': '3.2'
+  'scope': '.text.html.ss, .text.html.php'
   'body': 'Fit(${1:width},${2:${1:height}})${0}'
+
 'Fit Max Image':
   'prefix': 'fitmax'
   'module': 'silverstripe/framework'
   'minVersion': '3.2'
+  'scope': '.text.html.ss, .text.html.php'
   'body': 'FitMax(${1:width},${2:${1:height}})${0}'
+
 'Fill Image':
   'prefix': 'fill'
   'module': 'silverstripe/framework'
@@ -796,17 +919,23 @@
   'prefix': 'fillmax'
   'module': 'silverstripe/framework'
   'minVersion': '3.2'
+  'scope': '.text.html.ss, .text.html.php'
   'body': 'FillMax(${1:width},${2:${1:height}})${0}'
+
 'Crop Width Image':
   'prefix': 'cropwidth'
   'module': 'silverstripe/framework'
   'minVersion': '3.2'
+  'scope': '.text.html.ss, .text.html.php'
   'body': 'CropWidth(${1:width})${0}'
+
 'Crop Height Image':
   'prefix': 'cropheight'
   'module': 'silverstripe/framework'
   'minVersion': '3.2'
+  'scope': '.text.html.ss, .text.html.php'
   'body': 'CropHeight(${1:width})${0}'
+
 'Pad Image':
   'prefix': 'pad'
   'module': 'silverstripe/framework'
@@ -822,6 +951,7 @@
       'body': 'PaddedImage(${1:width},${2:${1:height}},${3:hex})${0}'
     }
   ]
+
 ######
 #
 # TagField
@@ -840,6 +970,7 @@
   \t${4}
   )${0}
   """
+
 'StringTagField':
   'prefix': 'stringtagfield'
   'module': 'silverstripe/tagfield'
@@ -869,6 +1000,7 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+
 'EmbeddedObjectField':
   'prefix': 'embeddedobjectfield'
   'module': 'sheadawson/silverstripe-linkable'
@@ -925,12 +1057,14 @@
   'scope': '.text.html.ss, .text.html.php'
   'minVersion': '2.0'
   'body': 'FocusFillMax(${1:width},${2:${1:height}})${0}'
+
 'Focus Crop Width Image':
   'prefix': 'focuscropwidth'
   'module': 'jonom/focuspoint'
   'scope': '.text.html.ss, .text.html.php'
   'minVersion': '2.0'
   'body': 'FocusCropWidth(${1:width})${0}'
+
 'Focus Crop Height Image':
   'prefix': 'focuscropheight'
   'module': 'jonom/focuspoint'
@@ -949,31 +1083,37 @@
   'module': 'silverstripe-australia/gridfieldextensions'
   'scope': '.text.html.php'
   'body': 'new GridFieldAddExistingSearchButton()'
+
 'GridFieldTitleHeader':
   'prefix': 'gridfieldtitleheader'
   'module': 'silverstripe-australia/gridfieldextensions'
   'scope': '.text.html.php'
   'body': 'new GridFieldTitleHeader()'
+
 'GridFieldEditableColumns':
   'prefix': 'gridfieldeditablecolumns'
   'module': 'silverstripe-australia/gridfieldextensions'
   'scope': '.text.html.php'
   'body': 'new GridFieldEditableColumns()'
+
 'GridFieldDeleteAction':
   'prefix': 'gridfielddeleteaction'
   'module': 'silverstripe-australia/gridfieldextensions'
   'scope': '.text.html.php'
   'body': 'new GridFieldDeleteAction()'
+
 'GridFieldAddNewInlineButton':
   'prefix': 'gridfieldaddnewinlinebutton'
   'module': 'silverstripe-australia/gridfieldextensions'
   'scope': '.text.html.php'
   'body': 'new GridFieldAddNewInlineButton()'
+
 'GridFieldAddNewMultiClass':
   'prefix': 'gridfieldaddnewmulticlass'
   'module': 'silverstripe-australia/gridfieldextensions'
   'scope': '.text.html.php'
   'body': 'new GridFieldAddNewMultiClass())'
+
 'GridFieldOrderableRows':
   'prefix': 'gridfieldorderablerows'
   'module': 'silverstripe-australia/gridfieldextensions'
@@ -1012,6 +1152,7 @@
   \treturn \\$fields;
   }
   """
+
 'BetterButtonCustomAction':
   'prefix': 'betterbuttoncustomaction'
   'module': 'unclecheese/betterbuttons'
@@ -1021,6 +1162,7 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+
 'BetterButtonNestedForm':
   'prefix': 'betterbuttonnestedform'
   'module': 'unclecheese/betterbuttons'

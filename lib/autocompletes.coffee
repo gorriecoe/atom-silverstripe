@@ -34,28 +34,33 @@ Autocompletes = ->
 
 buildAutoComplete = ({snippet, name, prefix, scopes, module, minVersion, maxVersion}) ->
   if scopes and packages.hasOwnProperty module
-    if scopes.indexOf(',') > -1
-      scopes = scopes.split(',')
-    else
-      scopes = [scopes]
 
-    trimed = []
-    for scope in scopes
-      scope = scope.trim()
-      scope = scope.replace /^./, ''
-      trimed.push(scope)
-    scopes = trimed
+    minVersion = if minVersion? then minVersion >= packages[module] else true
+    maxVersion = if maxVersion? then maxVersion < packages[module] else true
 
-    completions[iteration] =
-      conditions:
-        prefix: prefix.trim()
-        scope: scopes
-      suggestion:
-        snippet: snippet
-        displayText: name
-        type: 'snippet'
-        iconHTML: '<i class="icon-ss"></i>'
-        className: 'suggestion-ss'
-    iteration++
+    if maxVersion and minVersion
+      if scopes.indexOf(',') > -1
+        scopes = scopes.split(',')
+      else
+        scopes = [scopes]
+
+      trimed = []
+      for scope in scopes
+        scope = scope.trim()
+        scope = scope.replace /^./, ''
+        trimed.push(scope)
+      scopes = trimed
+
+      completions[iteration] =
+        conditions:
+          prefix: prefix.trim()
+          scope: scopes
+        suggestion:
+          snippet: snippet
+          displayText: name
+          type: 'snippet'
+          iconHTML: '<i class="icon-ss"></i>'
+          className: 'suggestion-ss'
+      iteration++
 
 module.exports = new Autocompletes

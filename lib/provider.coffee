@@ -9,16 +9,16 @@ module.exports =
   filterSuggestions: true
 
   getSuggestions: (request) ->
-    completions = []
+    return unless request.prefix?.length
+    suggestions = []
     for index, autocomplete of autocompletes when checkConditions(autocomplete.conditions, request)
-      completions.push(autocomplete.suggestion)
-    completions
+      autocomplete.suggestion.replacementPrefix = request.prefix
+      suggestions.push(autocomplete.suggestion)
+    suggestions
   dispose: ->
 
 checkConditions = (conditions, request) ->
-  if request.prefix
-    if hasScope(conditions.scope, request.scopeDescriptor)
-      firstCharsEqual(request.prefix,conditions.prefix)
+  hasScope(conditions.scope, request.scopeDescriptor) and firstCharsEqual(conditions.prefix, request.prefix)
 
 hasScope = (scopeConditions, scopeDescriptor) ->
   if scopeConditions
@@ -30,4 +30,4 @@ hasScope = (scopeConditions, scopeDescriptor) ->
     scopeFound
 
 firstCharsEqual = (str1, str2) ->
-  str1[0].toLowerCase() is str2[0].toLowerCase()
+  str1.startsWith(str2)
