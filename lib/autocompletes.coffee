@@ -15,10 +15,10 @@ Autocompletes = ->
           snippet: variation.body
           name: name
           prefix: options.prefix
-          scopes: options.scope ? variation.scope
-          module: options.module ? variation.module
-          minVersion: options.minVersion ? variation.minVersion
-          maxVersion: options.maxVersion ? variation.maxVersion
+          scopes: variation.scope ? options.scope
+          module: variation.module ? options.module
+          minVersion: variation.minVersion ? options.minVersion
+          maxVersion: variation.maxVersion ? options.maxVersion
         })
     else
       buildAutoComplete({
@@ -34,10 +34,8 @@ Autocompletes = ->
 
 buildAutoComplete = ({snippet, name, prefix, scopes, module, minVersion, maxVersion}) ->
   if scopes and packages.hasOwnProperty module
-
-    minVersion = if minVersion? then minVersion >= packages[module] else true
-    maxVersion = if maxVersion? then maxVersion < packages[module] else true
-
+    minVersion = if minVersion? then parseFloat(packages[module]) >= parseFloat(minVersion) else true
+    maxVersion = if maxVersion? then parseFloat(packages[module]) < parseFloat(maxVersion) else true
     if maxVersion and minVersion
       if scopes.indexOf(',') > -1
         scopes = scopes.split(',')
