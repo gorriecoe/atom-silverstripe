@@ -1,5 +1,6 @@
 cson = require 'season'
 path = require 'path'
+format = require './string-format'
 packageInfo = require '../package.json'
 packagePath = atom.packages.resolvePackagePath packageInfo.name
 packages = require './packages'
@@ -13,6 +14,7 @@ Autocompletes = ->
       for key, variation of options.variations
         buildAutoComplete({
           snippet: variation.body
+          definitions: variation.definitions ? options.definitions
           name: name
           prefix: options.prefix
           scopes: variation.scope ? options.scope
@@ -23,6 +25,7 @@ Autocompletes = ->
     else
       buildAutoComplete({
         snippet: options.body
+        definitions: options.definitions
         name: name
         prefix: options.prefix
         scopes: options.scope
@@ -32,7 +35,7 @@ Autocompletes = ->
       })
   completions
 
-buildAutoComplete = ({snippet, name, prefix, scopes, module, minVersion, maxVersion}) ->
+buildAutoComplete = ({snippet, definitions, name, prefix, scopes, module, minVersion, maxVersion}) ->
   if scopes
     if scopes.indexOf(',') > -1
       scopes = scopes.split(',')
@@ -42,9 +45,7 @@ buildAutoComplete = ({snippet, name, prefix, scopes, module, minVersion, maxVers
     scopes = []
   trimed = []
   for scope in scopes
-    scope = scope.trim()
-    scope = scope.replace /^./, ''
-    trimed.push(scope)
+    trimed.push(scope.trim().replace /^./, '')
   scopes = trimed
 
   if packages.hasOwnProperty module
@@ -57,7 +58,7 @@ buildAutoComplete = ({snippet, name, prefix, scopes, module, minVersion, maxVers
           prefix: prefix.trim()
           scope: scopes
         suggestion:
-          snippet: snippet
+          snippet: format(snippet, definitions)
           displayText: name
           type: 'snippet'
           iconHTML: '<i class="icon-ss"></i>'

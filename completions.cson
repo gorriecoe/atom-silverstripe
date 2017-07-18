@@ -469,40 +469,80 @@
 'Class Model Admin Silverstripe':
   'prefix': 'classmodeladmin'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * ${5:Description}
-   *
-   * @package silverstripe
-   * @subpackage ${6:mysite}
-   */
-  class ${1}Admin extends ModelAdmin
-  {
-  \t/**
-  \t * Managed data objects for CMS
-  \t * @var array
-  \t */
-  \tprivate static \\$managed_models = array(
-  \t\t\'${2}\'
-  \t);
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      /**
+       * ${5:Description}
+       *
+       * @package silverstripe
+       * @subpackage ${6:mysite}
+       */
+      class ${1}Admin extends ModelAdmin
+      {
+      \t/**
+      \t * Managed data objects for CMS
+      \t * @var array
+      \t */
+      \tprivate static \\$managed_models = [
+      \t\t\'${2}\'
+      \t];
 
-  \t/**
-  \t * URL Path for CMS
-  \t * @var string
-  \t */
-  \tprivate static \\$url_segment = \'${3}\';
+      \t/**
+      \t * URL Path for CMS
+      \t * @var string
+      \t */
+      \tprivate static \\$url_segment = \'${3}\';
 
-  \t/**
-  \t * Menu title for Left and Main CMS
-  \t * @var string
-  \t */
-  \tprivate static \\$menu_title = \'${4}\';
+      \t/**
+      \t * Menu title for Left and Main CMS
+      \t * @var string
+      \t */
+      \tprivate static \\$menu_title = \'${4}\';
 
-  \t${0}
-  }
-  """
+      \t${0}
+      }
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      /**
+       * ${5:Description}
+       *
+       * @package silverstripe
+       * @subpackage ${6:mysite}
+       */
+      class ${1}Admin extends ModelAdmin
+      {
+      \t/**
+      \t * Managed data objects for CMS
+      \t * @var array
+      \t */
+      \tprivate static \\$managed_models = array(
+      \t\t\'${2}\'
+      \t);
+
+      \t/**
+      \t * URL Path for CMS
+      \t * @var string
+      \t */
+      \tprivate static \\$url_segment = \'${3}\';
+
+      \t/**
+      \t * Menu title for Left and Main CMS
+      \t * @var string
+      \t */
+      \tprivate static \\$menu_title = \'${4}\';
+
+      \t${0}
+      }
+      """
+    }
+  ]
 
 'menu_title':
   'prefix': 'menu_title'
@@ -559,183 +599,414 @@
 'db':
   'prefix': 'db'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Database fields
-   * @var array
-   */
-  private static \\$db = array(
-  \t\'${1}\' => \'${2}\',
-  );${0}
-  """
+  'definitions': {
+    'comment': """
+    /**
+     * Database fields
+     * @var array
+     */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$db = [
+      \t\'${1}\' => \'${2}\',
+      ];${0}
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$db = array(
+      \t\'${1}\' => \'${2}\',
+      );${0}
+      """
+    }
+  ]
 
 'has_one':
   'prefix': 'has_one'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Has_one relationship
-   * @var array
-   */
-  private static \\$has_one = array(
-  \t\'${1}\' => \'${2}\',
-  );${0}
-  """
+  'definitions': {
+    'comment': """
+    /**
+     * Has_one relationship
+     * @var array
+     */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$has_one = [
+      \t\'${1}\' => \'${2}\',
+      ];${0}
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$has_one = array(
+      \t\'${1}\' => \'${2}\',
+      );${0}
+      """
+    }
+  ]
 
 'has_many':
   'prefix': 'has_many'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Has_many relationship
-   * @var array
-   */
-  private static \\$has_many = array(
-  \t\'${1}\' => \'${2}\',
-  );${0}
-  """
+  'definitions': {
+    'comment': """
+    /**
+     * Has_many relationship
+     * @var array
+     */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$has_many = [
+      \t\'${1}\' => \'${2}\',
+      ];${0}
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$has_many = array(
+      \t\'${1}\' => \'${2}\',
+      );${0}
+      """
+    }
+  ]
+
 
 'many_many':
   'prefix': 'many_many'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Many_many relationship
-   * @var array
-   */
-  private static \\$many_many = array(
-  \t\'${1}\' => \'${2}\',
-  );${0}
-  """
+  'definitions': {
+    'comment': """
+    /**
+     * Many_many relationship
+     * @var array
+     */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$many_many = [
+      \t\'${1}\' => \'${2}\',
+      ];${0}
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$many_many = array(
+      \t\'${1}\' => \'${2}\',
+      );${0}
+      """
+    }
+  ]
 
 'many_many_extraFields':
   'prefix': 'many_many_extrafields'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * \{@inheritdoc \}
-   * @var array
-   */
-  private static \\$many_many_extraFields = array(
-  \t\'${1}\' => array(
-  \t\t\'${2:Sort}\' => \'${3:Int}\'
-  \t)
-  );${0}
-  """
+  'definitions': {
+    'comment': """
+    /**
+     * \{@inheritdoc \}
+     * @var array
+     */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$many_many_extraFields = [
+      \t\'${1}\' => [
+      \t\t\'${2:Sort}\' => \'${3:Int}\'
+      \t]
+      ];${0}
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$many_many_extraFields = array(
+      \t\'${1}\' => array(
+      \t\t\'${2:Sort}\' => \'${3:Int}\'
+      \t)
+      );${0}
+      """
+    }
+  ]
 
 'belongs_to':
   'prefix': 'belongs_to'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Belongs_to relationship
-   * @var array
-   */
-  private static \\$belongs_to = array(
-  \t\'${1}\' => \'${2}\',
-  );
-  ${0}
-  """
+  'definitions': {
+    'comment': """
+    /**
+     * Belongs_to relationship
+     * @var array
+     */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$belongs_to = [
+      \t\'${1}\' => \'${2}\',
+      ];
+      ${0}
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$belongs_to = array(
+      \t\'${1}\' => \'${2}\',
+      );
+      ${0}
+      """
+    }
+  ]
 
 'belongs_many_many':
   'prefix': 'belongs_many_many'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Belongs_many_many relationship
-   * @var array
-   */
-  private static \\$belongs_many_many = array(
-  \t\'${1}\' => \'${2}\',
-  );${0}
-  """
+  'definitions': {
+    'comment': """
+    /**
+     * Belongs_many_many relationship
+     * @var array
+     */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$belongs_many_many = [
+      \t\'${1}\' => \'${2}\',
+      ];${0}
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$belongs_many_many = array(
+      \t\'${1}\' => \'${2}\',
+      );${0}
+      """
+    }
+  ]
 
 'casting':
   'prefix': 'casting'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Defines types to variables from custom functions
-   * @var array
-   */
-  private static \\$casting = array(
-  \t\'${1}\' => \'${2}\'
-  );
-  """
+  'definitions': {
+    'comment': """
+    /**
+     * Belongs_to relationship
+     * @var array
+     */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$casting = [
+      \t\'${1}\' => \'${2}\'
+      ];
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$casting = array(
+      \t\'${1}\' => \'${2}\'
+      );
+      """
+    }
+  ]
+
 
 'defaults':
   'prefix': 'defaults'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Define the default values for all the $db fields
-   * @var array
-   */
-  private static \\$defaults = array(
-  \t\'${1}\' => \'${2}\'
-  );
-  """
+  'definitions': {
+    'comment': """
+    /**
+     * Belongs_to relationship
+     * @var array
+     */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$defaults = [
+      \t\'${1}\' => \'${2}\'
+      ];
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$defaults = array(
+      \t\'${1}\' => \'${2}\'
+      );
+      """
+    }
+  ]
+
 
 'default_sort':
   'prefix': 'default_sort'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Default sort ordering
-   * @var string
-   */
-  private static \\$default_sort = \'${1} ${2:ASC}\';${0}
-  """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      /**
+       * Default sort ordering
+       * @var array
+       */
+      private static \\$default_sort = [\'${1}\' => \'${2:ASC}\'];${0}
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      /**
+       * Default sort ordering
+       * @var string
+       */
+      private static \\$default_sort = \'${1} ${2:ASC}\';${0}
+      """
+    }
+  ]
 
 'allowed_children':
   'prefix': 'allowed_children'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Defines the allowed child page types
-   * @var array
-   */
-  private static $allowed_children = array(
-  \t\'${1}\'
-  );
-  """
+  'definitions': {
+    'comment': """
+    /**
+     * Defines the allowed child page types
+     * @var array
+     */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static $allowed_children = [
+      \t\'${1}\'
+      ];
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static $allowed_children = array(
+      \t\'${1}\'
+      );
+      """
+    }
+  ]
+
 
 'allowed_actions':
   'prefix': 'allowed_actions'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Defines methods that can be called directly
-   * @var array
-   */
-  private static \\$allowed_actions = array(
-  \t\'${1}\' => ${2:true}
-  );
-  """
+  'definitions': [
+    'comment': """
+    /**
+     * Defines methods that can be called directly
+     * @var array
+     */
+    """
+  ]
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static $allowed_actions = [
+      \t\'${1}\' => ${2:true}
+      ];
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static $allowed_actions = array(
+      \t\'${1}\' => ${2:true}
+      );
+      """
+    }
+  ]
 
 'hide_ancestor':
   'prefix': 'hide_ancestor'
@@ -766,17 +1037,36 @@
 'searchable_fields':
   'prefix': 'searchable_fields'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Defines a default list of filters for the search context
-   * @var array
-   */
-  private static \\$searchable_fields = array(
-  \t'${1}' => '${2}'
-  );
-  """
+  'definitions': {
+    'comment': """
+      /**
+       * Defines a default list of filters for the search context
+       * @var array
+       */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$searchable_fields = array(
+      \t'${1}' => '${2}'
+      );
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$searchable_fields = [
+      \t'${1}' => '${2}'
+      ];
+      """
+    }
+  ]
 
 # translate
 'Main translator function':
