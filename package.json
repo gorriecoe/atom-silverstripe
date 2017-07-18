@@ -26,7 +26,7 @@
   "dependencies": {
     "cson-safe": "^1.0.5",
     "json-file": "^0.1.0",
-    "season": "^6.0.0",
+    "season": "^6.0.0"
   },
   "devDependencies": {
     "eslint": "^3.19.0"
