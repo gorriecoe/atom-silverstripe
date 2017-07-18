@@ -33,22 +33,25 @@ Autocompletes = ->
   completions
 
 buildAutoComplete = ({snippet, name, prefix, scopes, module, minVersion, maxVersion}) ->
-  if scopes and packages.hasOwnProperty module
-    minVersion = if minVersion? then parseFloat(packages[module]) >= parseFloat(minVersion) else true
-    maxVersion = if maxVersion? then parseFloat(packages[module]) < parseFloat(maxVersion) else true
+  if scopes
+    if scopes.indexOf(',') > -1
+      scopes = scopes.split(',')
+    else
+      scopes = [scopes]
+  else
+    scopes = []
+  trimed = []
+  for scope in scopes
+    scope = scope.trim()
+    scope = scope.replace /^./, ''
+    trimed.push(scope)
+  scopes = trimed
+
+  if packages.hasOwnProperty module
+    moduleVersion = parseFloat(packages[module])
+    minVersion = if minVersion? then moduleVersion >= parseFloat(minVersion) else true
+    maxVersion = if maxVersion? then moduleVersion < parseFloat(maxVersion) else true
     if maxVersion and minVersion
-      if scopes.indexOf(',') > -1
-        scopes = scopes.split(',')
-      else
-        scopes = [scopes]
-
-      trimed = []
-      for scope in scopes
-        scope = scope.trim()
-        scope = scope.replace /^./, ''
-        trimed.push(scope)
-      scopes = trimed
-
       completions[iteration] =
         conditions:
           prefix: prefix.trim()

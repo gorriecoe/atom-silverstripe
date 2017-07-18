@@ -3,10 +3,9 @@ autocompletes = require('./autocompletes');
 
 module.exports =
   selector: '*'
-  disableForSelector: '.comment, .string'
+  disableForSelector: '.comment'
   inclusionPriority: 1
   suggestionPriority: 2
-  filterSuggestions: true
 
   getSuggestions: (request) ->
     return unless request.prefix?.length
@@ -30,4 +29,4 @@ hasScope = (scopeConditions, scopeDescriptor) ->
     scopeFound
 
 firstCharsEqual = (str1, str2) ->
-  str1.startsWith(str2)
+  str1.toLowerCase().startsWith(str2.toLowerCase())

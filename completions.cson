@@ -11,19 +11,19 @@
   'scope': '.text.html.ss'
   'variations': [
     {
-      'maxVersion': '3.0'
-      'body': """
-      <% control ${1} %>
-      \t${2}
-      <% end_control %>
-      """
-    }
-    {
       'minVersion': '3.0'
       'body': """
       <% loop ${1} %>
       \t${2}
       <% end_loop %>
+      """
+    }
+    {
+      'maxVersion': '3.0'
+      'body': """
+      <% control ${1} %>
+      \t${2}
+      <% end_control %>
       """
     }
   ]
@@ -34,19 +34,19 @@
   'scope': '.text.html.ss'
   'variations': [
     {
-      'maxVersion': '3.0'
-      'body': """
-      <% control ${1} %>
-      \t${2}
-      <% end_control %>
-      """
-    }
-    {
       'minVersion': '3.0'
       'body': """
       <% with ${1} %>
       \t${2}
       <% end_with %>
+      """
+    }
+    {
+      'maxVersion': '3.0'
+      'body': """
+      <% control ${1} %>
+      \t${2}
+      <% end_control %>
       """
     }
   ]
@@ -373,6 +373,7 @@
   'module': 'silverstripe/cms'
   'minVersion': '3.0'
   'maxVersion': '4.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * ${3:Description}
@@ -397,6 +398,7 @@
   'prefix': 'classpage'
   'module': 'silverstripe/cms'
   'minVersion': '4.0'
+  'scope': '.text.html.php'
   'body': """
   use SilverStripe\\CMS\\Model\\SiteTree;
 
@@ -438,6 +440,7 @@
   'prefix': 'classmodeladmin'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * ${5:Description}
