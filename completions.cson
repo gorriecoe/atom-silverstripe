@@ -123,7 +123,7 @@
 
 # General variables
 'Current Member':
-  'prefix': 'currentmember'
+  'prefix': 'member'
   'module': 'silverstripe/framework'
   'variations': [
     {
@@ -133,6 +133,20 @@
     {
       'scope': '.text.html.php'
       'body': 'Member::currentUser()'
+    }
+  ]
+
+'Current Member ID':
+  'prefix': 'memberid'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': 'CurrentMember.ID'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': 'Member::currentUserID()'
     }
   ]
 
@@ -265,7 +279,6 @@
       'body': 'Count()${0}'
     }
   ]
-
 
 # Scope traverse
 'Traverse Up Scope':
@@ -436,6 +449,23 @@
   }
   """
 
+'Class DataObject Silverstripe':
+  'prefix': 'classdataobject'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * ${3:Description}
+   *
+   * @package silverstripe
+   * @subpackage ${4:mysite}
+   */
+  class ${1} extends ${2:DataObject}
+  {
+  \t${0}
+  }
+  """
+
 'Class Model Admin Silverstripe':
   'prefix': 'classmodeladmin'
   'module': 'silverstripe/framework'
@@ -478,6 +508,7 @@
   'prefix': 'menu_title'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Menu title for Left and Main CMS
@@ -490,6 +521,7 @@
   'prefix': 'menu_icon'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Menu icon for Left and Main CMS
@@ -502,6 +534,7 @@
   'prefix': 'singular_name'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Singular name for CMS
@@ -514,6 +547,7 @@
   'prefix': 'plural_name'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Plural name for CMS
@@ -526,6 +560,7 @@
   'prefix': 'db'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Database fields
@@ -540,6 +575,7 @@
   'prefix': 'has_one'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Has_one relationship
@@ -554,6 +590,7 @@
   'prefix': 'has_many'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Has_many relationship
@@ -568,6 +605,7 @@
   'prefix': 'many_many'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Many_many relationship
@@ -582,6 +620,7 @@
   'prefix': 'many_many_extrafields'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * \{@inheritdoc \}
@@ -598,6 +637,7 @@
   'prefix': 'belongs_to'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Belongs_to relationship
@@ -613,6 +653,7 @@
   'prefix': 'belongs_many_many'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Belongs_many_many relationship
@@ -627,6 +668,7 @@
   'prefix': 'casting'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Defines types to variables from custom functions
@@ -641,6 +683,7 @@
   'prefix': 'defaults'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Define the default values for all the $db fields
@@ -655,6 +698,7 @@
   'prefix': 'default_sort'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Default sort ordering
@@ -667,6 +711,7 @@
   'prefix': 'allowed_children'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Defines the allowed child page types
@@ -681,6 +726,7 @@
   'prefix': 'allowed_actions'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Defines methods that can be called directly
@@ -695,6 +741,7 @@
   'prefix': 'hide_ancestor'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   private static \\$hide_ancestor = \'\${1:PageType}\';${0}
   """
@@ -704,6 +751,7 @@
   'prefix': 'summary_fields'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Defines summary fields commonly used in table columns
@@ -719,6 +767,7 @@
   'prefix': 'searchable_fields'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Defines a default list of filters for the search context
@@ -736,6 +785,66 @@
   'minVersion': '3.0'
   'scope': '.text.html.ss, .text.html.php'
   'body': '_t(${1}, ${2})${0}'
+
+# Events
+'onBeforeWrite':
+  'prefix': 'onbeforewrite'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * Event handler called before writing to the database.
+   */
+  public function onBeforeWrite()
+  {
+  \tparent::onBeforeWrite();
+  \t${0}
+  }
+  """
+
+'onAfterWrite':
+  'prefix': 'onafterwrite'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * Event handler called after writing to the database.
+   */
+  public function onAfterWrite()
+  {
+  \tparent::onAfterWrite();
+  \t${0}
+  }
+  """
+
+'onBeforeDelete':
+  'prefix': 'onbeforedelete'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * Event handler called before deleting from the database.
+   */
+  public function onBeforeDelete()
+  {
+  \tparent::onBeforeDelete();
+  \t${0}
+  }
+  """
+'onAfterDelete':
+  'prefix': 'onafterdelete'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * Event handler called after deleting from the database.
+   */
+  public function onAfterDelete()
+  {
+  \tparent::onAfterDelete();
+  \t${0}
+  }
+  """
 
 # Permissions
 'canView':
@@ -824,6 +933,549 @@
   \treturn array(
   \t\t'${1:PERMISSION}' => '${2:Title}'
   \t);
+  }
+  """
+
+'<?php …':
+  'prefix': 'php' # Overrides standard php to exclude ?>
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '\<?php\n${0}'
+
+# Debug Tools
+'Debug message':
+  'prefix': 'message'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': 'Debug::message(${1});${0}'
+
+'Debug show':
+  'prefix': 'show'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': 'Debug::show(${1});${0}'
+
+'Debug log':
+  'prefix': 'log'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': 'Debug::log(${1});${0}'
+
+'Debug dump':
+  'prefix': 'dump '
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': 'Debug::dump(${1});${0}'
+
+#  Fields
+'setAttribute':
+  'prefix': 'setattribute'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setAttribute(\'${1}\', \'${2}\')${0}'
+
+'setValue':
+  'prefix': 'setvalue'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setValue(${1})${0}'
+
+'setName':
+  'prefix': 'setname'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setName(\'${1}\')${0}'
+
+'setTitle':
+  'prefix': 'settitle'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setTitle(\'${1}\')${0}'
+
+'setRightTitle':
+  'prefix': 'setrighttitle'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setRightTitle(\'${1}\')${0}'
+
+'setLeftTitle':
+  'prefix': 'setlefttitle'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setLeftTitle(\'${1}\')${0}'
+
+'setDescription':
+  'prefix': 'setdescription'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setDescription(\'${1}\')${0}'
+
+'addExtraClass':
+  'prefix': 'addextraclass'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->addExtraClass(\'${1}\')${0}'
+
+'removeExtraClass':
+  'prefix': 'removeextraclass'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->removeExtraClass(\'${1}\')${0}'
+
+'Required':
+  'prefix': 'required'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->Required()${0}'
+
+'HTMLEditorField':
+  'prefix': 'htmlfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  HtmlEditorField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'UploadField':
+  'prefix': 'uploadfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  UploadField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'setFolderName':
+  'prefix': 'setfoldername'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setFolderName(\'${1}\')${0}'
+
+'setAllowedExtensions':
+  'prefix': 'setallowedextensions'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setAllowedExtensions(array(${1}))${0}'
+
+'setAllowedFileCategories':
+  'prefix': 'setallowedfilecategories'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setAllowedFileCategories(array(${1}))${0}'
+
+'setAllowedMaxFileNumber':
+  'prefix': 'setallowedmaxfilenumber'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setAllowedMaxFileNumber(${1:null})${0}'
+
+'setCanUpload':
+  'prefix': 'setcanupload'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setCanUpload(${1:true})${0}'
+
+'setCanAttachExisting':
+  'prefix': 'setcanattachexisting'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setCanAttachExisting(${1:true})${0}'
+
+'TextField':
+  'prefix': 'textfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  TextField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'EmailField':
+  'prefix': 'emailfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  EmailField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'ReadonlyField':
+  'prefix': 'readonlyfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  ReadonlyField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'NumericField':
+  'prefix': 'numericfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  NumericField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'NumericField_Readonly':
+  'prefix': 'numericfield_readonly'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  NumericField_Readonly::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'CheckboxField':
+  'prefix': 'checkboxfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  CheckboxField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'CheckboxField_Readonly':
+  'prefix': 'checkboxfield_readonly'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  CheckboxField_Readonly::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'NullableField':
+  'prefix': 'nullablefield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  NullableField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'TextareaField':
+  'prefix': 'textareafield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  TextareaField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'setRows':
+  'prefix': 'setrows'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setRows(${1})${0}'
+
+'setColumns':
+  'prefix': 'setcolumns'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->setColumns(${1})${0}'
+
+'TreeDropdownField':
+  'prefix': 'treedropdownfield'
+  'body': """
+  TreeDropdownField::create(
+  \t\'${1:name}ID\',
+  \t\'${2:${1:title}}\',
+  \t\'${3:SiteTree}\'
+  )${0}
+  """
+
+'TreeDropdownField_Readonly':
+  'prefix': 'treedropdownfield_readonly'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  TreeDropdownField_Readonly::create(
+  \t\'${1:name}ID\',
+  \t\'${2:${1:title}}\',
+  \t\'${3:SiteTree}\'
+  )${0}
+  """
+
+'DropdownField':
+  'prefix': 'dropdownfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  DropdownField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\',
+  \t\'${3:datalist}\'
+  )${0}
+  """
+
+'LookupField':
+  'prefix': 'lookupfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  LookupField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\',
+  \t\'${3:datalist}\'
+  )${0}
+  """
+
+'ListboxField':
+  'prefix': 'listboxfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  ListboxField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\',
+  \t\'${3:datalist}\'
+  )${0}
+  """
+'GroupedDropdownField':
+  'prefix': 'groupeddropdownfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  GroupedDropdownField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\',
+  \t\'${3:datalist}\'
+  )${0}
+  """
+
+'OptionsetField':
+  'prefix': 'optionsetfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  OptionsetField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\',
+  \t\'${3:datalist}\'
+  )${0}
+  """
+
+'CheckboxSetField':
+  'prefix': 'checkboxsetfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  CheckboxSetField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\',
+  \t\'${3:datalist}\'
+  )${0}
+  """
+
+'HeaderField':
+  'prefix': 'headerfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  HeaderField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'HiddenField':
+  'prefix': 'hiddenfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  HiddenField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'LabelField':
+  'prefix': 'labelfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  LabelField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
+'GridField':
+  'prefix': 'gridfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  GridField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\',
+  \t\\$this->${1}(),
+  \t${4:GridFieldConfig_Base::create()}
+  )${0}
+  """
+
+'GridFieldConfig_Base':
+  'prefix': 'gridfieldconfig_base'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': 'GridFieldConfig_Base::create(${1})${0}'
+
+'GridFieldConfig_RecordEditor':
+  'prefix': 'gridfieldconfig_recordeditor'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': 'GridFieldConfig_RecordEditor::create(${1})${0}'
+
+'GridFieldConfig_RelationEditor':
+  'prefix': 'gridfieldconfig_relationeditor'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': 'GridFieldConfig_RelationEditor::create(${1})${0}'
+
+'GridFieldConfig_RecordViewer':
+  'prefix': 'gridfieldconfig_recordviewer'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': 'GridFieldConfig_RecordViewer::create(${1})${0}'
+
+'addComponent':
+  'prefix': 'addcomponent'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->addComponent(${1})${0}'
+
+'removeComponentsByType':
+  'prefix': 'removecomponentsbytype'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': '->removeComponentsByType(${1})${0}'
+
+'GridFieldButtonRow':
+  'prefix': 'gridfieldbuttonrow'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': 'new GridFieldButtonRow(\'before\')'
+
+'GridFieldToolbarHeader':
+  'prefix': 'gridfieldtoolbarheader'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': 'new GridFieldToolbarHeader()'
+
+#  Tabs
+'addFieldToTab':
+  'prefix': 'addfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  addFieldToTab(
+  \t\'${1:Root.Main}\',
+  \t${0},
+  \t\'${3:insertBefore}\'
+  );
+  """
+
+'addFieldsToTab':
+  'prefix': 'addfields'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  addFieldsToTab(
+  \t\'${1:Root.Main}\',
+  \tarray(
+  \t\t${0}
+  \t)
+  );
+  """
+
+'getCMSFields':
+  'prefix': 'getcmsfields'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * CMS Fields
+   * @return FieldList
+   */
+  public function getCMSFields()
+  {
+  \t\\$fields = parent::getCMSFields();
+  \t\\$fields->${0}
+  \treturn \\$fields;
+  }
+  """
+
+'getSettingsFields':
+  'prefix': 'getsettingsfields'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * Settings Tab Fields
+   * @return FieldList
+   */
+  public function getSettingsFields()
+  {
+  \t\\$fields = parent::getSettingsFields();
+  \t\\$fields->${0}
+  \treturn \\$fields;
+  }
+  """
+
+'updateCMSFields':
+  'prefix': 'updatecmsfields'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * Update Fields
+   * @return FieldList
+   */
+  public function updateCMSFields(FieldList \\$fields)
+  {
+  \t\\$owner = $this->owner;
+  \t\\$fields->${0}
+  \treturn \\$fields;
+  }
+  """
+
+'getEditForm':
+  'prefix': 'geteditform'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * @param Int $id
+   * @param FieldList $fields
+   * @return Form
+   */
+  public function getEditForm($id = null, $fields = null)
+  {
+  \t\\$form = parent::getEditForm($id, $fields);
+  \t${0}
+  \treturn \\$form;
   }
   """
 
