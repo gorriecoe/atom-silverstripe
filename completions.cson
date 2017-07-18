@@ -381,8 +381,8 @@
     }
   ]
 
-'Class & Controller Silverstripe':
-  'prefix': 'classcontroller'
+'Class Page & Controller Silverstripe':
+  'prefix': 'classpagecontroller'
   'module': 'silverstripe/cms'
   'minVersion': '3.0'
   'maxVersion': '4.0'
