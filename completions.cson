@@ -972,61 +972,61 @@
   'prefix': 'setattribute'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setAttribute(\'${1}\', \'${2}\')${0}'
+  'body': 'setAttribute(\'${1}\', \'${2}\')${0}'
 
 'setValue':
   'prefix': 'setvalue'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setValue(${1})${0}'
+  'body': 'setValue(${1})${0}'
 
 'setName':
   'prefix': 'setname'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setName(\'${1}\')${0}'
+  'body': 'setName(\'${1}\')${0}'
 
 'setTitle':
   'prefix': 'settitle'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setTitle(\'${1}\')${0}'
+  'body': 'setTitle(\'${1}\')${0}'
 
 'setRightTitle':
   'prefix': 'setrighttitle'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setRightTitle(\'${1}\')${0}'
+  'body': 'setRightTitle(\'${1}\')${0}'
 
 'setLeftTitle':
   'prefix': 'setlefttitle'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setLeftTitle(\'${1}\')${0}'
+  'body': 'setLeftTitle(\'${1}\')${0}'
 
 'setDescription':
   'prefix': 'setdescription'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setDescription(\'${1}\')${0}'
+  'body': 'setDescription(\'${1}\')${0}'
 
 'addExtraClass':
   'prefix': 'addextraclass'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->addExtraClass(\'${1}\')${0}'
+  'body': 'addExtraClass(\'${1}\')${0}'
 
 'removeExtraClass':
   'prefix': 'removeextraclass'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->removeExtraClass(\'${1}\')${0}'
+  'body': 'removeExtraClass(\'${1}\')${0}'
 
 'Required':
   'prefix': 'required'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->Required()${0}'
+  'body': 'Required()${0}'
 
 'HTMLEditorField':
   'prefix': 'htmlfield'
@@ -1054,37 +1054,37 @@
   'prefix': 'setfoldername'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setFolderName(\'${1}\')${0}'
+  'body': 'setFolderName(\'${1}\')${0}'
 
 'setAllowedExtensions':
   'prefix': 'setallowedextensions'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setAllowedExtensions(array(${1}))${0}'
+  'body': 'setAllowedExtensions(array(${1}))${0}'
 
 'setAllowedFileCategories':
   'prefix': 'setallowedfilecategories'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setAllowedFileCategories(array(${1}))${0}'
+  'body': 'setAllowedFileCategories(array(${1}))${0}'
 
 'setAllowedMaxFileNumber':
   'prefix': 'setallowedmaxfilenumber'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setAllowedMaxFileNumber(${1:null})${0}'
+  'body': 'setAllowedMaxFileNumber(${1:null})${0}'
 
 'setCanUpload':
   'prefix': 'setcanupload'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setCanUpload(${1:true})${0}'
+  'body': 'setCanUpload(${1:true})${0}'
 
 'setCanAttachExisting':
   'prefix': 'setcanattachexisting'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setCanAttachExisting(${1:true})${0}'
+  'body': 'setCanAttachExisting(${1:true})${0}'
 
 'TextField':
   'prefix': 'textfield'
@@ -1189,13 +1189,13 @@
   'prefix': 'setrows'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setRows(${1})${0}'
+  'body': 'setRows(${1})${0}'
 
 'setColumns':
   'prefix': 'setcolumns'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->setColumns(${1})${0}'
+  'body': 'setColumns(${1})${0}'
 
 'TreeDropdownField':
   'prefix': 'treedropdownfield'
@@ -1364,13 +1364,13 @@
   'prefix': 'addcomponent'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->addComponent(${1})${0}'
+  'body': 'addComponent(${1})${0}'
 
 'removeComponentsByType':
   'prefix': 'removecomponentsbytype'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': '->removeComponentsByType(${1})${0}'
+  'body': 'removeComponentsByType(${1})${0}'
 
 'GridFieldButtonRow':
   'prefix': 'gridfieldbuttonrow'
