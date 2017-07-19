@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'ssicon';
-  src: url('atom://atom-silverstripe/resources/font/ss.woff') format("woff");
+  src: url('atom://atom-silverstripe/resources/font/ssicon.woff2') format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -8,8 +8,11 @@
 // SS icon
 .icon-ss:before,
 .icon-file-text[data-name$=".ss"]:before{
+  content: '\f101';
   font-family: 'ssicon';
-  content: '\e800';
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
 }
 
 .suggestion-ss .icon.snippet{
