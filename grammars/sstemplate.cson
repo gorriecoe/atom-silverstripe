@@ -69,7 +69,7 @@
 ]
 'repository':
   'ss-variable-open':
-    'match': '\\$(\\.?[a-zA-Z0-9]*(\\([a-zA-Z0-9\'\, ]*\\))*)*'
+    'match': '\\$(\\.?[\\w]+(\\([\\.\'" \\w]*\\))*)*'
     'name': 'variable.ss'
   'ss-variable-closed':
     'begin': '\{\\$'
