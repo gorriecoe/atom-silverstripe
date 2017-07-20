@@ -90,36 +90,74 @@
   'scope': '.text.html.ss'
   'body': '<% else %>\n\t${0}'
 
-# Template includes
 'Include':
   'prefix': 'include'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': '<% include ${1} %>${0}'
 
-'Require themedCSS':
-  'prefix': 'requirethemedcss'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': '<% require themedCSS(\'${1}\') %>${0}'
-
-'Require Javascript':
-  'prefix': 'requirejavascript'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': '<% require javascript(\'${1}\') %>${0}'
-
-'Require CSS':
-  'prefix': 'requirecss'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': '<% require css(\'${1}\') %>${0}'
-
 'Base Tag':
   'prefix': 'basetag'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'body': '<% base_tag %>${0}'
+
+# Requirements
+'Require themedJS':
+  'prefix': 'requirethemedjs'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': '<% require themedJS(\'${1}\') %>${0}'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': 'Requirement::themedJS(\'${1}\')${0}'
+    }
+  ]
+
+'Require themedCSS':
+  'prefix': 'requirethemedcss'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': '<% require themedCSS(\'${1}\') %>${0}'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': 'Requirement::themedCSS(\'${1}\')${0}'
+    }
+  ]
+
+'Require Javascript':
+  'prefix': 'requirejavascript'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': '<% require javascript(\'${1}\') %>${0}'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': 'Requirement::javascript(\'${1}\')${0}'
+    }
+  ]
+
+'Require CSS':
+  'prefix': 'requirecss'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': '<% require css(\'${1}\') %>${0}'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': 'Requirement::css(\'${1}\')${0}'
+    }
+  ]
 
 # General variables
 'Current Member':
