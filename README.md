@@ -24,12 +24,12 @@ Or search for `atom-silverstripe` in Atom settings view.
 
 Quick object and controller setup
 
-![Quick object and controller setup](https://raw.githubusercontent.com/gorriecoe/atom-silverstripe/master/README/objectandcontroller.gif)
+![Quick object and controller setup](https://raw.githubusercontent.com/gorriecoe/atom-silverstripe/master/resources/readme/objectandcontroller.gif)
 
 Adding private statics
 
-![Adding private statics](https://raw.githubusercontent.com/gorriecoe/atom-silverstripe/master/README/privatestatics.gif)
+![Adding private statics](https://raw.githubusercontent.com/gorriecoe/atom-silverstripe/master/resources/readme/privatestatics.gif)
 
 Adding CMS Fields
 
-![Adding CMS Fields](https://raw.githubusercontent.com/gorriecoe/atom-silverstripe/master/README/addfields.gif)
+![Adding CMS Fields](https://raw.githubusercontent.com/gorriecoe/atom-silverstripe/master/resources/readme/addfields.gif)

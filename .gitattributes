@@ -1,4 +1,6 @@
 /.gitignore export-ignore
 /.gitattributes export-ignore
 /.editorconfig export-ignore
-/README/ export-ignore
+/resources/font/ssicon.json export-ignore
+/resources/readme/ export-ignore
+/resources/svg/ export-ignore
