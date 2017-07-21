@@ -6,9 +6,5 @@ autocompletes = require './autocompletes'
 provider = require './provider'
 
 module.exports =
-  activate:  ->
-    autocompletes
+  activate:  -> autocompletes
   getProvider: -> provider
-
-# filter composerPackages
-# if options.module of composerPackages
