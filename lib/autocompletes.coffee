@@ -36,6 +36,33 @@ Autocompletes = ->
   completions
 
 buildAutoComplete = ({snippet, definitions, name, prefix, scopes, module, minVersion, maxVersion}) ->
+  if checkConditions(module, minVersion, maxVersion)
+    completions[iteration] =
+      conditions:
+        prefix: buildPrefix(prefix, module, minVersion, maxVersion)
+        scope: buildScope(scopes)
+      suggestion:
+        snippet: format(snippet, definitions)
+        displayText: name
+        type: 'snippet'
+        iconHTML: '<i class="icon-ss"></i>'
+        className: 'suggestion-ss'
+    iteration++
+
+checkConditions = (module, minVersion, maxVersion) ->
+  # Allow all autocompletes if composer packages aren't found
+  if !Object.keys(packages).length
+    return true
+  # Filter modules
+  if !packages.hasOwnProperty(module)
+    return false
+  # Now filer module versions
+  moduleVersion = parseFloat(packages[module])
+  minVersion = if minVersion? then moduleVersion >= parseFloat(minVersion) else true
+  maxVersion = if maxVersion? then moduleVersion < parseFloat(maxVersion) else true
+  maxVersion and minVersion
+
+buildScope = (scopes) ->
   if scopes
     if scopes.indexOf(',') > -1
       scopes = scopes.split(',')
@@ -43,26 +70,18 @@ buildAutoComplete = ({snippet, definitions, name, prefix, scopes, module, minVer
       scopes = [scopes]
   else
     scopes = []
-  trimed = []
-  for scope in scopes
-    trimed.push(scope.trim().replace /^./, '')
-  scopes = trimed
 
-  if packages.hasOwnProperty module
-    moduleVersion = parseFloat(packages[module])
-    minVersion = if minVersion? then moduleVersion >= parseFloat(minVersion) else true
-    maxVersion = if maxVersion? then moduleVersion < parseFloat(maxVersion) else true
-    if maxVersion and minVersion
-      completions[iteration] =
-        conditions:
-          prefix: prefix.trim()
-          scope: scopes
-        suggestion:
-          snippet: format(snippet, definitions)
-          displayText: name
-          type: 'snippet'
-          iconHTML: '<i class="icon-ss"></i>'
-          className: 'suggestion-ss'
-      iteration++
+  cleaned = []
+  for scope in scopes
+    cleaned.push(scope.trim().replace(/^./, ''))
+  cleaned
+
+buildPrefix = (prefix, module, minVersion, maxVersion) ->
+  prefix = [prefix.trim()]
+  if module? then prefix.push(module.replace(/^[\w-]*\//, ''))
+  if minVersion? and maxVersion?
+    if minVersion? then prefix.push(minVersion) else prefix.push('0')
+    if maxVersion? then prefix.push(maxVersion) else prefix.push('+')
+  prefix.join('_')
 
 module.exports = new Autocompletes

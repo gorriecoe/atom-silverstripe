@@ -19,4 +19,5 @@ composerPackages = ->
           version[v] = version[v].replace /[^0-9.]/, ''
         composerPackages[composerPackage.name] = version[0] + '.' + version[1]
   composerPackages
+
 module.exports = new composerPackages
