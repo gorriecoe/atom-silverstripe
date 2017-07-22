@@ -44,6 +44,7 @@ buildAutoComplete = ({snippet, definitions, name, prefix, scopes, module, minVer
       suggestion:
         snippet: format(snippet, definitions)
         displayText: name
+        rightLabelHTML: buildRightLabel(module, minVersion, maxVersion)
         type: 'snippet'
         iconHTML: '<i class="icon-ss"></i>'
         className: 'suggestion-ss'
@@ -78,10 +79,25 @@ buildScope = (scopes) ->
 
 buildPrefix = (prefix, module, minVersion, maxVersion) ->
   prefix = [prefix.trim()]
-  if module? then prefix.push(module.replace(/^[\w-]*\//, ''))
-  if minVersion? and maxVersion?
-    if minVersion? then prefix.push(minVersion) else prefix.push('0')
-    if maxVersion? then prefix.push(maxVersion) else prefix.push('+')
+  if module? then prefix.push(moduleName(module))
+  if minVersion? or maxVersion?
+    prefix.push(moduleVersionString(minVersion, maxVersion))
   prefix.join('_')
+
+buildRightLabel = (module, minVersion, maxVersion) ->
+  label = []
+  if module? then label.push(moduleName(module))
+  if minVersion? or maxVersion?
+    label.push(moduleVersionString(minVersion, maxVersion))
+  label.join(' ')
+
+moduleName = (module) ->
+  module.replace(/^[\w-]*\//, '')
+
+moduleVersionString = (minVersion, maxVersion) ->
+  string = []
+  if minVersion? then string.push(minVersion) else string.push('0')
+  if maxVersion? then string.push('-' + maxVersion) else string.push('+')
+  string.join('')
 
 module.exports = new Autocompletes
