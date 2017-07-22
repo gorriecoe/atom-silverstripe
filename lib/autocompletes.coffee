@@ -21,6 +21,8 @@ Autocompletes = ->
           module: variation.module ? options.module
           minVersion: variation.minVersion ? options.minVersion
           maxVersion: variation.maxVersion ? options.maxVersion
+          description: variation.description ? options.description
+          url: variation.url ? options.url
         })
     else
       buildAutoComplete({
@@ -32,10 +34,12 @@ Autocompletes = ->
         module: options.module
         minVersion: options.minVersion
         maxVersion: options.maxVersion
+        description: options.description
+        url: options.url
       })
   completions
 
-buildAutoComplete = ({snippet, definitions, name, prefix, scopes, module, minVersion, maxVersion}) ->
+buildAutoComplete = ({snippet, definitions, name, prefix, scopes, module, minVersion, maxVersion, description, url}) ->
   if checkConditions(module, minVersion, maxVersion)
     completions[iteration] =
       conditions:
@@ -45,6 +49,8 @@ buildAutoComplete = ({snippet, definitions, name, prefix, scopes, module, minVer
         snippet: format(snippet, definitions)
         displayText: name
         rightLabelHTML: buildRightLabel(module, minVersion, maxVersion)
+        description: description
+        descriptionMoreURL: url
         type: 'snippet'
         iconHTML: '<i class="icon-ss"></i>'
         className: 'suggestion-ss'
