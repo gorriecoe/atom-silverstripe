@@ -913,7 +913,6 @@
     }
   ]
 
-
 'defaults':
   'prefix': 'defaults'
   'module': 'silverstripe/framework'
@@ -1059,18 +1058,38 @@
 'summary_fields':
   'prefix': 'summary_fields'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
+
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Defines summary fields commonly used in table columns
-   * as a quick overview of the data for this dataobject
-   * @var array
-   */
-  private static \\$summary_fields = array(
-  \t'${1}' => '${2}'
-  );
-  """
+  'definitions': [
+    'comment': """
+    /**
+     * Defines summary fields commonly used in table columns
+     * as a quick overview of the data for this dataobject
+     * @var array
+     */
+    """
+  ]
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$summary_fields = [
+      \t'${1}' => '${2}'
+      ];
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$summary_fields = array(
+      \t'${1}' => '${2}'
+      );
+      """
+    }
+  ]
 
 'searchable_fields':
   'prefix': 'searchable_fields'
