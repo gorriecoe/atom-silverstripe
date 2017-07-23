@@ -1748,14 +1748,56 @@
   'prefix': 'addfields'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': """
-  addFieldsToTab(
-  \t\'${1:Root.Main}\',
-  \tarray(
-  \t\t${0}
-  \t)
-  );
-  """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      addFieldsToTab(
+      \t\'${1:Root.Main}\',
+      \t[
+      \t\t${0}
+      \t]
+      );
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      addFieldsToTab(
+      \t\'${1:Root.Main}\',
+      \tarray(
+      \t\t${0}
+      \t)
+      );
+      """
+    }
+  ]
+
+
+'removeByName':
+  'prefix': 'removebyname'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      removeByName([
+      \t${0}
+      ]);
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      removeByName(array(
+      \t${0}
+      ));
+      """
+    }
+  ]
 
 'getCMSFields':
   'prefix': 'getcmsfields'
