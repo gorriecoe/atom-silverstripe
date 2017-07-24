@@ -113,7 +113,7 @@
     }
     {
       'scope': '.text.html.php'
-      'body': 'Requirement::themedJS(\'${1}\');${0}'
+      'body': 'Requirements::themedJS(\'${1}\');${0}'
     }
   ]
 
@@ -127,7 +127,7 @@
     }
     {
       'scope': '.text.html.php'
-      'body': 'Requirement::themedCSS(\'${1}\');${0}'
+      'body': 'Requirements::themedCSS(\'${1}\');${0}'
     }
   ]
 
@@ -141,7 +141,7 @@
     }
     {
       'scope': '.text.html.php'
-      'body': 'Requirement::javascript(\'${1}\');${0}'
+      'body': 'Requirements::javascript(\'${1}\');${0}'
     }
   ]
 
@@ -155,7 +155,7 @@
     }
     {
       'scope': '.text.html.php'
-      'body': 'Requirement::css(\'${1}\');${0}'
+      'body': 'Requirements::css(\'${1}\');${0}'
     }
   ]
 
