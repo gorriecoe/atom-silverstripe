@@ -2302,7 +2302,7 @@
   'prefix': 'gridfieldorderablerows'
   'module': 'silverstripe-australia/gridfieldextensions'
   'scope': '.text.html.php'
-  'body': 'new GridFieldOrderableRows(${1:\'Sort\'})'
+  'body': 'new GridFieldOrderableRows(${1:\'Sort\'})${0}'
 
 ######
 #
@@ -2313,7 +2313,7 @@
 'GridFieldSortableRows':
   'prefix': 'gridfieldsortablerows'
   'module': 'undefinedoffset/sortablegridfield'
-  'body': 'new GridFieldSortableRows(${1:\'Sort\'})'
+  'body': 'new GridFieldSortableRows(${1:\'Sort\'})${0}'
 
 ######
 #
@@ -2324,6 +2324,7 @@
 'getBetterButtonsActions':
   'prefix': 'getbetterbuttonsactions'
   'module': 'unclecheese/betterbuttons'
+  'scope': '.text.html.php'
   'body': """
   /**
    * Create better button custom actions
@@ -2340,6 +2341,7 @@
 'BetterButtonCustomAction':
   'prefix': 'betterbuttoncustomaction'
   'module': 'unclecheese/betterbuttons'
+  'scope': '.text.html.php'
   'body': """
   BetterButtonCustomAction::create(
   \t\'${1:name}\',
@@ -2350,6 +2352,7 @@
 'BetterButtonNestedForm':
   'prefix': 'betterbuttonnestedform'
   'module': 'unclecheese/betterbuttons'
+  'scope': '.text.html.php'
   'body': """
   BetterButtonNestedForm::create(
   \t\'${1:name}\',
