@@ -2362,3 +2362,110 @@
   \t)
   )${0}
   """
+
+######
+#
+# Display Logic
+#
+######
+
+'displayIf Condition':
+  'prefix': 'displayif'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "displayIf(${1})${0}"
+'displayUnless Condition':
+  'prefix': 'displayunless'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "displayUnless(${1})${0}"
+'hideIf Condition':
+  'prefix': 'hideif'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "hideIf(${1})${0}"
+'hideUnless Condition':
+  'prefix': 'hideunless'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "hideUnless(${1})${0}"
+'isEqualTo Comparison':
+  'prefix': 'isequalto'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "isEqualTo(${1})${0}"
+'isNotEqualTo Comparison':
+  'prefix': 'isnotequalto'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "isNotEqualTo(${1})${0}"
+'isGreaterThan Comparison':
+  'prefix': 'isgreaterthan'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "isGreaterThan(${1})${0}"
+'isLessThan Comparison':
+  'prefix': 'islessthan'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "isLessThan(${1})${0}"
+'contains Comparison':
+  'prefix': 'contains'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "contains(${1})${0}"
+'startsWith Comparison':
+  'prefix': 'startswith'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "startsWith(${1})${0}"
+'endsWith Comparison':
+  'prefix': 'endswith'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "endsWith(${1})${0}"
+'endsWith Comparison':
+  'prefix': 'endswith'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "endsWith(${1})${0}"
+'isEmpty Comparison':
+  'prefix': 'isempty'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "isEmpty(${1})${0}"
+'isNotEmpty Comparison':
+  'prefix': 'isnotempty'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "isNotEmpty(${1})${0}"
+'isBetween Comparison':
+  'prefix': 'isbetween'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "isBetween(${1})${0}"
+'isChecked Comparison':
+  'prefix': 'ischecked'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "isChecked()${0}"
+'isNotChecked Comparison':
+  'prefix': 'isnotchecked'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "isNotChecked()${0}"
+'hasCheckedOption Comparison':
+  'prefix': 'hascheckedoption'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "hasCheckedOption(${1})${0}"
+'hasCheckedAtLeast Comparison':
+  'prefix': 'hascheckedatleast'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "hasCheckedAtLeast(${1})${0}"
+'hasCheckedLessThan Comparison':
+  'prefix': 'hascheckedlessthan'
+  'module': 'unclecheese/display-logic'
+  'scope': '.text.html.php'
+  'body': "hasCheckedLessThan(${1})${0}"
