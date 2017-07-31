@@ -1015,14 +1015,14 @@
   'prefix': 'allowed_actions'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'definitions': [
+  'definitions': {
     'comment': """
     /**
      * Defines methods that can be called directly
      * @var array
      */
     """
-  ]
+  }
   'variations': [
     {
       'minVersion': '4.0'
@@ -1058,9 +1058,8 @@
 'summary_fields':
   'prefix': 'summary_fields'
   'module': 'silverstripe/framework'
-
   'scope': '.text.html.php'
-  'definitions': [
+  'definitions': {
     'comment': """
     /**
      * Defines summary fields commonly used in table columns
@@ -1068,7 +1067,7 @@
      * @var array
      */
     """
-  ]
+  }
   'variations': [
     {
       'minVersion': '4.0'
