@@ -1052,7 +1052,7 @@
 
 'allowed_children':
   'prefix': 'allowed_children'
-  'module': 'silverstripe/framework'
+  'module': 'silverstripe/cms'
   'scope': '.text.html.php'
   'definitions': {
     'comment': """
@@ -1084,6 +1084,17 @@
     }
   ]
 
+'can_be_root':
+  'prefix': 'can_be_root'
+  'module': 'silverstripe/cms'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * Defines whether a page can be in the root of the site tree
+   * @var boolean
+   */
+  private static $can_be_root = ${1:false};
+  """
 
 'allowed_actions':
   'prefix': 'allowed_actions'
@@ -1125,6 +1136,11 @@
   'minVersion': '3.0'
   'scope': '.text.html.php'
   'body': """
+  /**
+   * If you extend a class, and don't want to be able to select
+   * the old class in the cms, set this to the old class name.
+   * @var string
+   */
   private static \\$hide_ancestor = \'\${1:PageType}\';${0}
   """
 
