@@ -2558,3 +2558,19 @@
    */
   private static $show_in_sitetree = ${1:false};${0}
   """
+
+'getLumberjackTitle':
+  'prefix': 'getLumberjackTitle'
+  'module': 'silverstripe/lumberjack'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * Define the title for the cms lumberjack gridfield.
+   *
+   * @return string
+   */
+  public function getLumberjackTitle()
+  {
+  \treturn \'${1}\';
+  }${0}
+  """
