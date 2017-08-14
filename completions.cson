@@ -682,6 +682,42 @@
   private static \\$menu_icon = \'${1}\';${0}
   """
 
+'extensions':
+  'prefix': 'extensions'
+  'module': 'silverstripe/framework'
+  'minVersion': '3.0'
+  'scope': '.text.html.php'
+  'definitions': {
+    'comment': """
+    /**
+     * Defines extension names and parameters to be applied
+     * to this object upon construction.
+     * @var array
+     */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static $extensions = [
+        \'${1}\',
+      ];${0}
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static $extensions = array(
+        \'${1}\',
+      );${0}
+      """
+    }
+  ]
+
 'singular_name':
   'prefix': 'singular_name'
   'module': 'silverstripe/framework'
@@ -809,7 +845,6 @@
       """
     }
   ]
-
 
 'many_many':
   'prefix': 'many_many'
