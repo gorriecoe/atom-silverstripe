@@ -213,6 +213,26 @@
     }
   ]
 
+'Requirement block':
+  'prefix': 'requireblock'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': 'Requirements::block(\'${1}\');${0}'
+
+'Theme directory':
+  'prefix': 'themedir'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': 'ThemeDir'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': '$this->ThemeDir()'
+    }
+  ]
+
 # General variables
 'Current Member':
   'prefix': 'member'
