@@ -2540,3 +2540,21 @@
   'module': 'unclecheese/display-logic'
   'scope': '.text.html.php'
   'body': "hasCheckedLessThan(${1})${0}"
+
+######
+#
+# Lumberjack
+#
+######
+
+'show_in_sitetree':
+  'prefix': 'show_in_sitetree'
+  'module': 'silverstripe/lumberjack'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * Defines whether a page is displayed within the site tree
+   * @var boolean
+   */
+  private static $show_in_sitetree = ${1:false};${0}
+  """
