@@ -92,7 +92,7 @@
 
 # Template scope & conditional logic
 'if Loop':
-  'prefix': 'ifloop'
+  'prefix': 'loopif'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'variations': [
@@ -118,7 +118,7 @@
     }
   ]
 'if With':
-  'prefix': 'ifwith'
+  'prefix': 'withif'
   'module': 'silverstripe/framework'
   'scope': '.text.html.ss'
   'variations': [
