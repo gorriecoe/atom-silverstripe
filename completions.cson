@@ -163,11 +163,11 @@
   'variations': [
     {
       'scope': '.text.html.ss'
-      'body': '<% require themedJS(\'${1}\') %>${0}'
+      'body': '<% require themedJavascript(\'${1}\') %>${0}'
     }
     {
       'scope': '.text.html.php'
-      'body': 'Requirements::themedJS(\'${1}\');${0}'
+      'body': 'Requirements::themedJavascript(\'${1}\');${0}'
     }
   ]
 
