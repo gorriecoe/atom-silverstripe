@@ -692,7 +692,7 @@
   \t *
   \t * @param SS_HTTPRequest $request
   \t */
-  \tpublic function run(SS_HTTPRequest $request)
+  \tpublic function run($request)
   \t{
   \t\t${0}
   \t}
