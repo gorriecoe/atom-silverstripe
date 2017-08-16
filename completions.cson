@@ -656,6 +656,49 @@
     }
   ]
 
+'Class BuildTask Silverstripe':
+  'prefix': 'classtask'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * ${3:Description}
+   *
+   * @package silverstripe
+   * @subpackage ${4:mysite}
+   */
+  class ${1} extends BuildTask
+  {
+  \t/**
+  \t * @var bool $enabled If set to FALSE, keep it from showing in the list
+  \t * and from being executable through URL or CLI.
+  \t */
+  \tprotected $enabled = true;
+  \t
+  \t /**
+  \t * @var string $title Shown in the overview on the TaskRunner
+  \t * HTML or CLI interface. Should be short and concise, no HTML allowed.
+  \t */
+  \tprotected $title = \'${2:${1}}\';
+  \t
+  \t /**
+  \t * @var string $description Describe the implications the task has,
+  \t * and the changes it makes. Accepts HTML formatting.
+  \t */
+  \tprotected $description = \'${3}\';
+
+  \t/**
+  \t * This method called via the TaskRunner
+  \t *
+  \t * @param SS_HTTPRequest $request
+  \t */
+  \tpublic function run(SS_HTTPRequest $request)
+  \t{
+  \t\t${0}
+  \t}
+  }
+  """
+
 'menu_title':
   'prefix': 'menu_title'
   'module': 'silverstripe/framework'
