@@ -233,266 +233,6 @@
     }
   ]
 
-# General variables
-'Current Member':
-  'prefix': 'member'
-  'module': 'silverstripe/framework'
-  'variations': [
-    {
-      'scope': '.text.html.ss'
-      'body': 'CurrentMember'
-    }
-    {
-      'scope': '.text.html.php'
-      'body': 'Member::currentUser()'
-    }
-  ]
-
-'Current Member ID':
-  'prefix': 'memberid'
-  'module': 'silverstripe/framework'
-  'variations': [
-    {
-      'scope': '.text.html.ss'
-      'body': 'CurrentMember.ID'
-    }
-    {
-      'scope': '.text.html.php'
-      'body': 'Member::currentUserID()'
-    }
-  ]
-
-'Current SiteConfig':
-  'prefix': 'siteconfig'
-  'module': 'silverstripe/framework'
-  'variations': [
-    {
-      'scope': '.text.html.ss'
-      'body': 'SiteConfig'
-    }
-    {
-      'scope': '.text.html.php'
-      'body': 'SiteConfig::current_site_config()'
-    }
-  ]
-
-'Title':
-  'prefix': 'title'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss, .text.html.php'
-  'body': 'Title'
-
-'Menu Title':
-  'prefix': 'menutitle'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss, .text.html.php'
-  'body': 'MenuTitle'
-
-'Content':
-  'prefix': 'content'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss, .text.html.php'
-  'body': 'Content'
-
-'MetaTags':
-  'prefix': 'metatags'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': 'MetaTags'
-
-'Relative Link':
-  'prefix': 'link'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss, .text.html.php'
-  'body': 'Link'
-
-'Absolute Link':
-  'prefix': 'absolutelink'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss, .text.html.php'
-  'body': 'AbsoluteLink'
-
-'isSection Linking Mode':
-  'prefix': 'issection'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': 'isSection'
-
-'isCurrent Linking Mode':
-  'prefix': 'iscurrent'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': 'isCurrent'
-
-'inSection Linking Mode':
-  'prefix': 'insection'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': 'inSection(${1:page-url})${0}'
-
-'URLSegment':
-  'prefix': 'urlsegment'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss, .text.html.php'
-  'body': 'URLSegment'
-
-'ClassName':
-  'prefix': 'classname'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss, .text.html.php'
-  'body': 'ClassName'
-
-# Children loop
-'Children':
-  'prefix': 'children'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss, .text.html.php'
-  'body': 'Children'
-
-'ChildrenOf':
-  'prefix': 'childrenof'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': 'ChildrenOf(${1:page-url})${0}'
-
-'AllChildren':
-  'prefix': 'allchildren'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss, .text.html.php'
-  'body': 'AllChildren'
-'Menu':
-  'prefix': 'menu'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': 'Menu(${1:page-url})${0}'
-
-'Page':
-  'prefix': 'page'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': 'Page(${1:page-url})${0}'
-
-'Level':
-  'prefix': 'level'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': 'Level(${1:1})${0}'
-
-'Count':
-  'prefix': 'count'
-  'module': 'silverstripe/framework'
-  'variations': [
-    {
-      'scope': '.text.html.ss'
-      'body': 'Count${0}'
-    }
-    {
-      'scope': '.text.html.php'
-      'body': 'Count()${0}'
-    }
-  ]
-
-# Scope traverse
-'Traverse Up Scope':
-  'prefix': 'up'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': 'Up'
-
-'Current Object Scope':
-  'prefix': 'me'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': 'Me'
-
-'Top Level Scope':
-  'prefix': 'top'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': 'Top'
-
-# Breadcrumbs
-'Breadcrumbs':
-  'prefix': 'breadcrumbs'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss'
-  'body': 'Breadcrumbs'
-
-# Form
-'Form':
-  'prefix': 'form'
-  'module': 'silverstripe/framework'
-  'variations': [
-    {
-      'scope': '.text.html.ss'
-      'body': 'Form'
-    }
-    {
-      'scope': '.text.html.php'
-      'body': '''
-      Form::create(
-      \t${0}
-      )
-      '''
-    }
-  ]
-
-
-# Formating
-'Limit Word Count':
-  'prefix': 'limitwordcount'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss, .text.html.php'
-  'body': 'LimitWordCount(${1:26},${2:\'...\'})${0}'
-
-'Limit Characters':
-  'prefix': 'limitcharacters'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.ss, .text.html.php'
-  'body': 'LimitCharacters(${1:20},${2:\'...\'})${0}'
-
-'Escape XML':
-  'prefix': 'escapexml'
-  'module': 'silverstripe/framework'
-  'variations': [
-    {
-      'scope': '.text.html.ss'
-      'body': 'EscapeXML'
-    }
-    {
-      'scope': '.text.html.php'
-      'body': 'EscapeXML()'
-    }
-  ]
-
-'First Paragraph':
-  'prefix': 'firstparagraph'
-  'module': 'silverstripe/framework'
-  'variations': [
-    {
-      'scope': '.text.html.ss'
-      'body': 'FirstParagraph'
-    }
-    {
-      'scope': '.text.html.php'
-      'body': 'FirstParagraph()'
-    }
-  ]
-
-'No HTML':
-  'prefix': 'nohtml'
-  'module': 'silverstripe/framework'
-  'variations': [
-    {
-      'scope': '.text.html.ss'
-      'body': 'NoHTML'
-    }
-    {
-      'scope': '.text.html.php'
-      'body': 'NoHTML()'
-    }
-  ]
-
 'Class Page & Controller Silverstripe':
   'prefix': 'classpagecontroller'
   'module': 'silverstripe/cms'
@@ -1481,6 +1221,142 @@
   'scope': '.text.html.php'
   'body': 'Debug::dump(${1});${0}'
 
+#  Tabs
+'addFieldToTab':
+  'prefix': 'addfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  addFieldToTab(
+  \t\'${1:Root.Main}\',
+  \t${0},
+  \t\'${3:insertBefore}\'
+  );
+  """
+
+'addFieldsToTab':
+  'prefix': 'addfields'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      addFieldsToTab(
+      \t\'${1:Root.Main}\',
+      \t[
+      \t\t${0}
+      \t]
+      );
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      addFieldsToTab(
+      \t\'${1:Root.Main}\',
+      \tarray(
+      \t\t${0}
+      \t)
+      );
+      """
+    }
+  ]
+
+'removeByName':
+  'prefix': 'removebyname'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      removeByName([
+      \t\'${0}\'
+      ]);
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      removeByName(array(
+      \t\'${0}\'
+      ));
+      """
+    }
+  ]
+
+'getCMSFields':
+  'prefix': 'getcmsfields'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * CMS Fields
+   * @return FieldList
+   */
+  public function getCMSFields()
+  {
+  \t\\$fields = parent::getCMSFields();
+  \t\\$fields->${0}
+  \treturn \\$fields;
+  }
+  """
+
+'getSettingsFields':
+  'prefix': 'getsettingsfields'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * Settings Tab Fields
+   * @return FieldList
+   */
+  public function getSettingsFields()
+  {
+  \t\\$fields = parent::getSettingsFields();
+  \t\\$fields->${0}
+  \treturn \\$fields;
+  }
+  """
+
+'updateCMSFields':
+  'prefix': 'updatecmsfields'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * Update Fields
+   * @return FieldList
+   */
+  public function updateCMSFields(FieldList \\$fields)
+  {
+  \t\\$owner = $this->owner;
+  \t\\$fields->${0}
+  \treturn \\$fields;
+  }
+  """
+
+'getEditForm':
+  'prefix': 'geteditform'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * @param Int $id
+   * @param FieldList $fields
+   * @return Form
+   */
+  public function getEditForm($id = null, $fields = null)
+  {
+  \t\\$form = parent::getEditForm($id, $fields);
+  \t${0}
+  \treturn \\$form;
+  }
+  """
+
 #  Fields
 'setAttribute':
   'prefix': 'setattribute'
@@ -1909,143 +1785,6 @@
   'scope': '.text.html.php'
   'body': 'new GridFieldToolbarHeader()'
 
-#  Tabs
-'addFieldToTab':
-  'prefix': 'addfield'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.php'
-  'body': """
-  addFieldToTab(
-  \t\'${1:Root.Main}\',
-  \t${0},
-  \t\'${3:insertBefore}\'
-  );
-  """
-
-'addFieldsToTab':
-  'prefix': 'addfields'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.php'
-  'variations': [
-    {
-      'minVersion': '4.0'
-      'body': """
-      addFieldsToTab(
-      \t\'${1:Root.Main}\',
-      \t[
-      \t\t${0}
-      \t]
-      );
-      """
-    }
-    {
-      'minVersion': '3.0'
-      'maxVersion': '4.0'
-      'body': """
-      addFieldsToTab(
-      \t\'${1:Root.Main}\',
-      \tarray(
-      \t\t${0}
-      \t)
-      );
-      """
-    }
-  ]
-
-
-'removeByName':
-  'prefix': 'removebyname'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.php'
-  'variations': [
-    {
-      'minVersion': '4.0'
-      'body': """
-      removeByName([
-      \t\'${0}\'
-      ]);
-      """
-    }
-    {
-      'minVersion': '3.0'
-      'maxVersion': '4.0'
-      'body': """
-      removeByName(array(
-      \t\'${0}\'
-      ));
-      """
-    }
-  ]
-
-'getCMSFields':
-  'prefix': 'getcmsfields'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.php'
-  'body': """
-  /**
-   * CMS Fields
-   * @return FieldList
-   */
-  public function getCMSFields()
-  {
-  \t\\$fields = parent::getCMSFields();
-  \t\\$fields->${0}
-  \treturn \\$fields;
-  }
-  """
-
-'getSettingsFields':
-  'prefix': 'getsettingsfields'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.php'
-  'body': """
-  /**
-   * Settings Tab Fields
-   * @return FieldList
-   */
-  public function getSettingsFields()
-  {
-  \t\\$fields = parent::getSettingsFields();
-  \t\\$fields->${0}
-  \treturn \\$fields;
-  }
-  """
-
-'updateCMSFields':
-  'prefix': 'updatecmsfields'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.php'
-  'body': """
-  /**
-   * Update Fields
-   * @return FieldList
-   */
-  public function updateCMSFields(FieldList \\$fields)
-  {
-  \t\\$owner = $this->owner;
-  \t\\$fields->${0}
-  \treturn \\$fields;
-  }
-  """
-
-'getEditForm':
-  'prefix': 'geteditform'
-  'module': 'silverstripe/framework'
-  'scope': '.text.html.php'
-  'body': """
-  /**
-   * @param Int $id
-   * @param FieldList $fields
-   * @return Form
-   */
-  public function getEditForm($id = null, $fields = null)
-  {
-  \t\\$form = parent::getEditForm($id, $fields);
-  \t${0}
-  \treturn \\$form;
-  }
-  """
-
 # Images
 'Set Size Image':
   'prefix': 'setsize'
@@ -2260,6 +1999,266 @@
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::raw2url(${1})${0}"
+
+
+# General variables
+'Current Member':
+  'prefix': 'member'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': 'CurrentMember'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': 'Member::currentUser()'
+    }
+  ]
+
+'Current Member ID':
+  'prefix': 'memberid'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': 'CurrentMember.ID'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': 'Member::currentUserID()'
+    }
+  ]
+
+'Current SiteConfig':
+  'prefix': 'siteconfig'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': 'SiteConfig'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': 'SiteConfig::current_site_config()'
+    }
+  ]
+
+'Title':
+  'prefix': 'title'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss, .text.html.php'
+  'body': 'Title'
+
+'Menu Title':
+  'prefix': 'menutitle'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss, .text.html.php'
+  'body': 'MenuTitle'
+
+'Content':
+  'prefix': 'content'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss, .text.html.php'
+  'body': 'Content'
+
+'MetaTags':
+  'prefix': 'metatags'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss'
+  'body': 'MetaTags'
+
+'Relative Link':
+  'prefix': 'link'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss, .text.html.php'
+  'body': 'Link'
+
+'Absolute Link':
+  'prefix': 'absolutelink'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss, .text.html.php'
+  'body': 'AbsoluteLink'
+
+'isSection Linking Mode':
+  'prefix': 'issection'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss'
+  'body': 'isSection'
+
+'isCurrent Linking Mode':
+  'prefix': 'iscurrent'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss'
+  'body': 'isCurrent'
+
+'inSection Linking Mode':
+  'prefix': 'insection'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss'
+  'body': 'inSection(${1:page-url})${0}'
+
+'URLSegment':
+  'prefix': 'urlsegment'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss, .text.html.php'
+  'body': 'URLSegment'
+
+'ClassName':
+  'prefix': 'classname'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss, .text.html.php'
+  'body': 'ClassName'
+
+# Children loop
+'Children':
+  'prefix': 'children'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss, .text.html.php'
+  'body': 'Children'
+
+'ChildrenOf':
+  'prefix': 'childrenof'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss'
+  'body': 'ChildrenOf(${1:page-url})${0}'
+
+'AllChildren':
+  'prefix': 'allchildren'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss, .text.html.php'
+  'body': 'AllChildren'
+'Menu':
+  'prefix': 'menu'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss'
+  'body': 'Menu(${1:page-url})${0}'
+
+'Page':
+  'prefix': 'page'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss'
+  'body': 'Page(${1:page-url})${0}'
+
+'Level':
+  'prefix': 'level'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss'
+  'body': 'Level(${1:1})${0}'
+
+'Count':
+  'prefix': 'count'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': 'Count${0}'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': 'Count()${0}'
+    }
+  ]
+
+# Scope traverse
+'Traverse Up Scope':
+  'prefix': 'up'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss'
+  'body': 'Up'
+
+'Current Object Scope':
+  'prefix': 'me'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss'
+  'body': 'Me'
+
+'Top Level Scope':
+  'prefix': 'top'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss'
+  'body': 'Top'
+
+# Breadcrumbs
+'Breadcrumbs':
+  'prefix': 'breadcrumbs'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss'
+  'body': 'Breadcrumbs'
+
+# Form
+'Form':
+  'prefix': 'form'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': 'Form'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': '''
+      Form::create(
+      \t${0}
+      )
+      '''
+    }
+  ]
+
+# Formating
+'Limit Word Count':
+  'prefix': 'limitwordcount'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss, .text.html.php'
+  'body': 'LimitWordCount(${1:26},${2:\'...\'})${0}'
+
+'Limit Characters':
+  'prefix': 'limitcharacters'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.ss, .text.html.php'
+  'body': 'LimitCharacters(${1:20},${2:\'...\'})${0}'
+
+'Escape XML':
+  'prefix': 'escapexml'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': 'EscapeXML'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': 'EscapeXML()'
+    }
+  ]
+
+'First Paragraph':
+  'prefix': 'firstparagraph'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': 'FirstParagraph'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': 'FirstParagraph()'
+    }
+  ]
+
+'No HTML':
+  'prefix': 'nohtml'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.ss'
+      'body': 'NoHTML'
+    }
+    {
+      'scope': '.text.html.php'
+      'body': 'NoHTML()'
+    }
+  ]
 
 ######
 #
