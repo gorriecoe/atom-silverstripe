@@ -1644,6 +1644,17 @@
   )${0}
   """
 
+'CurrencyField':
+  'prefix': 'currencyfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  CurrencyField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  )${0}
+  """
+
 'NumericField_Readonly':
   'prefix': 'numericfield_readonly'
   'module': 'silverstripe/framework'
