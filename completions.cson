@@ -157,9 +157,10 @@
   'body': '<% base_tag %>${0}'
 
 # Requirements
-'Require themedJS':
+'Require themed javascript':
   'prefix': 'requirethemedjs'
   'module': 'silverstripe/framework'
+  'minVersion': '3.5'
   'variations': [
     {
       'scope': '.text.html.ss'
@@ -171,7 +172,7 @@
     }
   ]
 
-'Require themedCSS':
+'Require themed CSS':
   'prefix': 'requirethemedcss'
   'module': 'silverstripe/framework'
   'variations': [
