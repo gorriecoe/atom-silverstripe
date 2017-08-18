@@ -949,6 +949,40 @@
     }
   ]
 
+'url_handlers':
+  'prefix': 'url_handlers'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'definitions': {
+    'comment': """
+    /**
+     * Defines URL patterns.
+     * @var array
+     */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static $url_handlers = [
+      \t\'${1}\' => \'${2}\'
+      ];
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static $url_handlers = array(
+      \t\'${1}\' => \'${2}\'
+      );
+      """
+    }
+  ]
+
 'hide_ancestor':
   'prefix': 'hide_ancestor'
   'module': 'silverstripe/framework'
