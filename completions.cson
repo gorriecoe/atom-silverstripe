@@ -562,6 +562,40 @@
     }
   ]
 
+'dbindexes':
+  'prefix': 'dbindexes'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'definitions': {
+    'comment': """
+    /**
+     * Database indexes
+     * @var array
+     */
+    """
+  }
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$indexes = [
+      \t\'${1}\' => \'${2}\',
+      ];${0}
+      """
+    }
+    {
+      'minVersion': '3.0'
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      private static \\$indexes = array(
+      \t\'${1}\' => \'${2}\',
+      );${0}
+      """
+    }
+  ]
+
 'has_one':
   'prefix': 'has_one'
   'module': 'silverstripe/framework'
