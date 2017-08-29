@@ -2075,6 +2075,32 @@
   'scope': '.text.html.php'
   'body': "Convert::raw2url(${1})${0}"
 
+# Session
+'Set session value':
+  'prefix': 'sessionset'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': "Session::set(\'${1}\', ${2})${0}"
+'Get session value':
+  'prefix': 'sessionget'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': "Session::get(\'${1}\')${0}"
+'Get all sessions':
+  'prefix': 'sessiongetall'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': "Session::get_all(\'${1}\')${0}"
+'Clear session value':
+  'prefix': 'sessionclear'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': "Session::clear(\'${1}\')${0}"
+'Clear all sessions':
+  'prefix': 'sessionclearall'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': "Session::clear_all(\'${1}\')${0}"
 
 # General variables
 'Current Member':
