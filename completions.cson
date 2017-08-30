@@ -2113,7 +2113,7 @@
     }
     {
       'scope': '.text.html.php'
-      'body': "Director::baseURL()${0}"
+      'body': "Director::baseURL()"
     }
   ]
 'Get the absolute root URL':
@@ -2126,7 +2126,7 @@
     }
     {
       'scope': '.text.html.php'
-      'body': "Director::absoluteBaseURL()${0}"
+      'body': "Director::absoluteBaseURL()"
     }
   ]
 
