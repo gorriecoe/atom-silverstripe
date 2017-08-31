@@ -705,7 +705,7 @@
   'definitions': {
     'comment': """
     /**
-     * \{@inheritdoc \}
+     * Defines Database fields for the Many_many bridging table
      * @var array
      */
     """
