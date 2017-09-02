@@ -23,6 +23,16 @@
       }
     }
   },
+  "consumedServices": {
+    "busy-signal": {
+      "versions": {
+        "1.0.0": "consumeSignal"
+      }
+    }
+  },
+  "package-dependencies": {
+    "busy-signal": "1.0.0"
+  },
   "dependencies": {
     "cson-safe": "^1.0.5",
     "json-file": "^0.1.0",
