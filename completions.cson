@@ -1084,9 +1084,9 @@
       'minVersion': '4.0'
       'body': """
       {{comment}}
-      private static \\$searchable_fields = array(
+      private static \\$searchable_fields = [
       \t'${1}' => '${2}'
-      );
+      ];
       """
     }
     {
@@ -1094,9 +1094,9 @@
       'maxVersion': '4.0'
       'body': """
       {{comment}}
-      private static \\$searchable_fields = [
+      private static \\$searchable_fields = array(
       \t'${1}' => '${2}'
-      ];
+      );
       """
     }
   ]
