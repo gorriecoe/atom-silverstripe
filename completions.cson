@@ -235,7 +235,7 @@
   ]
 
 'Class Page & Controller Silverstripe':
-  'prefix': 'classpagecontroller'
+  'prefix': 'classpageandcontroller'
   'module': 'silverstripe/cms'
   'minVersion': '3.0'
   'maxVersion': '4.0'
@@ -266,7 +266,7 @@
   'minVersion': '4.0'
   'scope': '.text.html.php'
   'body': """
-  use SilverStripe\\CMS\\Model\\SiteTree;
+  use SilverStripe\\\\CMS\\\\Model\\\\SiteTree;
 
   /**
    * ${3:Description}
@@ -280,12 +280,13 @@
   }
   """
 
-'Class Page Silverstripe':
+'Class Page Controller Silverstripe':
   'prefix': 'classpagecontroller'
   'module': 'silverstripe/cms'
   'minVersion': '4.0'
+  'scope': '.text.html.php'
   'body': """
-  use SilverStripe\\CMS\\Controllers\\ContentController;
+  use SilverStripe\\\\CMS\\\\Controllers\\\\ContentController;
 
   /**
    * ${3:Description}
