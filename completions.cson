@@ -294,7 +294,7 @@
    * @package silverstripe
    * @subpackage ${4:mysite}
    */
-  class ${1}_Controller extends ${2:Page}_Controller
+  class ${1}Controller extends ${2:Page}Controller
   {
   \tpublic function init()
   \t{
