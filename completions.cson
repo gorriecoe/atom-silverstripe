@@ -1371,6 +1371,7 @@
   {
   \t\\$fields = parent::getCMSFields();
   \t\\$fields->${0}
+  \t\\$this->extend('updateCMSFields', \\$fields);
   \treturn \\$fields;
   }
   """
