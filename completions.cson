@@ -1378,7 +1378,7 @@
 
 'getSettingsFields':
   'prefix': 'getsettingsfields'
-  'module': 'silverstripe/framework'
+  'module': 'silverstripe/cms'
   'scope': '.text.html.php'
   'body': """
   /**
@@ -1389,6 +1389,7 @@
   {
   \t\\$fields = parent::getSettingsFields();
   \t\\$fields->${0}
+  \t\\$this->extend('updateSettingsFields', \\$fields);
   \treturn \\$fields;
   }
   """
