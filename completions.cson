@@ -2757,3 +2757,23 @@
   \treturn \'${1}\';
   }${0}
   """
+
+######
+#
+# Fluent
+#
+######
+
+'Translatable db fields':
+  'prefix': 'translatefields'
+  'module': 'tractorcow/silverstripe-fluent'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * Defines db fields that are translatable.
+   * @var array
+   */
+  private static $translate = array(
+  \t\'${1}\',
+  );${0}
+  """
