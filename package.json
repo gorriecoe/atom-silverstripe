@@ -30,10 +30,11 @@
       }
     }
   },
-  "package-dependencies": {
-    "busy-signal": "1.0.0"
-  },
+  "package-deps": [
+    "busy-signal"
+  ],
   "dependencies": {
+    "atom-package-deps": "^4.6.0",
     "cson-safe": "^1.0.5",
     "json-file": "^0.1.0",
     "season": "^6.0.0"
