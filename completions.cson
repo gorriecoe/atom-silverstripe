@@ -529,6 +529,19 @@
   private static \\$plural_name = \'${1}\';${0}
   """
 
+'table_name':
+  'prefix': 'table_name'
+  'module': 'silverstripe/framework'
+  'minVersion': '4.0'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * Defines the database table name
+   * @var string
+   */
+  private static \\$table_name = \'${1}\';${0}
+  """
+
 'db':
   'prefix': 'db'
   'module': 'silverstripe/framework'
@@ -1178,10 +1191,11 @@
   'scope': '.text.html.php'
   'body': """
   /**
-   * Viewing Permissions
+   * DataObject view permissions
+   * @param Member \\$member
    * @return boolean
    */
-  public function canView($member = null)
+  public function canView(\\$member = null)
   {
   \treturn ${1};
   }${0}
@@ -1194,10 +1208,11 @@
   'scope': '.text.html.php'
   'body': """
   /**
-   * Editing Permissions
+   * DataObject edit permissions
+   * @param Member \\$member
    * @return boolean
    */
-  public function canEdit($member = null)
+  public function canEdit(\\$member = null)
   {
   \treturn ${1};
   }${0}
@@ -1210,10 +1225,11 @@
   'scope': '.text.html.php'
   'body': """
   /**
-   * Deleting Permissions
+   * DataObject delete permissions
+   * @param Member \\$member
    * @return boolean
    */
-  public function canDelete($member = null)
+  public function canDelete(\\$member = null)
   {
   \treturn ${1};
   }${0}
@@ -1224,16 +1240,38 @@
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * Creating Permissions
-   * @return boolean
-   */
-  public function canCreate($member = null)
-  {
-  \treturn ${1};
-  }${0}
-  """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      /**
+       * DataObject create permissions
+       * @param Member \\$member
+       * @param array \\$context Additional context-specific data which might
+       * affect whether (or where) this object could be created.
+       * @return boolean
+       */
+      public function canCreate(\\$member = null, \\$context = [])
+      {
+      \treturn ${1};
+      }${0}
+      """
+    }
+    {
+      'maxVersion': '4.0'
+      'body': """
+      /**
+       * DataObject create permissions
+       * @param Member \\$member
+       * @return boolean
+       */
+      public function canCreate(\\$member = null)
+      {
+      \treturn ${1};
+      }${0}
+      """
+    }
+  ]
 
 'permissionCheck':
   'prefix': 'permissioncheck'
