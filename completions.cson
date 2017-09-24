@@ -307,18 +307,41 @@
   'prefix': 'classdataobject'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': """
-  /**
-   * ${3:Description}
-   *
-   * @package silverstripe
-   * @subpackage ${4:mysite}
-   */
-  class ${1} extends ${2:DataObject}
-  {
-  \t${0}
+  'definitions': {
+    'comment': """
+    /**
+     * ${3:Description}
+     *
+     * @package silverstripe
+     * @subpackage ${4:mysite}
+     */
+    """
   }
-  """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': """
+      use SilverStripe\\\\ORM\\\\DataObject;
+
+      {{comment}}
+      class ${1} extends ${2:DataObject}
+      {
+      \t${0}
+      }
+      """
+    }
+    {
+      'maxVersion': '4.0'
+      'body': """
+      {{comment}}
+      class ${1} extends ${2:DataObject}
+      {
+      \t${0}
+      }
+      """
+    }
+  ]
+
 
 'Class Model Admin Silverstripe':
   'prefix': 'classmodeladmin'
