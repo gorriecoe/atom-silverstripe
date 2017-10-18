@@ -884,7 +884,7 @@
   'definitions': {
     'comment': """
     /**
-     * Belongs_to relationship
+     * Add default values to database
      * @var array
      */
     """
