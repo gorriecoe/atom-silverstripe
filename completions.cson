@@ -296,9 +296,9 @@
    */
   class ${1}Controller extends ${2:Page}Controller
   {
-  \tpublic function init()
+  \tpublic function doInit()
   \t{
-  \t\tparent::init();
+  \t\tparent::doInit();
   \t}
   }
   """
