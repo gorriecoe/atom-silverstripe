@@ -2398,86 +2398,222 @@
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::raw2att(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert value to HTML attribute':
   'prefix': 'convertraw2htmlatt'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::raw2htmlatt(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert value to HTML name':
   'prefix': 'convertraw2htmlname'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::raw2htmlname(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert value to HTML ID':
   'prefix': 'convertraw2htmlid'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::raw2htmlid(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert value to XML':
   'prefix': 'convertraw2xml'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::raw2xml(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert value to javascript':
   'prefix': 'convertraw2js'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::raw2js(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert value to JSON':
   'prefix': 'convertraw2json'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::raw2json(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert array to JSON':
   'prefix': 'convertarray2json'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::array2json(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert value to SQL':
   'prefix': 'convertraw2sql'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::raw2sql(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert symbolic identifier to SQL':
   'prefix': 'convertsymbol2sql'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::symbol2sql(${1}, ${2:'.'})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert XML to raw text':
   'prefix': 'convertxml2raw'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::xml2raw(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert JSON to an object':
   'prefix': 'convertjson2obj'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::json2obj(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert JSON to an array':
   'prefix': 'convertjson2array'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::json2array(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert XML to an array':
   'prefix': 'convertxml2array'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::xml2array(${1}, {$2:false}, {$3:false})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert to link if valid':
   'prefix': 'convertlinkIfMatch'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::linkIfMatch(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert HTML to plain text':
   'prefix': 'converthtml2raw'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::html2raw(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 'Convert value to url':
   'prefix': 'convertraw2url'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Convert::raw2url(${1})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Core\\Convert'
+      ]
+    }
+  ]
 
 # Session
 'Set session value':
