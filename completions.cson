@@ -1334,24 +1334,62 @@
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': 'Debug::message(${1});${0}'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Dev\\Debug'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'Debug show':
   'prefix': 'show'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': 'Debug::show(${1});${0}'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Dev\\Debug'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'Debug log':
   'prefix': 'log'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': 'Debug::log(${1});${0}'
+  'variations': [
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+      'body': 'Debug::log(${1});${0}'
+    }
+  ]
 
 'Debug dump':
   'prefix': 'dump '
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': 'Debug::dump(${1});${0}'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Dev\\Debug'
+      ]
+    }
+  ]
 
 #  Tabs
 'addFieldToTab':
@@ -1472,6 +1510,18 @@
   \treturn \\$fields;
   }
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\FieldList'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'getEditForm':
   'prefix': 'geteditform'
@@ -1562,6 +1612,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\HtmlEditorField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'UploadField':
   'prefix': 'uploadfield'
@@ -1573,6 +1635,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\UploadField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'setFolderName':
   'prefix': 'setfoldername'
@@ -1620,6 +1694,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\TextField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'EmailField':
   'prefix': 'emailfield'
@@ -1631,6 +1717,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\EmailField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'ReadonlyField':
   'prefix': 'readonlyfield'
@@ -1642,6 +1740,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\ReadonlyField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'NumericField':
   'prefix': 'numericfield'
@@ -1653,6 +1763,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\NumericField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'CurrencyField':
   'prefix': 'currencyfield'
@@ -1664,6 +1786,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\CurrencyField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'NumericField_Readonly':
   'prefix': 'numericfield_readonly'
@@ -1675,6 +1809,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\NumericField_Readonly'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'CheckboxField':
   'prefix': 'checkboxfield'
@@ -1686,6 +1832,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\CheckboxField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'CheckboxField_Readonly':
   'prefix': 'checkboxfield_readonly'
@@ -1697,6 +1855,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\CheckboxField_Readonly'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'NullableField':
   'prefix': 'nullablefield'
@@ -1708,6 +1878,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\NullableField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'TextareaField':
   'prefix': 'textareafield'
@@ -1719,6 +1901,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\TextareaField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'setRows':
   'prefix': 'setrows'
@@ -1741,6 +1935,18 @@
   \t\'${3:SiteTree}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\TreeDropdownField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'TreeDropdownField_Readonly':
   'prefix': 'treedropdownfield_readonly'
@@ -1753,6 +1959,18 @@
   \t\'${3:SiteTree}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\TreeDropdownField_Readonly'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'DropdownField':
   'prefix': 'dropdownfield'
@@ -1765,6 +1983,18 @@
   \t\'${3:datalist}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\DropdownField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'setEmptyString':
   'prefix': 'setemptystring'
@@ -1783,6 +2013,18 @@
   \t\'${3:datalist}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\LookupField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'ListboxField':
   'prefix': 'listboxfield'
@@ -1795,6 +2037,19 @@
   \t\'${3:datalist}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\ListboxField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
+
 'GroupedDropdownField':
   'prefix': 'groupeddropdownfield'
   'module': 'silverstripe/framework'
@@ -1806,6 +2061,18 @@
   \t\'${3:datalist}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\GroupedDropdownField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'OptionsetField':
   'prefix': 'optionsetfield'
@@ -1818,6 +2085,18 @@
   \t\'${3:datalist}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\OptionsetField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'CheckboxSetField':
   'prefix': 'checkboxsetfield'
@@ -1830,6 +2109,18 @@
   \t\'${3:datalist}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\CheckboxSetField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'HeaderField':
   'prefix': 'headerfield'
@@ -1841,6 +2132,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\HeaderField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'HiddenField':
   'prefix': 'hiddenfield'
@@ -1852,6 +2155,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\HiddenField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'LabelField':
   'prefix': 'labelfield'
@@ -1863,6 +2178,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\LabelField'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'GridField':
   'prefix': 'gridfield'
@@ -1876,6 +2203,18 @@
   \t${4:GridFieldConfig_Base::create()}
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'GridFieldConfig_Base':
   'prefix': 'gridfieldconfig_base'
