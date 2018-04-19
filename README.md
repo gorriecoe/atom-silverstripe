@@ -16,6 +16,7 @@ Or search for `atom-silverstripe` in Atom settings view.
 
 - Reads the project composer.lock file to determine the available snippets.
 - Php snippets follow [psr-2 standards](http://www.php-fig.org/psr/psr-2/)
+- Snippets add use namespace if required
 - Supports 4.\*, 3.\* and even 2.\*
 - File icon for .ss
 - Uses full word prefixes so you don't have to remember abbreviations
