@@ -2767,26 +2767,86 @@
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Session::set(\'${1}\', ${2})${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Control\\Session'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 'Get session value':
   'prefix': 'sessionget'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Session::get(\'${1}\')${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Control\\Session'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 'Get all sessions':
   'prefix': 'sessiongetall'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Session::get_all(\'${1}\')${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Control\\Session'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 'Clear session value':
   'prefix': 'sessionclear'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Session::clear(\'${1}\')${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Control\\Session'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 'Clear all sessions':
   'prefix': 'sessionclearall'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': "Session::clear_all(\'${1}\')${0}"
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Control\\Session'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 # Director
 'Get the root URL':
@@ -2799,6 +2859,16 @@
     }
     {
       'scope': '.text.html.php'
+      'minVersion': '4.0'
+      'body': "Director::baseURL()"
+      'useNamespace': [
+        'SilverStripe\\Control\\Director'
+      ]
+    }
+    {
+      'scope': '.text.html.php'
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
       'body': "Director::baseURL()"
     }
   ]
@@ -2812,6 +2882,16 @@
     }
     {
       'scope': '.text.html.php'
+      'minVersion': '4.0'
+      'body': "Director::absoluteBaseURL()"
+      'useNamespace': [
+        'SilverStripe\\Control\\Director'
+      ]
+    }
+    {
+      'scope': '.text.html.php'
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
       'body': "Director::absoluteBaseURL()"
     }
   ]
