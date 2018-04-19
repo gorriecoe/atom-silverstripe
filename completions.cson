@@ -1,9 +1,3 @@
-######
-#
-# Silverstripe
-#
-######
-
 # Template scope
 'Loop':
   'prefix': 'loop'
@@ -1389,6 +1383,10 @@
         'SilverStripe\\Dev\\Debug'
       ]
     }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
   ]
 
 #  Tabs
@@ -2195,24 +2193,32 @@
   'prefix': 'gridfield'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': """
-  GridField::create(
-  \t\'${1:name}\',
-  \t\'${2:${1:title}}\',
-  \t\\$this->${1}(),
-  \t${4:GridFieldConfig_Base::create()}
-  )${0}
-  """
   'variations': [
     {
       'minVersion': '4.0'
+      'body': """
+      GridField::create(
+      \t\'${1:name}\',
+      \t\'${2:${1:title}}\',
+      \t\\$this->${1}(),
+      \t${4}
+      )${0}
+      """
       'useNamespace': [
-        'SilverStripe\\Forms'
+        'SilverStripe\\Forms\\GridField\\GridField'
       ]
     }
     {
       'maxVersion': '4.0'
       'minVersion': '3.0'
+      'body': """
+      GridField::create(
+      \t\'${1:name}\',
+      \t\'${2:${1:title}}\',
+      \t\\$this->${1}(),
+      \t${4:GridFieldConfig_Base::create()}
+      )${0}
+      """
     }
   ]
 
@@ -2221,24 +2227,72 @@
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': 'GridFieldConfig_Base::create(${1})${0}'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\GridField\\GridFieldConfig_Base'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'GridFieldConfig_RecordEditor':
   'prefix': 'gridfieldconfig_recordeditor'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': 'GridFieldConfig_RecordEditor::create(${1})${0}'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\GridField\\GridFieldConfig_RecordEditor'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'GridFieldConfig_RelationEditor':
   'prefix': 'gridfieldconfig_relationeditor'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': 'GridFieldConfig_RelationEditor::create(${1})${0}'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\GridField\\GridFieldConfig_RelationEditor'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'GridFieldConfig_RecordViewer':
   'prefix': 'gridfieldconfig_recordviewer'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': 'GridFieldConfig_RecordViewer::create(${1})${0}'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\GridField\\GridFieldConfig_RecordViewer'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'addComponent':
   'prefix': 'addcomponent'
@@ -2257,12 +2311,36 @@
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': 'new GridFieldButtonRow(\'before\')'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\GridField\\GridFieldButtonRow'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'GridFieldToolbarHeader':
   'prefix': 'gridfieldtoolbarheader'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': 'new GridFieldToolbarHeader()'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\GridField\\GridFieldToolbarHeader'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 # Images
 'Set Size Image':
@@ -2405,6 +2483,10 @@
         'SilverStripe\\Core\\Convert'
       ]
     }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
   ]
 'Convert value to HTML attribute':
   'prefix': 'convertraw2htmlatt'
@@ -2417,6 +2499,10 @@
       'useNamespace': [
         'SilverStripe\\Core\\Convert'
       ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
     }
   ]
 'Convert value to HTML name':
@@ -2431,6 +2517,10 @@
         'SilverStripe\\Core\\Convert'
       ]
     }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
   ]
 'Convert value to HTML ID':
   'prefix': 'convertraw2htmlid'
@@ -2443,6 +2533,10 @@
       'useNamespace': [
         'SilverStripe\\Core\\Convert'
       ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
     }
   ]
 'Convert value to XML':
@@ -2457,6 +2551,10 @@
         'SilverStripe\\Core\\Convert'
       ]
     }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
   ]
 'Convert value to javascript':
   'prefix': 'convertraw2js'
@@ -2469,6 +2567,10 @@
       'useNamespace': [
         'SilverStripe\\Core\\Convert'
       ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
     }
   ]
 'Convert value to JSON':
@@ -2483,6 +2585,10 @@
         'SilverStripe\\Core\\Convert'
       ]
     }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
   ]
 'Convert array to JSON':
   'prefix': 'convertarray2json'
@@ -2495,6 +2601,10 @@
       'useNamespace': [
         'SilverStripe\\Core\\Convert'
       ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
     }
   ]
 'Convert value to SQL':
@@ -2509,6 +2619,10 @@
         'SilverStripe\\Core\\Convert'
       ]
     }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
   ]
 'Convert symbolic identifier to SQL':
   'prefix': 'convertsymbol2sql'
@@ -2521,6 +2635,10 @@
       'useNamespace': [
         'SilverStripe\\Core\\Convert'
       ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
     }
   ]
 'Convert XML to raw text':
@@ -2535,6 +2653,10 @@
         'SilverStripe\\Core\\Convert'
       ]
     }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
   ]
 'Convert JSON to an object':
   'prefix': 'convertjson2obj'
@@ -2547,6 +2669,10 @@
       'useNamespace': [
         'SilverStripe\\Core\\Convert'
       ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
     }
   ]
 'Convert JSON to an array':
@@ -2561,6 +2687,10 @@
         'SilverStripe\\Core\\Convert'
       ]
     }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
   ]
 'Convert XML to an array':
   'prefix': 'convertxml2array'
@@ -2573,6 +2703,10 @@
       'useNamespace': [
         'SilverStripe\\Core\\Convert'
       ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
     }
   ]
 'Convert to link if valid':
@@ -2587,6 +2721,10 @@
         'SilverStripe\\Core\\Convert'
       ]
     }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
   ]
 'Convert HTML to plain text':
   'prefix': 'converthtml2raw'
@@ -2600,6 +2738,10 @@
         'SilverStripe\\Core\\Convert'
       ]
     }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
   ]
 'Convert value to url':
   'prefix': 'convertraw2url'
@@ -2612,6 +2754,10 @@
       'useNamespace': [
         'SilverStripe\\Core\\Convert'
       ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
     }
   ]
 
