@@ -1926,6 +1926,8 @@
 
 'TreeDropdownField':
   'prefix': 'treedropdownfield'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
   'body': """
   TreeDropdownField::create(
   \t\'${1:name}ID\',
