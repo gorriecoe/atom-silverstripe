@@ -1309,9 +1309,20 @@
 'permissionCheck':
   'prefix': 'permissioncheck'
   'module': 'silverstripe/framework'
-  'minVersion': '3.0'
   'scope': '.text.html.php'
   'body': 'Permission::check(${1:string|array}, ${2:\'any\'}, ${3:$member})${0}'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Security\\Permission'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'providePermissions':
   'prefix': 'providepermissions'
