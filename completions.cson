@@ -837,6 +837,21 @@
     }
   ]
 
+'owns':
+  'prefix': 'owns'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'minVersion': '4.0'
+  'body': """
+  /**
+   * Relationship version ownership
+   * @var array
+   */
+  private static \\$owns = [
+  \t\'${1}\'
+  ];
+  """
+
 'casting':
   'prefix': 'casting'
   'module': 'silverstripe/framework'
