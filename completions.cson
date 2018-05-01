@@ -1640,7 +1640,7 @@
     {
       'minVersion': '4.0'
       'useNamespace': [
-        'SilverStripe\\Forms\\HtmlEditorField'
+        'SilverStripe\\Forms\\HTMLEditor\\HtmlEditorField'
       ]
     }
     {
