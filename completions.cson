@@ -3217,7 +3217,7 @@
 
 ######
 #
-# Linkable
+# sheadawson/silverstripe-linkable
 #
 ######
 
@@ -3246,7 +3246,59 @@
 
 ######
 #
-# SortableUploadField
+# gorriecoe/silverstripe-link
+#
+######
+
+'Link':
+  'prefix': 'link'
+  'module': 'gorriecoe/silverstripe-link'
+  'scope': '.text.html.php'
+  'body': "Link::class"
+  'useNamespace': [
+    'gorriecoe\\Link\\Models\\Link'
+  ]
+
+######
+#
+# gorriecoe/silverstripe-linkfield
+#
+######
+
+'LinkField':
+  'prefix': 'linkfield'
+  'module': 'gorriecoe/silverstripe-linkfield'
+  'scope': '.text.html.php'
+  'body': """
+  LinkField::create(
+  \t\'${1:name}\',
+  \t\'${2:${1:title}}\'
+  \t${3:\$this},
+  )${0}
+  """
+  'useNamespace': [
+    'gorriecoe\\Link\\Models\\Link'
+    'gorriecoe\\LinkField\\LinkField'
+  ]
+
+######
+#
+# gorriecoe/silverstripe-embed
+#
+######
+
+'Embeddable':
+  'prefix': 'embed'
+  'module': 'gorriecoe/silverstripe-embed'
+  'scope': '.text.html.php'
+  'body': "Embeddable::class"
+  'useNamespace': [
+    'gorriecoe\\Embed\\Extensions\\Embeddable'
+  ]
+
+######
+#
+# bummzack/sortablefile
 #
 ######
 
@@ -3263,7 +3315,7 @@
 
 ######
 #
-# Focuspoint
+# jonom/focuspoint
 #
 ######
 
@@ -3305,55 +3357,55 @@
 
 ######
 #
-# Gridfield extensions
+# symbiote/silverstripe-gridfieldextensions
 #
 ######
 
 'GridFieldAddExistingSearchButton':
   'prefix': 'gridfieldaddexistingsearchbutton'
-  'module': 'silverstripe-australia/gridfieldextensions'
+  'module': 'symbiote/gridfieldextensions'
   'scope': '.text.html.php'
   'body': 'new GridFieldAddExistingSearchButton()'
 
 'GridFieldTitleHeader':
   'prefix': 'gridfieldtitleheader'
-  'module': 'silverstripe-australia/gridfieldextensions'
+  'module': 'symbiote/gridfieldextensions'
   'scope': '.text.html.php'
   'body': 'new GridFieldTitleHeader()'
 
 'GridFieldEditableColumns':
   'prefix': 'gridfieldeditablecolumns'
-  'module': 'silverstripe-australia/gridfieldextensions'
+  'module': 'symbiote/gridfieldextensions'
   'scope': '.text.html.php'
   'body': 'new GridFieldEditableColumns()'
 
 'GridFieldDeleteAction':
   'prefix': 'gridfielddeleteaction'
-  'module': 'silverstripe-australia/gridfieldextensions'
+  'module': 'symbiote/gridfieldextensions'
   'scope': '.text.html.php'
   'body': 'new GridFieldDeleteAction()'
 
 'GridFieldAddNewInlineButton':
   'prefix': 'gridfieldaddnewinlinebutton'
-  'module': 'silverstripe-australia/gridfieldextensions'
+  'module': 'symbiote/gridfieldextensions'
   'scope': '.text.html.php'
   'body': 'new GridFieldAddNewInlineButton()'
 
 'GridFieldAddNewMultiClass':
   'prefix': 'gridfieldaddnewmulticlass'
-  'module': 'silverstripe-australia/gridfieldextensions'
+  'module': 'symbiote/gridfieldextensions'
   'scope': '.text.html.php'
   'body': 'new GridFieldAddNewMultiClass())'
 
 'GridFieldOrderableRows':
   'prefix': 'gridfieldorderablerows'
-  'module': 'silverstripe-australia/gridfieldextensions'
+  'module': 'symbiote/gridfieldextensions'
   'scope': '.text.html.php'
   'body': 'new GridFieldOrderableRows(${1:\'Sort\'})${0}'
 
 ######
 #
-# Sortable Gridfield
+# undefinedoffset/sortablegridfield
 #
 ######
 
@@ -3364,7 +3416,7 @@
 
 ######
 #
-# Better Buttons
+# unclecheese/betterbuttons
 #
 ######
 
@@ -3412,7 +3464,7 @@
 
 ######
 #
-# Display Logic
+# unclecheese/silverstripe-display-logic
 #
 ######
 
@@ -3519,7 +3571,7 @@
 
 ######
 #
-# Lumberjack
+# silverstripe/lumberjack
 #
 ######
 
@@ -3553,7 +3605,7 @@
 
 ######
 #
-# Fluent
+# tractorcow/silverstripe-fluent
 #
 ######
 
