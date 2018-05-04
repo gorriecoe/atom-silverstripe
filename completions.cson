@@ -3272,8 +3272,8 @@
   'body': """
   LinkField::create(
   \t\'${1:name}\',
-  \t\'${2:${1:title}}\'
-  \t${3:\$this},
+  \t\'${2:${1:title}}\',
+  \t${3:\$this}
   )${0}
   """
   'useNamespace': [
