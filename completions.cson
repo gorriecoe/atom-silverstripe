@@ -154,15 +154,25 @@
 'Require themed javascript':
   'prefix': 'requirethemedjs'
   'module': 'silverstripe/framework'
-  'minVersion': '3.5'
   'variations': [
     {
       'scope': '.text.html.ss'
+      'minVersion': '3.5'
       'body': '<% require themedJavascript(\'${1}\') %>${0}'
     }
     {
       'scope': '.text.html.php'
+      'minVersion': '3.5'
+      'maxVersion': '4.0'
       'body': 'Requirements::themedJavascript(\'${1}\');${0}'
+    }
+    {
+      'scope': '.text.html.php'
+      'minVersion': '4.0'
+      'body': 'Requirements::themedJavascript(\'${1}\');${0}'
+      'useNamespace': [
+        'SilverStripe\\View\\Requirements'
+      ]
     }
   ]
 
@@ -176,7 +186,16 @@
     }
     {
       'scope': '.text.html.php'
+      'maxVersion': '4.0'
       'body': 'Requirements::themedCSS(\'${1}\');${0}'
+    }
+    {
+      'scope': '.text.html.php'
+      'minVersion': '4.0'
+      'body': 'Requirements::themedCSS(\'${1}\');${0}'
+      'useNamespace': [
+        'SilverStripe\\View\\Requirements'
+      ]
     }
   ]
 
@@ -190,7 +209,16 @@
     }
     {
       'scope': '.text.html.php'
+      'maxVersion': '4.0'
       'body': 'Requirements::javascript(\'${1}\');${0}'
+    }
+    {
+      'scope': '.text.html.php'
+      'minVersion': '4.0'
+      'body': 'Requirements::javascript(\'${1}\');${0}'
+      'useNamespace': [
+        'SilverStripe\\View\\Requirements'
+      ]
     }
   ]
 
@@ -204,7 +232,16 @@
     }
     {
       'scope': '.text.html.php'
+      'maxVersion': '4.0'
       'body': 'Requirements::css(\'${1}\');${0}'
+    }
+    {
+      'scope': '.text.html.php'
+      'minVersion': '4.0'
+      'body': 'Requirements::css(\'${1}\');${0}'
+      'useNamespace': [
+        'SilverStripe\\View\\Requirements'
+      ]
     }
   ]
 
@@ -213,6 +250,17 @@
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
   'body': 'Requirements::block(\'${1}\');${0}'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\View\\Requirements'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+    }
+  ]
 
 'Theme directory':
   'prefix': 'themedir'
