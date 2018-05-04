@@ -3360,6 +3360,18 @@
   \t\'${2:${1:title}}\'
   )${0}
   """
+  'variations': [
+    {
+      'minVersion': '2.0'
+      'useNamespace': [
+        'Bummzack\\SortableFile\\Forms\\SortableUploadField'
+      ]
+    }
+    {
+      'maxVersion': '2.0'
+    }
+  ]
+
 
 ######
 #
