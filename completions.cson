@@ -2002,23 +2002,31 @@
   'prefix': 'treedropdownfield'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': """
-  TreeDropdownField::create(
-  \t\'${1:name}ID\',
-  \t\'${2:${1:title}}\',
-  \t\'${3:SiteTree}\'
-  )${0}
-  """
   'variations': [
     {
       'minVersion': '4.0'
+      'body': """
+      TreeDropdownField::create(
+      \t\'${1:name}ID\',
+      \t\'${2:${1:title}}\',
+      \t${3:SiteTree::class}
+      )${0}
+      """
       'useNamespace': [
         'SilverStripe\\Forms\\TreeDropdownField'
+        'SilverStripe\\CMS\\Model\\SiteTree'
       ]
     }
     {
       'maxVersion': '4.0'
       'minVersion': '3.0'
+      'body': """
+      TreeDropdownField::create(
+      \t\'${1:name}ID\',
+      \t\'${2:${1:title}}\',
+      \t\'${3:SiteTree}\'
+      )${0}
+      """
     }
   ]
 
@@ -2026,23 +2034,31 @@
   'prefix': 'treedropdownfield_readonly'
   'module': 'silverstripe/framework'
   'scope': '.text.html.php'
-  'body': """
-  TreeDropdownField_Readonly::create(
-  \t\'${1:name}ID\',
-  \t\'${2:${1:title}}\',
-  \t\'${3:SiteTree}\'
-  )${0}
-  """
   'variations': [
     {
       'minVersion': '4.0'
+      'body': """
+      TreeDropdownField_Readonly::create(
+      \t\'${1:name}ID\',
+      \t\'${2:${1:title}}\',
+      \t${3:SiteTree::class}
+      )${0}
+      """
       'useNamespace': [
         'SilverStripe\\Forms\\TreeDropdownField_Readonly'
+        'SilverStripe\\CMS\\Model\\SiteTree'
       ]
     }
     {
       'maxVersion': '4.0'
       'minVersion': '3.0'
+      'body': """
+      TreeDropdownField_Readonly::create(
+      \t\'${1:name}ID\',
+      \t\'${2:${1:title}}\',
+      \t\'${3:SiteTree}\'
+      )${0}
+      """
     }
   ]
 
@@ -2054,7 +2070,7 @@
   DropdownField::create(
   \t\'${1:name}\',
   \t\'${2:${1:title}}\',
-  \t\'${3:datalist}\'
+  \t${3:datalist}
   )${0}
   """
   'variations': [
