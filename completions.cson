@@ -1202,7 +1202,7 @@
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
   'scope': '.text.html.ss, .text.html.php'
-  'body': '_t(${1}, ${2})${0}'
+  'body': '_t(__CLASS__ . \'${1/(\\S*)(\\s*)/\\U$1/}\', \'${2:${1}}\')${0}'
 
 # Events
 'onBeforeWrite':
