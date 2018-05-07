@@ -42,6 +42,17 @@
     ]
   }
   {
+    'begin': '<\%t'
+    'beginCaptures':
+      '1':
+        'name': 'punctuation.definition.tag.begin.html.ss'
+    'end': '-? \%>'
+    'endCaptures':
+      '1':
+        'name': 'punctuation.definition.tag.end.html.ss'
+    'name': 'keyword.control.import.include.ss'
+  }
+  {
     'begin': '(<(?!\/|\%)([a-zA-Z]*))'
     'beginCaptures':
       '1':

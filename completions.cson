@@ -1201,8 +1201,17 @@
   'prefix': '_t'
   'module': 'silverstripe/framework'
   'minVersion': '3.0'
-  'scope': '.text.html.ss, .text.html.php'
-  'body': '_t(__CLASS__ . \'${1/(\\S*)(\\s*)/\\U$1/}\', \'${2:${1}}\')${0}'
+  'variations': [
+    {
+      'scope': '.text.html.php'
+      'body': '_t(__CLASS__ . \'.${1/([a-zA-Z]*)([^a-zA-Z]*)/\\U$1/}\', \'${2:${1}}\')${0}'
+    }
+    {
+      'scope': '.text.html.ss'
+      'body': '<%t ${1/([a-zA-Z.]*)([^a-zA-Z.]*)/\\U$1/} \'${2:${1}}\' %>${0}'
+    }
+  ]
+
 
 # Events
 'onBeforeWrite':
