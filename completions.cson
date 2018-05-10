@@ -2444,6 +2444,15 @@
   ]
 
 # Images
+'Image':
+  'prefix': 'image'
+  'module': 'silverstripe/assets'
+  'scope': '.text.html.php'
+  'minVersion': '1.0'
+  'body': "Image::class"
+  'useNamespace': [
+    'SilverStripe\\Assets\\Image'
+  ]
 'Set Size Image':
   'prefix': 'setsize'
   'module': 'silverstripe/framework'
