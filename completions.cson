@@ -3045,6 +3045,15 @@
     }
     {
       'scope': '.text.html.php'
+      'minVersion': '4.0'
+      'body': 'SiteConfig::current_site_config()'
+      'useNamespace': [
+        'SilverStripe\\SiteConfig\\SiteConfig'
+      ]
+    }
+    {
+      'scope': '.text.html.php'
+      'maxVersion': '4.0'
       'body': 'SiteConfig::current_site_config()'
     }
   ]
