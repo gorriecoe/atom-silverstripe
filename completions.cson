@@ -1552,10 +1552,47 @@
   {
   \t\\$fields = parent::getCMSFields();
   \t\\$fields->${0}
+  \treturn \\$fields;
+  }
+  """
+
+'getCMSFieldsScafoldless':
+  'prefix': 'getcmsfieldsscafoldless'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'body': """
+  /**
+   * CMS Fields
+   * @return FieldList
+   */
+  public function getCMSFields()
+  {
+  \t\\$fields = FieldList::create();
+  \t\\$fields->push(
+  \t\tTabSet::create(
+  \t\t\t'Root',
+  \t\t\tTab::create('Main')
+  \t\t)
+  \t);
+  \t\\$fields->${0}
   \t\\$this->extend('updateCMSFields', \\$fields);
   \treturn \\$fields;
   }
   """
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'useNamespace': [
+        'SilverStripe\\Forms\\FieldList',
+        'SilverStripe\\Forms\\Tab',
+        'SilverStripe\\Forms\\TabSet'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+    }
+  ]
 
 'getSettingsFields':
   'prefix': 'getsettingsfields'
