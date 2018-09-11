@@ -1472,6 +1472,26 @@
     }
   ]
 
+'SS_Log':
+  'prefix': 'sslog'
+  'module': 'silverstripe/framework'
+  'scope': '.text.html.php'
+  'variations': [
+    {
+      'minVersion': '4.0'
+      'body': 'Injector::inst()->get(LoggerInterface::class)->${2:error}(\'${1}\');${0}'
+      'useNamespace': [
+        'Psr\\Log\\LoggerInterface',
+        'SilverStripe\\Core\\Injector\\Injector'
+      ]
+    }
+    {
+      'maxVersion': '4.0'
+      'minVersion': '3.0',
+      'body': 'SS_Log::log(\'${1}\', ${2:SS_Log::ERR});${0}'
+    }
+  ]
+
 #  Tabs
 'addFieldToTab':
   'prefix': 'addfield'
