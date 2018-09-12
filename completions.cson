@@ -3062,6 +3062,25 @@
       'body': "Director::absoluteBaseURL()"
     }
   ]
+'Get base folder':
+  'prefix': 'basefolder'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.php'
+      'minVersion': '4.0'
+      'body': "Director::baseFolder()"
+      'useNamespace': [
+        'SilverStripe\\Control\\Director'
+      ]
+    }
+    {
+      'scope': '.text.html.php'
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+      'body': "Director::baseFolder()"
+    }
+  ]
 
 # General variables
 'Current Member':
