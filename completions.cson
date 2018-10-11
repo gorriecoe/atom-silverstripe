@@ -3081,6 +3081,25 @@
       'body': "Director::baseFolder()"
     }
   ]
+'Redirect':
+  'prefix': 'redirect'
+  'module': 'silverstripe/framework'
+  'variations': [
+    {
+      'scope': '.text.html.php'
+      'minVersion': '4.0'
+      'body': "Director::redirect(${1})${0}"
+      'useNamespace': [
+        'SilverStripe\\Control\\Director'
+      ]
+    }
+    {
+      'scope': '.text.html.php'
+      'maxVersion': '4.0'
+      'minVersion': '3.0'
+      'body': "Director::redirect(${1})${0}"
+    }
+  ]
 
 # General variables
 'Current Member':
