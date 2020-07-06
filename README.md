@@ -2,7 +2,7 @@
 
 Provides [SilverStripe](http://www.silverstripe.org/) syntax highlighting and snippets.
 
-[![Powered by Sanchez](resources/poweredby.png)](https://github.com/gorriecoe/silverstripe-sanchez)
+[![Powered by Sanchez](https://raw.githubusercontent.com/gorriecoe/silverstripe-sanchez/master/resources/poweredby.png)](https://github.com/gorriecoe/silverstripe-sanchez)
 
 ## Installation
 
