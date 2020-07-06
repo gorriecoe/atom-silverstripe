@@ -2,6 +2,8 @@
 
 Provides [SilverStripe](http://www.silverstripe.org/) syntax highlighting and snippets.
 
+[![Powered by Sanchez](resources/poweredby.png)](https://github.com/gorriecoe/silverstripe-sanchez)
+
 ## Installation
 
 Using `apm`:
@@ -20,17 +22,5 @@ Or search for `atom-silverstripe` in Atom settings view.
 - Supports 4.\*, 3.\* and even 2.\*
 - File icon for .ss
 - Uses full word prefixes so you don't have to remember abbreviations
-- Includes snippets for addons modules such as [tagfield](https://github.com/silverstripe-labs/silverstripe-tagfield) and [linkable](https://github.com/sheadawson/silverstripe-linkable)
+- Includes snippets for addons modules such as [tagfield](https://github.com/silverstripe/silverstripe-tagfield) and [linkable](https://github.com/sheadawson/silverstripe-linkable)
 - .ss templates include scope and conditional indentation.
-
-Quick object and controller setup
-
-![Quick object and controller setup](https://raw.githubusercontent.com/gorriecoe/atom-silverstripe/master/resources/readme/objectandcontroller.gif)
-
-Adding private statics
-
-![Adding private statics](https://raw.githubusercontent.com/gorriecoe/atom-silverstripe/master/resources/readme/privatestatics.gif)
-
-Adding CMS Fields
-
-![Adding CMS Fields](https://raw.githubusercontent.com/gorriecoe/atom-silverstripe/master/resources/readme/addfields.gif)

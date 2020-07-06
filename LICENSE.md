@@ -1,6 +1,6 @@
 BSD 3-Clause License
 
-Copyright (c) 2017, gorriecoe
+Copyright (c) 2020, gorriecoe
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

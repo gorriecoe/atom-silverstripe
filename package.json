@@ -12,7 +12,7 @@
     "url": "https://github.com/gorriecoe/atom-silverstripe/issues"
   },
   "license": "BSD",
-  "main": "./lib/main",
+  "main": "index",
   "engines": {
     "atom": ">1.0.0"
   },
@@ -23,32 +23,19 @@
       }
     }
   },
-  "consumedServices": {
-    "busy-signal": {
-      "versions": {
-        "1.0.0": "consumeSignal"
-      }
-    }
-  },
-  "package-deps": [
-    "busy-signal"
-  ],
   "dependencies": {
-    "atom-package-deps": "^4.6.0",
-    "cson-safe": "^1.0.5",
-    "json-file": "^0.1.0",
-    "season": "^6.0.0"
+    "silverstripe-sanchez": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint": "^7.2.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
   },
   "scripts": {
-    "installgenerator": "npm install -g icon-font-generator",
-    "generateicon": "icon-font-generator ./resources/svg/*.svg --out ./resources/font/ --name ssicon --css false --html false --types woff2 --center --descent 6"
+    "lint": "eslint **/*.js",
+    "lint-fix": "eslint **/*.js --fix"
   }
 }
