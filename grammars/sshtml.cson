@@ -3,31 +3,28 @@ name: 'HTML (Silverstripe)'
 fileTypes: [
 	'ss'
 ]
-foldingStartMarker: '<%\\s[^end].*\\s%>|<%--'
-foldingStopMarker: '<%\\send.*\\s%>|--%>'
+foldingStartMarker: '<%\\s*(?:if|else|loop|with|control)|<%--'
+foldingStopMarker: '<%\\s*[end|else].*\\s%>|--%>'
 patterns: [
 	{
 		include: 'text.html.basic'
-	}
+	},
 	{
-		begin: '<% (include|require)'
-		end: '-? %>'
-		name: 'keyword.control.import.include.ss'
-	}
-	{
-		begin: '<% +(?!>)[-=]?'
+		begin: '<% +(?!>)(include|require)*[-=]?'
 		captures:
 			'0':
-				name: 'punctuation.section.embedded.ruby'
+				name: 'support.function.ss'
+			'1':
+				name: 'keyword.control.import.include.ss'
 		end: '-? %>'
 		name: 'keyword.control.ss'
 		patterns: [
 			{
 				captures:
 					'1':
-						name: 'punctuation.definition.comment.ruby'
+						name: 'punctuation.definition.comment'
 				match: '(#).*?(?=-? %>)'
-				name: 'comment.line.number-sign.ruby'
+				name: 'comment.line.number-sign'
 			}
 		]
 	}
@@ -51,12 +48,12 @@ patterns: [
 	{
 		begin: '<%t'
 		beginCaptures:
-			'1':
-				name: 'punctuation.definition.tag.begin.html.ss'
+			'0':
+				name: 'support.function.ss'
 		end: '-? %>'
 		endCaptures:
-			'1':
-				name: 'punctuation.definition.tag.end.html.ss'
+			'0':
+				name: 'support.function.ss'
 		name: 'keyword.control.import.include.ss'
 	}
 	{
