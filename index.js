@@ -1,10 +1,10 @@
-const sanchez = require('silverstripe-sanchez')
-let build = null
+const Enginez = require('silverstripe-sanchez')
+let sanchez = null
 
 module.exports = {
   activate () {
     const paths = atom.workspace.project.getPaths()
-    build = sanchez.init({
+    sanchez = new Enginez({
       // .silverstripe_sanchez
       configPaths: paths,
       // composer.lock
@@ -15,7 +15,7 @@ module.exports = {
   },
 
   deactivate () {
-    build = null
+    sanchez = null
   },
 
   getProvider () {
@@ -26,23 +26,17 @@ module.exports = {
       suggestionPriority: 2,
 
       getSuggestions (request) {
-        return sanchez.conditions(
-          // Full list of available snippets built during activate.
-          build.snippets,
+        return sanchez.snippets({
           // Scope e.g. .text.html.php
-          request.scopeDescriptor.scopes,
+          scope: request.scopeDescriptor.scopes,
           // Prefix e.g getcmsfields
-          request.prefix,
-          // Full list of available composer packages found during activate.
-          build.composerPackages,
-          // Full list of available node packages found during activate.
-          build.nodePackages
-        ).map(snippet => {
+          prefix: request.prefix
+        }).map(snippet => {
           const suggestion = snippet.suggestion
           suggestion.rightLabelHTML = suggestion.information
           suggestion.displayText = suggestion.name
           suggestion.iconHTML = '<i class="icon-ss"></i>'
-          if (build.comments) {
+          if (sanchez.data.comments) {
             suggestion.snippet = suggestion.comment + suggestion.body
           } else {
             suggestion.snippet = suggestion.body
@@ -52,27 +46,25 @@ module.exports = {
       },
 
       onDidInsertSuggestion ({editor, suggestion}) {
-        if (suggestion.namespaces && build.namespacing) {
-          // Get a list of locations to apply namespacing
-          sanchez.namespace(
-            editor.getText(),
-            suggestion.namespaces
-          ).forEach(namespace => {
-            editor.setTextInBufferRange(
-              [
-                // Start position
-                // @param row
-                // @param column
-                [namespace.line, 0],
-                // End position
-                // @param row
-                // @param column
-                [namespace.line, 0]
-              ],
-              namespace.body
-            )
-          })
-        }
+        // Get a list of locations to apply use items.
+        sanchez.getUseItemLoc({
+          text: editor.getText(),
+          useItems: suggestion.useItems
+        }).forEach(useItem => {
+          editor.setTextInBufferRange(
+            [
+              // Start position
+              // @param row
+              // @param column
+              [useItem.line, 0],
+              // End position
+              // @param row
+              // @param column
+              [useItem.line, 0]
+            ],
+            useItem.body
+          )
+        })
       }
     }
   }
