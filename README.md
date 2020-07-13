@@ -17,4 +17,4 @@ Provides [SilverStripe](http://www.silverstripe.org/) syntax highlighting and sn
 
 ## Options
 
-[Add your own snippets](https://github.com/gorriecoe/silverstripe-sanchez#custom-settings-and-snippets-im-a-coder-because-i-write)
+[Add your own snippets](https://github.com/gorriecoe/silverstripe-sanchez)
