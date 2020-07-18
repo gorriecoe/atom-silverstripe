@@ -30,7 +30,9 @@ module.exports = {
           // Scope e.g. .text.html.php
           scope: request.scopeDescriptor.scopes,
           // Prefix e.g getcmsfields
-          prefix: request.prefix
+          prefix: request.prefix,
+          // Atom doesn't use language so just pass it.
+          language: true
         }).map(snippet => {
           const suggestion = snippet.suggestion
           suggestion.rightLabelHTML = suggestion.information
