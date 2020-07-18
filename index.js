@@ -4,13 +4,33 @@ let sanchez = null
 module.exports = {
   activate () {
     const paths = atom.workspace.project.getPaths()
+
+    let atomconfig = {
+      comments: atom.config.get('atom-silverstripe.comments'),
+      useItems: atom.config.get('atom-silverstripe.useItems')
+    }
+
+    // if null use `.silverstripe_sanchez` file config if available either in
+    // the home directory or active project
+    if (atomconfig.comments === 'null') {
+      delete atomconfig.comments
+    }
+
+    // if null use `.silverstripe_sanchez` file config if available either in
+    // the home directory or active project
+    if (atomconfig.useItems === 'null') {
+      delete atomconfig.useItems
+    }
+
     sanchez = new Enginez({
       // .silverstripe_sanchez
       configPaths: paths,
       // composer.lock
       composerPaths: paths,
       // package-lock.json
-      nodePaths: paths
+      nodePaths: paths,
+      // atom settings override .silverstripe_sanchez
+      config: atomconfig
     })
   },
 
@@ -38,7 +58,7 @@ module.exports = {
           suggestion.rightLabelHTML = suggestion.information
           suggestion.displayText = suggestion.name
           suggestion.iconHTML = '<i class="icon-ss"></i>'
-          if (sanchez.data.comments) {
+          if (sanchez.data.comments === 'true') {
             suggestion.snippet = suggestion.comment + suggestion.body
           } else {
             suggestion.snippet = suggestion.body

@@ -23,6 +23,46 @@
       }
     }
   },
+  "configSchema": {
+    "comments": {
+      "type": "string",
+      "enum": [
+        {
+          "value": "true",
+          "description": "Enable"
+        },
+        {
+          "value": "false",
+          "description": "Disable"
+        },
+        {
+          "value": "null",
+          "description": "Inherit from `.silverstripe_sanchez`"
+        }
+      ],
+      "default": "null",
+      "description": "Enable/Disable if snippets should include comments."
+    },
+    "useItems": {
+      "type": "string",
+      "enum": [
+        {
+          "value": "true",
+          "description": "Enable"
+        },
+        {
+          "value": "false",
+          "description": "Disable"
+        },
+        {
+          "value": "null",
+          "description": "Inherit from `.silverstripe_sanchez`"
+        }
+      ],
+      "default": "null",
+      "description": "Enable/Disable if snippets should attempt to inject use item namespacing automatically."
+    }
+  },
   "dependencies": {
     "silverstripe-sanchez": "^1.0.0"
   },
