@@ -3,8 +3,8 @@ name: 'HTML Silverstripe'
 fileTypes: [
 	'ss'
 ]
-foldingStartMarker: '<%\\s*(?:if|else|loop|with|control)|<%--'
-foldingStopMarker: '<%\\s*[end|else].*\\s%>|--%>'
+foldingStartMarker: '<%\\s+(?:if|else|loop|with|control|cache|uncache)|<%--'
+foldingStopMarker: '<%\\s+end_[a-zA-Z]+|else].*\\s%>|--%>'
 patterns: [
 	{
 		include: 'text.html.basic'
