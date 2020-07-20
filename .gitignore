@@ -76,6 +76,9 @@ typings/
 # nuxt.js build output
 .nuxt
 
+# rollup.js default build output
+dist/
+
 # Storybook build outputs
 .out
 .storybook-out
