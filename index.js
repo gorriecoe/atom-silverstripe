@@ -1,3 +1,4 @@
+// const atom = require('atom')
 const Enginez = require('silverstripe-sanchez')
 let sanchez = null
 
@@ -32,6 +33,24 @@ module.exports = {
       // atom settings override .silverstripe_sanchez
       config: atomconfig
     })
+
+    const foundSnippets = sanchez.snippets({
+      prefix: true,
+      scope: true,
+      language: true
+    }).length
+    const totalSnippets = sanchez.allSnippets.length
+
+    const snippetsNotify = atom.notifications.addInfo(
+      `${foundSnippets} Silverstripe snippets available from a total of ${totalSnippets} found.`,
+      {
+        dismissable: true
+      }
+    )
+
+    setTimeout(() => {
+      snippetsNotify.dismiss()
+    }, 10000)
   },
 
   deactivate () {
@@ -68,7 +87,8 @@ module.exports = {
       },
 
       onDidInsertSuggestion ({editor, suggestion}) {
-        // Get a list of locations to apply use items.
+        // Get a list of locations to safely apply use items from sanchez.
+        // Then insert in the given locations.
         sanchez.getUseItemLoc({
           text: editor.getText(),
           useItems: suggestion.useItems
