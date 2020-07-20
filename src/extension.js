@@ -1,4 +1,3 @@
-// const atom = require('atom')
 const Enginez = require('silverstripe-sanchez')
 let sanchez = null
 
@@ -6,7 +5,7 @@ module.exports = {
   activate () {
     const paths = atom.workspace.project.getPaths()
 
-    let atomconfig = {
+    const atomconfig = {
       comments: atom.config.get('atom-silverstripe.comments'),
       useItems: atom.config.get('atom-silverstripe.useItems')
     }
@@ -86,7 +85,7 @@ module.exports = {
         })
       },
 
-      onDidInsertSuggestion ({editor, suggestion}) {
+      onDidInsertSuggestion ({ editor, suggestion }) {
         // Get a list of locations to safely apply use items from sanchez.
         // Then insert in the given locations.
         sanchez.getUseItemLoc({
