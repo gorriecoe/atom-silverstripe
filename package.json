@@ -1,6 +1,6 @@
 {
   "name": "atom-silverstripe",
-  "version": "4.2.4",
+  "version": "4.3.0",
   "description": "Provides SilverStripe syntax highlighting and snippets.",
   "repository": {
     "type": "git",
@@ -63,8 +63,19 @@
       "description": "Enable/Disable if snippets should attempt to inject use item namespacing automatically."
     }
   },
+  "consumedServices": {
+    "busy-signal": {
+      "versions": {
+        "1.0.0": "consumeSignal"
+      }
+    }
+  },
+  "package-deps": [
+    "busy-signal"
+  ],
   "dependencies": {
-    "silverstripe-sanchez": "^1.0.0"
+    "atom-package-deps": "^4.6.0",
+    "silverstripe-sanchez": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^7.2.0",

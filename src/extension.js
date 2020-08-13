@@ -1,9 +1,23 @@
 const Enginez = require('silverstripe-sanchez')
+const { CompositeDisposable } = require('atom')
+const packageDeps = require('atom-package-deps')
+const packageInfo = require('../package.json')
+
 let sanchez = null
 
 module.exports = {
   activate () {
-    const paths = atom.workspace.project.getPaths()
+    packageDeps.install(
+      packageInfo.name,
+      false
+    )
+    this.subscriptions = new CompositeDisposable()
+    this.interval = null
+  },
+
+  consumeSignal (registry) {
+    const sanchezProvider = registry.create()
+    this.subscriptions.add(sanchezProvider)
 
     const atomconfig = {
       comments: atom.config.get('atom-silverstripe.comments'),
@@ -22,38 +36,28 @@ module.exports = {
       delete atomconfig.useItems
     }
 
-    sanchez = new Enginez({
-      // .silverstripe_sanchez
-      configPaths: paths,
-      // composer.lock
-      composerPaths: paths,
-      // package-lock.json
-      nodePaths: paths,
-      // atom settings override .silverstripe_sanchez
-      config: atomconfig
-    })
-
-    const foundSnippets = sanchez.snippets({
-      prefix: true,
-      scope: true,
-      language: true
-    }).length
-    const totalSnippets = sanchez.allSnippets.length
-
-    const snippetsNotify = atom.notifications.addInfo(
-      `${foundSnippets} Silverstripe snippets available from a total of ${totalSnippets} found.`,
-      {
-        dismissable: true
+    let sanchezBuilt = false
+    this.interval = setInterval(() => {
+      if (sanchezBuilt) {
+        clearInterval(this.interval)
+        sanchezProvider.add('Silverstripe complete')
+        sanchezProvider.clear()
+      } else {
+        sanchezProvider.add('Initializing Silverstripe')
+        sanchez = new Enginez({
+          rootPaths: atom.workspace.project.getPaths(),
+          // atom settings override .silverstripe_sanchez
+          config: atomconfig
+        })
+        sanchezBuilt = true
       }
-    )
-
-    setTimeout(() => {
-      snippetsNotify.dismiss()
-    }, 10000)
+    }, 1000)
   },
 
   deactivate () {
     sanchez = null
+    this.subscriptions.dispose()
+    clearInterval(this.interval)
   },
 
   getProvider () {
